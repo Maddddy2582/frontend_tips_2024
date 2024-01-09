@@ -19,7 +19,7 @@ The main idea behind the flex layout is to give the container the ability to alt
 
 ### Example of a typical CSS Flexbox<br><br>
 
-![This is a Flexbox](Images1\flex.jpg)
+![This is a Flexbox](Images1/flex.jpg)
 
 ## <span style="color:#FF8900">How to create a Flexbox?
 
@@ -40,7 +40,7 @@ This creates or defines a main axis in which the flexbox is created.<br><br>We c
     flex-direction: row | row-reverse | column | column-reverse;
     }
 
-![Flexdir](Images1\flexdir.jpg)
+![Flexdir](Images1/flexdir.jpg)
 
 
 ## <span style="color:#FF8900">Flex Wrap
@@ -54,7 +54,7 @@ This is used to define whether a flex box should wrap around if the space is fil
     flex-wrap: nowrap | wrap | wrap-reverse;
     }
 
-![flexwrap](Images1\flexwrap.jpg)    
+![flexwrap](Images1/flexwrap.jpg)    
 
 <span style="color:blue">nowrap:</span> Does not wrap the content.<br><span style="color:blue">wrap:</span> wraps the content.<br><span style="color:blue">wrap-reverse:</span> wraps the content in reverse.
 
@@ -66,7 +66,7 @@ This is a shorthand for the flex-direction and flex-wrap properties, which toget
     flex-flow: column wrap; | row wrap;
     }    
 
-![flexwrap](Images1\flexwrap1.jpg)
+![flexwrap](Images1/flexwrap1.jpg)
 ## <span style="color:#FF8900">Order
 
 the order property controls the order in which they appear in the flex container.<br>By default all the elements will have 0 order.<br><br>This action is performed to each item seperately in the flexbox , so it is defined inside a class. 
@@ -76,7 +76,7 @@ the order property controls the order in which they appear in the flex container
     }
 
 This assigns *item* to position 5.<br><br>
-![flexwrap](Images1\flexorder.jpg)
+![flexwrap](Images1/flexorder.jpg)
  
 
 
@@ -91,7 +91,7 @@ This assigns *item* to position 5.<br><br>
     column-gap: 20px;
     }
 
- ![xample](Images1\flexgap.JPG)
+ ![xample](Images1/flexgap.JPG)
 
 
 
@@ -134,7 +134,7 @@ Justify is used to align the contents along the main-axis.<br><br> The different
     justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
     }
 
-![flexjustify](Images1\flexjustify.jpg)
+![flexjustify](Images1/flexjustify.jpg)
 
 ## <span style="color:#B931FC"> Align
 
@@ -163,7 +163,7 @@ it works similar to justify-content.
     .flex-container {
     align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch;
     }
-![flexalignitems](Images1\flexalignitems.jpg)
+![flexalignitems](Images1/flexalignitems.jpg)
 
 ### <span style="color:blue">Align-items</span>
 
@@ -184,7 +184,7 @@ The types in align-items are:
     align-items: stretch | flex-start | flex-end | center | baseline;
     }
 
-![flexalignitems](Images1\flexaligncontent.jpg)    
+![flexalignitems](Images1/flexaligncontent.jpg)    
 
 ### <span style="color:blue">Align-self</span>
 
@@ -196,7 +196,7 @@ It is used to insert a seperate item and align it inside the flexbox
     align-self: auto | flex-start | flex-end | center | baseline | stretch;
     }
 
-![flexalignitems](Images1\flexalignself.jpg) 
+![flexalignitems](Images1/flexalignself.jpg) 
 
 This concludes all the CSS Flexbox properties
 

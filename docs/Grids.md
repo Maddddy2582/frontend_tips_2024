@@ -23,7 +23,7 @@ Like tables, grid layout enables an author to align elements into <span style="c
 
 ### Example of a typical CSS Grid<br><br>
 
-![This is a css-grid](Images\css-grid-with-gaps.jpg)
+![This is a css-grid](Images/css-grid-with-gaps.jpg)
 
 ## <span style="color:#FF8900">How to create a Grid?
 
@@ -42,14 +42,14 @@ We can add rows and columns as we needed.
 
 CSS grid lines are the lines browsers create on a grid container when you define the <span style="color:blue">**grid-template-columns**</span> or<span style="color:blue"> **grid-template-rows property.**</span><br><br>
 
-![Grid Lines](Images\grid_lines.png)
+![Grid Lines](Images/grid_lines.png)
 
 
 ## <span style="color:#FF8900">Grid Rows and Column
 
 The divison of grids along the vertical axis are called <span style="color:red">**Columns**</span> and along the horizontal axis are called as <span style="color:red">**Rows.**</span>
 
-![rows and columns](Images\h9qs07pm0a8s20scr6wr.png)
+![rows and columns](Images/h9qs07pm0a8s20scr6wr.png)
 
 #### Syntax to define Rows and Columns
 
@@ -134,7 +134,7 @@ multiple ways to do this they are:
 
  Now let us see an example and see how to create that using different metods
 
- ![xample](Images\Capture.JPG)
+ ![xample](Images/Capture.JPG)
 
 
 ### <span style="color:#B931FC">Start and End
@@ -225,7 +225,7 @@ Defines a grid template by referencing the names of the grid areas which are spe
     grid-area: footer;
     }
 output:
-![example of grid areas](Images\template-areas.svg)    
+![example of grid areas](Images/template-areas.svg)    
 
 ### <span style="color:#B931FC">Shorthand for Grid Areas
 
@@ -239,10 +239,10 @@ so instead of defining the grid area rows and columns seperately we can use shor
 Sometimes if we don't know the exact space our grid would occupy and if we want to adjust it based on the content in the grid itself , we can use minmax ,<span style="color:blue">***min-content***</span> would force the grid to occupy the minimum space required by the biggest content in the grid and <span style="color:blue">***max-content***</span>   does the vice versa.
 
 **Example for min-content**
-![min-content](Images\Capture1.JPG)
+![min-content](Images/Capture1.JPG)
 
 **Example for max-content**
-![max-content](Images\max-content.JPG)
+![max-content](Images/max-content.JPG)
 
 There is also a Keyword <span style="color:blue">***minmax***</span> by which we can define the minimum and maximum allowed sixe of a grid.
 
@@ -253,7 +253,7 @@ There is also a Keyword <span style="color:blue">***minmax***</span> by which we
     }
 
 **ouput:**
-![minmax](Images\minmax.png)
+![minmax](Images/minmax.png)
 
 ## <span style="color:#FF8900">Auto
 
@@ -273,7 +273,7 @@ Auto keyword is used to automatically fill the gaps in our grid. This can be don
 
 **output:**
 
-![auto-fill & auto-fit](Images\auto-fit.JPG)
+![auto-fill & auto-fit](Images/auto-fit.JPG)
 
 ## <span style="color:#FF8900">Auto-flow
 
@@ -283,17 +283,17 @@ There are three types of auto-flow values
 
 <span style="color:blue">**Row**</span> – tells the auto-placement algorithm to fill in each row in turn, adding new rows as necessary (default)
 
-![auto flow row](Images\flowrow.JPG)
+![auto flow row](Images/flowrow.JPG)
 
 
 <span style="color:blue">**Column**</span> – tells the auto-placement algorithm to fill in each column in turn, adding new columns as necessary
 
-![auto flow column](Images\flowcolumn.JPG)
+![auto flow column](Images/flowcolumn.JPG)
 
 
 <span style="color:blue">**Dense**</span> – tells the auto-placement algorithm to attempt to fill in holes earlier in the grid if smaller items come up later
 
-![auto flow dense](Images\D4QoZBCWAAA-RgD.jpg)
+![auto flow dense](Images/D4QoZBCWAAA-RgD.jpg)
 
 ## <span style="color:#FF8900">Positioning Of Content
 
@@ -309,8 +309,8 @@ We can position and arrange the items in the grid or the whole grid itself howev
  
 We can use this property to position the whole grid  inside the grid container along the X-Axis.
  
-![This represents justify-content!](Images\justify-content1.png)
-![This represents justify-content!](Images\justify-content2.png)
+![This represents justify-content!](Images/justify-content1.png)
+![This represents justify-content!](Images/justify-content2.png)
 
 Sample Code:
  
@@ -328,8 +328,8 @@ Sample Code:
  
 We can use this property to position grid-items inside grid containers along the X-Axis.
  
-![This represents justify-items!](Images\justify-items1.png)
-![This representd justify-items!](Images\justify-items2.png)
+![This represents justify-items!](Images/justify-items1.png)
+![This representd justify-items!](Images/justify-items2.png)
 
 Sample Code:
 
@@ -348,7 +348,7 @@ Sample Code:
  
 We can use this property to position 1 individual grid-item inside a grid container along the X-Axis.
  
-![This represents justify-self!](Images\justify-self.png)
+![This represents justify-self!](Images/justify-self.png)
 
 Sample code:
  
@@ -363,8 +363,8 @@ Sample code:
  
 We can use this property to position our grid inside the grid container along the Y-Axis.
  
-![This represents align-content!](Images\align-content1.png)
-![This represents align-content!](Images\align-content2.png)
+![This represents align-content!](Images/align-content1.png)
+![This represents align-content!](Images/align-content2.png)
 
 Sample code:
  
@@ -382,7 +382,7 @@ Sample code:
  
 We can use this property to position grid-items inside the grid container along the Y-Axis.
  
-![This represens align-items!](Images\align-items.png)
+![This represens align-items!](Images/align-items.png)
 
 Sample code:
  
@@ -402,7 +402,7 @@ Sample code:
  
 We can use this property to position 1 individual grid-item (child) inside a grid container along the Y-Axis.
  
-![This represents align-self!](Images\align-self.png)
+![This represents align-self!](Images/align-self.png)
 
 Sample code:
  
