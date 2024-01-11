@@ -74,6 +74,83 @@
                 height: 20px;
                 width: 1.5px;
             }
+            .colour
+            {
+                background-color: rgb(6, 6, 6);
+                border-radius: 25px 25px 0px 0px;
+                padding-top: 220px;
+            }
+            .main-container
+            {
+                display: flex;
+            }
+            .main-container>div
+            {
+                color: white;
+            
+                
+            }
+            .city-container
+            {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                padding-top: 20px;
+                
+            }
+            .city-container>div
+            {
+                background-color: rgb(21, 21, 25);
+
+                background-image:url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
+                background-size: 90%;
+                background-position: right bottom;
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 200px;
+            }
+            .card-container
+            {
+                display: grid;
+                grid-template-columns:1fr    ;
+                grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+                grid-template-areas:"a b"
+                "c ."
+                "d ."
+                "e ."
+                "f .";
+            }
+            .item1
+            {
+                grid-area:a;
+                color: white;
+                justify-content: space-between;
+            }
+            .item2
+            {
+                grid-area:b;
+                color: white;
+            }
+            .item3
+            {
+                grid-area: c;
+                color: white;
+            }
+            .item4
+            {
+                grid-area: d;
+                color: white;
+            }
+            .item5
+            {
+                grid-area: e;
+                color: white;
+            }
+            .item6
+            {
+                grid-area: f;
+                color: white;
+            }
             @media screen and (width <= 1000px ) and (width > 800px)
             {
                 .grid-container1>div
@@ -122,5 +199,81 @@
             <div>3 PM<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20"><br>6</div>
         </div>
     </div>
+    <div class="colour">    
+        <div class="main-container">
+            <div style="flex-grow:8; text-align: center; font-size: 25px;">Top cities around the world</div>
+            <div style="flex-grow:0.1"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg"></div>
+            <div style="flex-grow:0.1"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg"></div>
+            <div style="flex-grow:0.1"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg"></div>
+            <div style="flex-grow:0.1">Display Top</div>
+            <div style="flex-grow:0.1; place-content: center;">
+                <select>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="city-container">
+            <div>
+                
+                <div class="card-container">
+                    <div class="item1">New Delhi</div>
+                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
+                    <div class="item3">10:00AM</div>
+                    <div class="item4">2-MAR-2020</div>
+                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
+                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
+
+                </div>
+                
+            </div>
+            <div>
+                <div class="card-container">
+                    <div class="item1">New Delhi</div>
+                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
+                    <div class="item3">10:00AM</div>
+                    <div class="item4">2-MAR-2020</div>
+                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
+                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
+
+                </div>
+
+
+            </div>
+            <div>
+                <div class="card-container">
+                    <div class="item1">New Delhi</div>
+                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
+                    <div class="item3">10:00AM</div>
+                    <div class="item4">2-MAR-2020</div>
+                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
+                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
+
+                </div>
+
+            </div>
+            <div>
+                <div class="card-container">
+                    <div class="item1">New Delhi</div>
+                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
+                    <div class="item3">10:00AM</div>
+                    <div class="item4">2-MAR-2020</div>
+                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
+                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>    
+
+    
     </body>
 </html>
