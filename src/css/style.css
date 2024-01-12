@@ -1,17 +1,53 @@
+body
+{
+    background-color: black;
+
+}
+
 .top-bar
 {
     background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/background.svg");
-    background-size: cover;
+    background-size:cover;
     background-repeat: no-repeat;
-    position: absolute;
+    position: relative;
+    padding: 30px;
     white-space: nowrap;
 }
 
-img
+.city-img
 {
-display: inline;
-padding-left: 10px;
-padding-right: 10px;
+    display: inline;
+    position: relative;
+    left:50px;
+}
+
+.city-selection
+{
+    display: inline-grid;
+    grid-template-columns: auto;
+    background-color: transparent;
+}
+
+.option
+{
+    padding-left: 30px;
+    position: relative;
+    top: -73px;
+    left: 50px;
+    color: white;
+    height:38px;
+}
+
+.option1
+{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+}
+
+option
+{
+    color: white;
 }
 
 .temperature-grid
@@ -20,15 +56,21 @@ padding-right: 10px;
     grid-template-columns: repeat(3,auto);
     background-color: transparent;
     padding-left: 20px;
+    position: relative;
+    top:-90px;
+    left:50px;
 }
 
 .temperature-grid > div 
 {
     display: inline-grid;
     background-color: transparent;
-    font-size: 20px;
-    padding: 20px;
+    font-size: 15px;
+    padding: 10px;
     color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    
 }
 
 .time-grid
@@ -36,23 +78,27 @@ padding-right: 10px;
     display: inline-grid;
     grid-auto-flow: column;
     background-color: transparent;
-    padding: 0;
+    justify-items: center;
+    position: relative;
+    top:-90px;
+    left:120px; 
+    
 }
 
 .time-grid > div
 {
     display: inline-grid;
     background-color: transparent;
-    padding: 29px;
+    padding: 17px;
     text-align: center;
     color: white;
+    font-size: 18px;
 }
 
-.city-selection
+.time-grid img
 {
-    display: inline-grid;
-    grid-template-columns: auto;
-    background-color: transparent;
+    position: relative;
+    left:13px;
 }
 
 .city-selection > div
@@ -75,6 +121,10 @@ padding-right: 10px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
     padding-bottom: 30px; 
     font-size: 20px;
+    position: relative;
+    top:-78px;
+    left:40PX;
+    font-size:25px;
 }
 
 #sec
@@ -85,18 +135,27 @@ padding-right: 10px;
 #date
 {
     color: rgb(117 174 225);
+    font-size: 20px;
 }
 
 .value
 {
-    font-size: 40px;
+    align-items: center;
+    
+}
+
+strong
+{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .mid-bg
 {
     background-color: rgb(6 6 6);
-    border-radius: 25px 25px 0 0;
-    padding-top: 220px;
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    top:-150px;
 }
 
 .mid-head
@@ -104,21 +163,26 @@ padding-right: 10px;
     flex-grow:8; 
     text-align: center; 
     font-size: 25px;
+    position: sticky;
+    padding-top: 20px;
 }
 
 .mid-container
 {
     display: flex;
+    position: sticky;
 }
 
 .card
 {
     flex-grow:0.1;
+    padding-top: 20px;
 }
 
 .mid-container > div
 {
-    color: white;   
+    color: white;
+    position: sticky;   
 }
 
 .card-container img
@@ -143,12 +207,14 @@ padding-right: 10px;
     background-repeat: no-repeat;
     width: 200px;
     height: 200px;
+    position: sticky;
 }
 
 .card-container
 {
     display: grid;
-    grid-template:repeat(4,1fr)/1fr;
+    grid-template:repeat(4,1fr)/1fr 1fr;
+    row-gap: 10px;
     grid-template: "a b"
     "c ."
     "d ."
@@ -160,13 +226,13 @@ padding-right: 10px;
 {
     grid-area: a;
     color: white;
-    justify-content: space-between;
 }
 
 .item2
 {
     grid-area: b;
     color: white;
+    justify-self:right;
 }
 
 .item3
@@ -200,3 +266,5 @@ padding-right: 10px;
         padding: 0;
     }
 }
+
+
