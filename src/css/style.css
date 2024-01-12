@@ -1,0 +1,202 @@
+.top-bar
+{
+    background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/background.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    white-space: nowrap;
+}
+
+img
+{
+display: inline;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+.temperature-grid
+{
+    display: inline-grid;
+    grid-template-columns: repeat(3,auto);
+    background-color: transparent;
+    padding-left: 20px;
+}
+
+.temperature-grid > div 
+{
+    display: inline-grid;
+    background-color: transparent;
+    font-size: 20px;
+    padding: 20px;
+    color: beige;
+}
+
+.time-grid
+{
+    display: inline-grid;
+    grid-auto-flow: column;
+    background-color: transparent;
+    padding: 0px;
+}
+
+.time-grid > div
+{
+    display: inline-grid;
+    background-color: transparent;
+    padding: 29px;
+    text-align: center;
+    color: white;
+}
+
+.city-selection
+{
+    display: inline-grid;
+    grid-template-columns: auto;
+    background-color: transparent;
+}
+
+.city-selection > div
+{
+    display: inline-grid;
+    background-color: transparent;
+}
+
+.top-bar select
+{
+    height: 50px; 
+    background-color: rgb(150, 148, 148);
+}
+
+.time-now
+{
+    display: inline; 
+    color: beige; 
+    margin-left: 50px; 
+    font-family:Comic Sans; 
+    padding-bottom: 30px; 
+    font-size: 20px;
+}
+
+#sec
+{
+    font-size: 15px;
+}
+
+#date
+{
+    color: rgb(117, 174, 225);
+}
+
+.value
+{
+    font-size: 40px;
+}
+
+.mid-bg
+{
+    background-color: rgb(6, 6, 6);
+    border-radius: 25px 25px 0px 0px;
+    padding-top: 220px;
+}
+
+.mid-head
+{
+    flex-grow:8; 
+    text-align: center; 
+    font-size: 25px;
+}
+
+.mid-container
+{
+    display: flex;
+}
+
+.card
+{
+    flex-grow:0.1;
+}
+
+.mid-container > div
+{
+    color: white;   
+}
+
+.card-container img
+{
+    height: 1em;
+}
+
+.city-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+.city-container > div
+{
+    background-color: rgb(21, 21, 25);
+    background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
+    background-size: 90%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+}
+
+.card-container
+{
+    display: grid;
+    grid-template-columns:1fr    ;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-areas: "a b"
+    "c ."
+    "d ."
+    "e ."
+    "f .";
+}
+
+.item1
+{
+    grid-area: a;
+    color: white;
+    justify-content: space-between;
+}
+
+.item2
+{
+    grid-area: b;
+    color: white;
+}
+
+.item3
+{
+    grid-area: c;
+    color: white;
+}
+
+.item4
+{
+    grid-area: d;
+    color: white;
+}
+.item5
+{
+    grid-area: e;
+    color: white;
+}
+
+.item6
+{
+    grid-area: f;
+    color: white;
+}
+
+@media screen and (width <= 1000px ) and (width > 800px)
+{
+    .time-grid>div
+    {
+        padding: 0px;
+    }
+}

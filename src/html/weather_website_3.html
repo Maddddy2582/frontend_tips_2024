@@ -3,210 +3,111 @@
     <head>
         <title>Weather</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        
-        <style>
-            .one
-            {
-                background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/background.svg");
-                background-size: 100%;
-                background-repeat: no-repeat;
-                position:absolute;
-                white-space: nowrap;
-            }
-            img
-            {
-            
-                display: inline;
-                padding-left: 10px;
-                padding-right: 10px;
-                
-            }
-            .grid-container
-            {
-                display: inline-grid;
-                grid-template-columns: auto auto auto;
-                background-color: transparent;
-                padding-left: 20px;
-            }
-            .grid-container>div 
-            {
-                display: inline-grid;
-                background-color: transparent;
-                font-size: 20px;
-                padding: 20px;
-                color: beige;
-            }
-            .grid-container1
-            {
-                display: inline-grid;
-                grid-auto-flow: column;
-                background-color: transparent;
-                padding: 0px;
-            }
-            .grid-container1>div
-            {
-                display: inline-grid;
-                background-color: transparent;
-                padding: 29px;
-                text-align: center;
-                color: white;
-
-            }
-            .grid-container2
-            {
-                display: inline-grid;
-                grid-template-columns:auto;
-                background-color: transparent;
-            }
-            .grid-container2>div
-            {
-                display: inline-grid;
-                background-color: transparent;
-            }
-            .flex-line1
-            {
-                display: flex;
-                flex-wrap: nowrap;
-            }
-            .stick
-            {
-                background-color: black;
-                height: 20px;
-                width: 1.5px;
-            }
-            .colour
-            {
-                background-color: rgb(6, 6, 6);
-                border-radius: 25px 25px 0px 0px;
-                padding-top: 220px;
-            }
-            .main-container
-            {
-                display: flex;
-            }
-            .main-container>div
-            {
-                color: white;
-            
-                
-            }
-            .city-container
-            {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-evenly;
-                padding-top: 20px;
-                
-            }
-            .city-container>div
-            {
-                background-color: rgb(21, 21, 25);
-
-                background-image:url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
-                background-size: 90%;
-                background-position: right bottom;
-                background-repeat: no-repeat;
-                width: 200px;
-                height: 200px;
-            }
-            .card-container
-            {
-                display: grid;
-                grid-template-columns:1fr    ;
-                grid-template-rows:1fr 1fr 1fr 1fr 1fr;
-                grid-template-areas:"a b"
-                "c ."
-                "d ."
-                "e ."
-                "f .";
-            }
-            .item1
-            {
-                grid-area:a;
-                color: white;
-                justify-content: space-between;
-            }
-            .item2
-            {
-                grid-area:b;
-                color: white;
-            }
-            .item3
-            {
-                grid-area: c;
-                color: white;
-            }
-            .item4
-            {
-                grid-area: d;
-                color: white;
-            }
-            .item5
-            {
-                grid-area: e;
-                color: white;
-            }
-            .item6
-            {
-                grid-area: f;
-                color: white;
-            }
-            @media screen and (width <= 1000px ) and (width > 800px)
-            {
-                .grid-container1>div
-                {
-                    padding: 0px;
-                }
-
-            }
-        </style>
+        <link rel="stylesheet" href="../css/style.css">    
     </head>
     <body>
-    <div class="one">
-        <img src="..\..\docs\assets\Images\HTML & CSS\Icons for cities\kolkata.svg" alt="KOLKATA" width=50 height=50>
-        <div class="grid-container2">
-        <div><select style="height: 50px; background-color: rgb(150, 148, 148);">
-            <option><span style="font-size: 30px;">New Delhi</span></option>
-            <option>Kolkata</option>
-            <option>Chennai</option>
-            <option>London</option>
-        </select></div>
-        <div><p style="display: inline; color: beige; margin-left: 50px; font-family:Comic Sans; padding-bottom: 30px; font-size: 20px;">10:10:<span style="font-size: 15px;">41</span> 
-            <img style="display: inline;"  src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\amState.svg" alt="KOLKATA" width="30" height="30"><br>
-            <span style="color: rgb(117, 174, 225);">01-Mar-2020</span>  </p>
-            
+        <div class="top-bar">
+            <img src="..\..\docs\assets\Images\HTML & CSS\Icons for cities\kolkata.svg" alt="KOLKATA" width=50 height=50>
+            <div class="city-selection">
+            <div>
+                <select>
+                    <option>New Delhi</option>
+                    <option>Kolkata</option>
+                    <option>Chennai</option>
+                    <option>London</option>
+                </select>
+            </div>
+            <div>
+                <p class="time-now">
+                    10:10:<span id="sec">44</span>
+                <img src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\amState.svg" alt="KOLKATA" height="50px"
+                    width="50px";><br>
+                <span id="date">01-Mar-2020</span>  </p>            
+            </div>
         </div>
+        <div class="temperature-grid">
+            <div>
+                Temp &degC <br>
+                <strong>25C</strong>
+            </div>
+            <div class="value"> 
+                | 
+            </div>
+            <div>
+                Humidity<br>
+                <strong>26%</strong>
+            </div>
+            <div>
+                Temp &degF<br>
+                <strong>78F</strong>
+            </div>
+            <div class="value"> 
+                | 
+            </div>
+            <div>
+                Precipitation<br>
+                <strong>0%</strong>
+            </div>
         </div>
-        <div class="grid-container">
-            <div>Temp &degC <br><strong>25C</strong></div>
-            <div style="font-size: 40px;"> | </div>
-            <div>Humidity <br><strong>26%</strong></div>
-            <div>Temp &degF <br><strong>78F</strong></div>
-            <div style="font-size: 40px;" > | </div>
-            <div>Precipitation <br><strong>0%</strong></div>
-        </div>
-        <div class="grid-container1">
-            <div>NOW<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\cloudyIcon.svg" alt="KOLKATA" width="20" height="20"><br>6</div>
-            <div class="stick"><br><br></div>
-            <div>11 AM<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20"><br>7</div>
-            <div><br><br>|</div>
-            <div>12 PM<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="KOLKATA" width="20" height="20"><br>7</div>
-            <div><br><br>|</div>
-            <div>1 PM<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20"><br>8</div>
-            <div><br><br>|</div>
-            <div>2 PM<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="KOLKATA" width="20" height="20"><br>8</div>
-            <div><br><br>|</div>
-            <div>3 PM<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20"><br>6</div>
+        <div class="time-grid">
+            <div>
+                NOW<br><br>|<br><br>
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\cloudyIcon.svg" alt="KOLKATA" width="20" height="20"><br>6
+            </div>
+            <div>
+                <br><br>|
+            </div>
+            <div>
+                11 AM<br><br>|<br><br>
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20"><br>7
+            </div>
+            <div>
+                <br><br>|
+            </div>
+            <div>
+                12 PM<br><br>|<br><br>
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="KOLKATA" width="20" height="20"><br>7
+            </div>
+            <div>
+                <br><br>|
+            </div>
+            <div>
+                1 PM<br><br>|<br><br>
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20"><br>8
+            </div>
+            <div>
+                <br><br>|
+            </div>
+            <div>
+                2 PM<br><br>|<br><br>
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="KOLKATA" width="20" height="20"><br>8
+            </div>
+            <div>
+                <br><br>|
+            </div>
+            <div>
+                3 PM<br><br>|<br><br><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20"><br>6
+            </div>
         </div>
     </div>
-    <div class="colour">    
-        <div class="main-container">
-            <div style="flex-grow:8; text-align: center; font-size: 25px;">Top cities around the world</div>
-            <div style="flex-grow:0.1"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg"></div>
-            <div style="flex-grow:0.1"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg"></div>
-            <div style="flex-grow:0.1"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg"></div>
-            <div style="flex-grow:0.1">Display Top</div>
-            <div style="flex-grow:0.1; place-content: center;">
+    <div class="mid-bg">    
+        <div class="mid-container">
+            <div class="mid-head">
+                Top cities around the world
+            </div>
+            <div class="card">
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg">
+            </div>
+            <div class="card">
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg">
+            </div>
+            <div class="card">
+                <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg">
+            </div>
+            <div class="card">
+                Display Top
+            </div>
+            <div class="card">
                 <select>
                     <option>3</option>
                     <option>4</option>
@@ -218,62 +119,97 @@
                     <option>10</option>
                 </select>
             </div>
-
         </div>
         <div class="city-container">
             <div>
-                
                 <div class="card-container">
-                    <div class="item1">New Delhi</div>
-                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
-                    <div class="item3">10:00AM</div>
-                    <div class="item4">2-MAR-2020</div>
-                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
-                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
-
+                    <div class="item1">
+                        New Delhi
+                    </div>
+                    <div class="item2">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg">25&deg;C
+                    </div>
+                    <div class="item3">
+                        10:00AM
+                    </div>
+                    <div class="item4">
+                        2-MAR-2020
+                    </div>
+                    <div class="item5">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg">56%
+                    </div>
+                    <div class="item6">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg">10%
+                    </div>
                 </div>
-                
             </div>
             <div>
                 <div class="card-container">
-                    <div class="item1">New Delhi</div>
-                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
-                    <div class="item3">10:00AM</div>
-                    <div class="item4">2-MAR-2020</div>
-                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
-                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
-
+                    <div class="item1">
+                        New Delhi
+                    </div>
+                    <div class="item2">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg">25&deg;C
+                    </div>
+                    <div class="item3">
+                        10:00AM
+                    </div>
+                    <div class="item4">
+                        2-MAR-2020
+                    </div>
+                    <div class="item5">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg">56%
+                    </div>
+                    <div class="item6">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg">10%
+                    </div>
                 </div>
-
-
             </div>
             <div>
                 <div class="card-container">
-                    <div class="item1">New Delhi</div>
-                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
-                    <div class="item3">10:00AM</div>
-                    <div class="item4">2-MAR-2020</div>
-                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
-                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
-
+                    <div class="item1">
+                        New Delhi
+                    </div>
+                    <div class="item2">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg">25&deg;C
+                    </div>
+                    <div class="item3">
+                        10:00AM
+                    </div>
+                    <div class="item4">
+                        2-MAR-2020
+                    </div>
+                    <div class="item5">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg">56%
+                    </div>
+                    <div class="item6">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg">10%
+                    </div>
                 </div>
-
             </div>
             <div>
                 <div class="card-container">
-                    <div class="item1">New Delhi</div>
-                    <div class="item2"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" style="height: 1em;">25&deg;C</div>
-                    <div class="item3">10:00AM</div>
-                    <div class="item4">2-MAR-2020</div>
-                    <div class="item5"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" style="height: 1em;">56%</div>
-                    <div class="item6"><img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" style="height: 1em;">10%</div>
-
+                    <div class="item1">
+                        New Delhi
+                    </div>
+                    <div class="item2">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg">25&deg;C
+                    </div>
+                    <div class="item3">
+                        10:00AM
+                    </div>
+                    <div class="item4">
+                        2-MAR-2020
+                    </div>
+                    <div class="item5">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg">56%
+                    </div>
+                    <div class="item6">
+                        <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg">10%
+                    </div>
                 </div>
             </div>
-
         </div>
-    </div>    
-
-    
+    </div>        
     </body>
 </html>
