@@ -119,8 +119,7 @@ option
     color: beige; 
     margin-left: 50px; 
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    padding-bottom: 30px; 
-    font-size: 20px;
+    padding-bottom: 30px;
     position: relative;
     top:-78px;
     left:40PX;
@@ -213,7 +212,6 @@ strong
 .card-container
 {
     display: grid;
-    grid-template:repeat(4,1fr)/1fr 1fr;
     row-gap: 10px;
     grid-template: "a b"
     "c ."
