@@ -27,7 +27,7 @@ The syntax for creating a Flexbox is
 
     .flex-container 
     {
-     display: flex; | inline-flex;
+        display: flex; | inline-flex;
     }
 
 Inline Flexbox are used to create flexbox which is an inline element<br>    
@@ -36,8 +36,9 @@ Inline Flexbox are used to create flexbox which is an inline element<br>
 
 This creates or defines a main axis in which the flexbox is created.<br><br>We can create either <span style="color:red">***row***</span> wise or <span style="color:red">***column***</span> wise<br><br>
 
-    .flex-container {
-    flex-direction: row | row-reverse | column | column-reverse;
+    .flex-container
+    {
+        flex-direction: row | row-reverse | column | column-reverse;
     }
 
 ![Flexdir](Images1/flexdir.JPG)
@@ -51,7 +52,7 @@ This is used to define whether a flex box should wrap around if the space is fil
 
     .flex-container 
     {
-    flex-wrap: nowrap | wrap | wrap-reverse;
+        flex-wrap: nowrap | wrap | wrap-reverse;
     }
 
 ![flexwrap](Images1/flexwrap.JPG)    
@@ -62,8 +63,9 @@ This is used to define whether a flex box should wrap around if the space is fil
 
 This is a shorthand for the flex-direction and flex-wrap properties, which together define the flex container’s main and cross axes. The default value is row nowrap.<br><br> We can wrap around the column or row.
 
-    .flex-container {
-    flex-flow: column wrap; | row wrap;
+    .flex-container 
+    {
+        flex-flow: column wrap; | row wrap;
     }    
 
 ![flexwrap](Images1/flexwrap1.JPG)
@@ -71,8 +73,9 @@ This is a shorthand for the flex-direction and flex-wrap properties, which toget
 
 the order property controls the order in which they appear in the flex container.<br>By default all the elements will have 0 order.<br><br>This action is performed to each item seperately in the flexbox , so it is defined inside a class. 
 
-    .item {
-    order: 5; /* default is 0 */
+    .item 
+    {
+        order: 5; /* default is 0 */
     }
 
 This assigns *item* to position 5.<br><br>
@@ -85,10 +88,10 @@ This assigns *item* to position 5.<br><br>
 
     .flex-container 
     {
-    display: flex;
-    gap: 10px 20px; /* row-gap column gap */
-    row-gap: 10px;
-    column-gap: 20px;
+        display: flex;
+        gap: 10px 20px; /* row-gap column gap */
+        row-gap: 10px;
+        column-gap: 20px;
     }
 
  ![xample](Images1/flexgap.JPG)
@@ -130,8 +133,9 @@ Justify is used to align the contents along the main-axis.<br><br> The different
 
 **Sample code:**
 
-    .flex-container {
-    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
+    .flex-container 
+    {
+        justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly | start | end | left | right ... + safe | unsafe;
     }
 
 ![flexjustify](Images1/flexjustify.JPG)
@@ -160,8 +164,9 @@ it works similar to justify-content.
 
 **sample code:**
 
-    .flex-container {
-    align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch;
+    .flex-container 
+    {
+        align-content: flex-start | flex-end | center | space-between | space-around | space-evenly | stretch;
     }
 ![flexalignitems](Images1/flexalignitems.JPG)
 
@@ -181,7 +186,7 @@ The types in align-items are:
 
     .flex-container 
     {
-    align-items: stretch | flex-start | flex-end | center | baseline;
+        align-items: stretch | flex-start | flex-end | center | baseline;
     }
 
 ![flexalignitems](Images1/flexaligncontent.JPG)    
@@ -192,8 +197,9 @@ It is used to insert a seperate item and align it inside the flexbox
 
 **sample code:**
 
-    .item {
-    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+    .item 
+    {
+        align-self: auto | flex-start | flex-end | center | baseline | stretch;
     }
 
 ![flexalignitems](Images1/flexalignself.JPG) 
