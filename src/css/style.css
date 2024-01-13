@@ -1,6 +1,7 @@
 body
 {
     background-color: black;
+    margin: 0%;
 }
 
 .top-bar
@@ -80,6 +81,7 @@ option
     position: relative;
     top: -90px;
     left: 120px; 
+    
 }
 
 .time-grid > div
@@ -130,13 +132,14 @@ option
 
 #date
 {
-    color: rgb(117 174 225);
+    color: white;
     font-size: 20px;
 }
 
 .value
 {
     align-items: center;
+    
 }
 
 strong
@@ -155,11 +158,13 @@ strong
 
 .mid-head
 {
-    flex-grow: 8; 
+    flex-grow:8; 
     text-align: center; 
     font-size: 25px;
     position: sticky;
     padding-top: 20px;
+    padding-left: 250px;
+    white-space: nowrap;
 }
 
 .mid-container
@@ -185,15 +190,27 @@ strong
     height: 1em;
 }
 
-.city-container
+.city-container  
 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding-top: 20px;
+    justify-content: center;
 }
 
-.city-container > div
+.main-city-container
+{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    overflow-x: scroll;
+    justify-content: left;
+    padding: 40px;
+}
+
+.main-city-container::-webkit-scrollbar
+{
+    display: none;
+}
+
+.main-city-container > div
 {
     background-color: rgb(21 21 25);
     background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
@@ -208,8 +225,9 @@ strong
 .card-container
 {
     display: grid;
+    grid-template: repeat(4,20px)/90px 90px;
     row-gap: 10px;
-    grid-template: "a b"
+    grid-template-areas: "a b"
     "c ."
     "d ."
     "e ."
@@ -258,11 +276,70 @@ strong
     .time-grid > div
     {
         padding: 0;
-    }
+    } 
+
     .time-grid
     {
+        left: 5px;
+    }
 
+    .city-img
+    {
+        left: 20px;
+    }
+
+    .option
+    {
+        left: 10px;
+    }
+
+    .time-now
+    {
+        left: 5px;
+    }
+
+    .temperature-grid
+    {
+        left: 10px;
+        font-size: 15px;
     }
 }
+
+@media screen and (width <= 800px ) and (width > 500px)
+{
+    .time-grid > div
+    {
+        padding: 0;
+    }
+
+    .time-grid
+    {
+        left: 5px;
+    }
+
+    .city-img
+    {
+        left: 20px;
+        height: 10px;
+        width: 10px;
+    }
+
+    .option
+    {
+        left: 10px;
+    }
+
+    .time-now
+    {
+        left: 5px;
+    }
+
+    .temperature-grid
+    {
+        left: 0;
+        font-size: 15px;
+    }
+}
+
 
 
