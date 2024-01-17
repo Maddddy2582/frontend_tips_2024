@@ -6,119 +6,87 @@
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-        <div class="top-bar">
-            <div class="city-img">
-                <img src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\cityImage.svg" alt="KOLKATA" width="120" height="120">
-            </div>
+        <div class="top-container">
+            <img class="city-img" src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\cityImage.svg" alt="image" height="110" width="110">
             <div class="city-selection">
-                <div class="option">
-                    <select class="option1">
-                        <option>New Delhi</option>
-                        <option>Kolkata</option>
-                        <option>Chennai</option>
-                        <option>London</option>
-                    </select>
-                </div>
+                <select class="option">
+                    <option>New Delhi</option>
+                    <option>London</option>
+                    <option>Paris</option>
+                    <option>Los Angeles</option>
+                </select>
                 <div>
-                    <p class="time-now">
-                        10:10:<span id="sec">44</span>
-                        <img src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\amState.svg" alt="KOLKATA" height="50px"
-                            width="50px";>
-                        <br>
-                        <span id="date">01-Mar-2020</span>
+                    <p class="time">
+                        <time id="time">
+                            10:10:<span id="sec">44</span>
+                        </time>
+                        <img src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\amState.svg" alt="am or pm" height="50" width="50">
                     </p>
+                    <p class="date">01-Mar-2020</p>
                 </div>
             </div>
-            <div class="temperature-grid">
-                <div>
-                    Temp &degC <br>
-                    <strong>25 &deg;C</strong>
-                </div>
-                <div class="value">|</div>
-                <div>
-                    Humidity<br>
-                    <strong>26 %</strong>
-                </div>
-                <div>
-                    Temp &degF<br>
-                    <strong>78 &deg;F</strong>
-                </div>
-                <div class="value">
-                    |
-                </div>
-                <div>
-                    Precipitation<br>
-                    <strong>0 %</strong>
-                </div>
+            <div class="temp-grid">
+                <p class="type">Temp &deg;C</p>
+                <p class="value">25 &deg;C</p>
+                <br>
+                <br>
+                <p class="type">Temp F </p>
+                <p class="value">78 F</p>
             </div>
-            <div class="time-grid">
-                <div>
-                    NOW<br>
-                    <br>
-                    |<br>
-                    <br>
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\cloudyIcon.svg" alt="KOLKATA" width="20" height="20">
-                    <br>6
+            <div class="temp-grid-pipe">
+                <div class="pipe"></div>
+                <div class="pipe"></div>
+            </div>
+            <div class="temp-grid">
+                <p class="type">Humidity</p>
+                <p class="value">26&percnt;</p>
+                <br>
+                <br>
+                <p class="type">Precipitation</p>
+                <p class="value">0&percnt;</p>
+            </div>
+            <div class="hourly-info">
+                <div class="hourly-column">
+                    <p>NOW</p>
+                    <p class="hourly-info-pipe"></p>
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\cloudyIcon.svg" alt="condition" height="30" width="30">
+                    <p>25&deg;C</p>
                 </div>
                 <div>
-                    <br>
-                    <br>|
+                    <div class="vanishing-pipe"></div>
+                </div>
+                <div class="hourly-column">
+                    <p>1 PM</p>
+                    <p class="hourly-info-pipe"></p>
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIconBlack.svg" alt="condition" height="30" width="30">
+                    <p>23&deg;C</p>
                 </div>
                 <div>
-                    11 AM<br>
-                    <br>
-                    |<br>
-                    <br>
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20">
-                    <br>7
+                    <div class="vanishing-pipe"></div>
+                </div>
+                <div class="hourly-column">
+                    <p>2 PM</p>
+                    <p class="hourly-info-pipe"></p>
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="condition" height="30" width="30">
+                    <p>24&deg;C</p>
                 </div>
                 <div>
-                    <br>
-                    <br>|
+                    <div class="vanishing-pipe"></div>
+                </div>
+                <div class="hourly-column">
+                    <p>3 PM</p>
+                    <p class="hourly-info-pipe"></p>
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="condition" height="30" width="30">
+                    <p>22&deg;C</p>
                 </div>
                 <div>
-                    12 PM<br>
-                    <br>
-                    |<br>
-                    <br>
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="KOLKATA" width="20" height="20">
-                    <br>7
+                    <div class="vanishing-pipe"></div>
                 </div>
-                <div>
-                    <br>
-                    <br>|
-                </div>
-                <div>
-                    1 PM<br>
-                    <br>
-                    |<br>
-                    <br>
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20">
-                    <br>8
-                </div>
-                <div>
-                    <br>
-                    <br>|
-                </div>
-                <div>
-                    2 PM<br>
-                    <br>
-                    |<br>
-                    <br>
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="KOLKATA" width="20" height="20">
-                    <br>8
-                </div>
-                <div>
-                    <br>
-                    <br>|
-                </div>
-                <div>
-                    3 PM<br>
-                    <br>
-                    |<br>
-                    <br>
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="KOLKATA" width="20" height="20">
-                    <br>6
+                <div class="hourly-column">
+                    <p>4 PM</p>
+                    <p class="hourly-info-pipe"></p>
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="condition" height="30" width="30">
+                    <p>21&deg;C</p>
                 </div>
             </div>
         </div>
@@ -127,17 +95,17 @@
                 <div class="mid-head">
                     Top cities around the world
                 </div>
-                <div class="card">
+                <div class="card1">
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon">
                 </div>
-                <div class="card">
+                <div class="card1">
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg" alt="snowflake">
                 </div>
-                <div class="card">
+                <div class="card1">
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="rainyicon">
                 </div>
                 <div class="card">
-                    Display Top
+                    <p>Display Top</p>
                 </div>
                 <div class="card">
                     <select>
@@ -297,5 +265,6 @@
                 </div>
             </div>
         </div>
+
     </body>
 </html>
