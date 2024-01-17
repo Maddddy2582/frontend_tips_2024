@@ -31,7 +31,7 @@ The syntax for creating a Grid is
 
     .grid-container 
     {
-     display: grid; | inline-grid;
+        display: grid; | inline-grid;
     }
 
 Inline-grid is used to create a grid which acts as inline instead of block<br>    
@@ -55,9 +55,9 @@ The divison of grids along the vertical axis are called <span style="color:red">
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows:auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows:auto auto auto;
     }
 
 Here as we can see <span style="color:blue">**grid-template-columns**</span> or<span style="color:blue"> **grid-template-rows**</span> are used to define the number of rows and columns.<br><br>
@@ -76,9 +76,9 @@ As we could see in the previous example we have used the auto property 3 times i
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: repeat(3,auto);
-    grid-template-rows:repeat(3,auto);
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        grid-template-rows:repeat(3,auto);
     }
 
 ## <span style="color:#FF8900">Grid container and items</span>
@@ -87,9 +87,10 @@ A grid container is the whole grid box and each boxes inside a grid are called a
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
     }
+
     .item1 
     {
         <!-- *any text here* --> 
@@ -101,10 +102,10 @@ This property defines the size of the gap between the rows and columns in a grid
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-column-gap: 50px;
-    grid-row-gap: 10px;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 50px;
+        grid-row-gap: 10px;
     }
 
 This creates a 50px gap between each colums and 10px gap between each rows.
@@ -132,7 +133,7 @@ multiple ways to do this they are:
  - Shorthand for Grid Areas
 
 
- Now let us see an example and see how to create that using different metods
+ Now let us see an example and see how to create that using different methods.
 
  ![xample](Images/Capture.JPG)
 
@@ -142,9 +143,10 @@ we can define the start and end of both rows and columns we want our item to occ
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
     }
+
     .item1 
     {
         grid-column-start: 1;
@@ -159,9 +161,10 @@ We can also make our item span as much columns or rows that we want
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
     }
+
     .item1 
     {
         grid-column-start: span 3;
@@ -174,9 +177,10 @@ Instead of defining start and stop seperately we can use a shorthand rule to def
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
     }
+
     .item1 
     {
         grid-column-start:1/3;
@@ -190,9 +194,10 @@ It is used to define where to start before spanning the given number of rows or 
 
     .grid-container 
     {
-    display: grid;
-    grid-template-columns: auto auto auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
     }
+
     .item1 
     {
         grid-column-start:1/span 3;
@@ -205,24 +210,29 @@ Defines a grid template by referencing the names of the grid areas which are spe
 
     .container 
     {
-    display: grid;
-    grid-template-columns: 50px 50px 50px 50px;
-    grid-template-areas: 
-        "header header header header"
-        "main main . sidebar"
-        "footer footer footer footer";
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        grid-template-areas: 
+            "header header header header"
+            "main main . sidebar"
+            "footer footer footer footer";
     }
-    .item-a {
-    grid-area: header;
+
+    .item-a 
+    {
+        grid-area: header;
     }
-    .item-b {
-    grid-area: main;
+    .item-b 
+    {
+        grid-area: main;
     }
-    .item-c {
-    grid-area: sidebar;
+    .item-c 
+    {
+        grid-area: sidebar;
     }
-    .item-d {
-    grid-area: footer;
+    .item-d 
+    {
+        grid-area: footer;
     }
 output:
 ![example of grid areas](Images/template-areas.svg)    
