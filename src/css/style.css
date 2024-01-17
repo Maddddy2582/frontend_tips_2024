@@ -1,4 +1,450 @@
-p{
-    font-family:'Courier New', Courier, monospace;
-    color:brown;
+@import url("../../docs/assets/Images/HTML & CSS/files/vars.css");
+
+body
+{
+    background-color: black;
+    min-width: 600px;
+}
+
+.top-container
+{
+    background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/background.svg");
+    background-size: cover;
+    display: flex;
+    padding: 40px;
+    white-space: nowrap;
+}
+
+.city-selection
+{
+    display: grid;
+}
+
+p
+{
+    color: white;
+}
+
+.option
+{
+    background-color: var(--bg-grey-tile);
+    color: white;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    height: 38px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+option
+{
+    color: black;
+}
+
+.time
+{
+    color: bisque;
+    font-size: 23px;
+    font-weight: bolder;
+    padding-bottom: 2px;
+    padding-left: 50px;
+    padding-top: 5px;
+    position: relative;
+}
+
+.date
+{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bolder;
+    padding-bottom: 5px;
+    padding-left: 50px;
+    position: relative;
+}
+
+#sec
+{
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+.temp-grid
+{
+    align-items: center;
+    color: white;
+    display: grid;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+}
+
+.type
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+.value
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+} 
+
+.temp-grid-pipe
+{
+    align-items: center;
+    display: grid;
+    position: relative;
+    row-gap: 30px;
+}
+
+.pipe
+{
+    background-color: white;
+    height: 50px;
+    width: 2px;
+}
+
+.hourly-info-pipe
+{
+    background-color: white;
+    height: 25px;
+    width: 1px;
+}
+
+.vanishing-pipe
+{
+    background-color: white;
+    height: 25px;
+    margin-top: 36px;
+    width: 1px;
+}
+
+.hourly-info
+{
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
+    position: relative;
+    width: 60%;
+}
+
+.hourly-column
+{
+    display: grid;
+    justify-items: center;
+    row-gap: 10px;
+}
+
+h3
+{
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+  
+}
+
+*
+{
+    font-family: Arial, Helvetica, sans-serif;;
+    margin: 0;
+}
+
+.mid-bg
+{
+    background-color: rgb(6 6 6);
+    border-radius: 30px 30px 0 0;
+    position: relative;
+    top: -20px;
+}
+
+.mid-head
+{
+    flex-grow: 8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding-left: 250px;
+    padding-top: 20px;
+    position: sticky;
+    text-align: center;
+}
+
+.mid-container
+{
+    background-color: black;
+    display: flex;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.card
+{
+    flex-grow: 0.1;
+    padding-top: 20px;
+}
+
+.card option
+{
+    color: black;
+}
+
+.card1
+{
+    flex-grow: 0.1;
+    padding-top: 20px;
+    position: relative;
+}
+
+.card1::after
+{
+    background: skyblue;
+    content: '';
+    display: block;
+    height: 2px;
+    transition: 0.5s;
+    width: 0%;
+}
+
+.card1:hover::after
+{
+    width: 80%;
+}
+
+.mid-container > div
+{
+    color: white;
+    position: sticky;
+}
+
+.card-container img
+{
+    height: 1em;
+}
+
+.city-container  
+{
+    justify-content: center;
+}
+
+.main-city-container
+{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 50px;
+    justify-content: left;
+    overflow-x: scroll;
+    padding: 40px;
+}
+
+.main-city-container::-webkit-scrollbar
+{
+    display: none;
+}
+
+.main-city-container > div
+{
+    background-color: rgb(21 21 25);
+    background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    height: 200px;
+    position: sticky;
+    width: 200px;
+}
+
+.card-container
+{
+    border-radius: 20px;
+    display: grid;
+    grid-template: repeat(4,20px)/90px 90px;
+    row-gap: 10px;
+    transition: 0.5s;
+    grid-template-areas: "a b"
+    "c ."
+    "d ."
+    "e ."
+    "f .";
+}
+
+.card-container:hover
+{
+    box-shadow: 0 0 15px 0 rgb(255 255 255);
+    transform: scale(1.1);
+}
+
+.item1
+{
+    color: white;
+    grid-area: a;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.item2
+{
+    color: white;
+    grid-area: b;
+    justify-self: right;
+    margin-right: 10px;
+}
+
+.item3
+{
+    color: white;
+    grid-area: c;
+}
+
+.item4
+{
+    color: white;
+    font-size: small;
+    grid-area: d;
+}
+
+.item5
+{
+    color: white;
+    grid-area: e;
+}
+
+.item6
+{
+    color: white;
+    grid-area: f;
+}
+
+@media screen and (width <= 1000px) 
+{
+    .vanishing-pipe
+    {
+        display: none;
+    }
+}
+
+@media screen and (width <= 900px)
+{
+    .time, .date, .temp-grid, .temp-grid-pipe, .hourly-info
+    {
+        left: -40px;
+        transition: 0.5s;
+    }
+    
+    .hourly-info > div
+    {
+        padding: 3px;
+        transition: 0.5s;
+    }
+
+    .value
+    {
+        font-size: x-large;
+        transition: 0.5s;
+    }
+
+    .option
+    {
+        left: -30px;
+        position: relative;
+        transition: 0.5s;
+    }
+}
+
+@media screen and (width <= 850px) 
+{
+    .option, .temp-grid, .temp-grid-pipe
+    {
+        font-size: large;
+        left: -35px;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .time, .sec, .date, .hourly-info
+    {
+        font-size: small;
+        transition: 0.5s;
+    }
+
+    .top-container
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+        transition: 0.5s;
+    }
+
+    .hourly-column img
+    {
+        height: 20px;
+        transition: 0.5s;
+        width: 20px;
+    }
+
+    .top-container .city-img
+    {
+        height: 90px;
+        transition: 0.5s;
+        width: 70px;
+    }
+
+    .temp-grid
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+        transition: 0.5s;
+    }
+
+    .heading
+    {
+        font-weight: 150;
+    }
+
+    .things-to-sort
+    {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (width <= 750px) 
+{
+    .temp-grid
+    {
+        padding-left: 15px;
+        padding-right: 10px;
+        transition: 0.5s;
+    }
+
+    .option
+    {
+        left: -30px;
+        position: relative;
+    }
+}
+
+@media screen and (width <=700px)
+{
+    .top-container
+    {
+        padding-left: 10px;
+        padding-right: 10px;
+        transition: 0.5s;
+    }
+
+    .type
+    {
+        font-size: small;
+    }
+
+    .option
+    {
+        left: -30px;
+        position: relative;
+        transition: 0.5s;
+        width: 70%;
+    }
 }
