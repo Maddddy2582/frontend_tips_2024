@@ -3,7 +3,7 @@
 body
 {
     background-color: black;
-    min-width: 600px;
+    min-width: 850px;
 }
 
 .top-container
@@ -25,17 +25,19 @@ p
     color: white;
 }
 
-.option
+input
 {
     background-color: var(--bg-grey-tile);
     color: white;
     cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 15px;
     height: 38px;
     margin-bottom: 10px;
     margin-left: 40px;
     margin-top: 30px;
+    width: 150px;
+    text-transform: capitalize;
 }
 
 option
@@ -52,6 +54,7 @@ option
     padding-left: 50px;
     padding-top: 5px;
     position: relative;
+    display: inline;
 }
 
 .date
@@ -69,6 +72,8 @@ option
 {
     font-size: 12px;
     font-weight: bolder;
+    display: inline;
+
 }
 
 .temp-grid
@@ -171,6 +176,7 @@ h3
     padding-top: 20px;
     position: sticky;
     text-align: center;
+    white-space: nowrap;
 }
 
 .mid-container
@@ -246,7 +252,7 @@ h3
     display: none;
 }
 
-.main-city-container > div
+.card-container
 {
     background-color: rgb(21 21 25);
     background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
@@ -256,10 +262,6 @@ h3
     height: 200px;
     position: sticky;
     width: 200px;
-}
-
-.card-container
-{
     border-radius: 20px;
     display: grid;
     grid-template: repeat(4,20px)/90px 90px;
@@ -338,7 +340,7 @@ h3
     font-size: x-large;
     position: relative;
     right: -65px;
-    top: 300px;
+    top: px;
 }
         
 .filter
@@ -354,8 +356,8 @@ h3
     flex-grow: 0.1;
     height: 1.5em;
     position: relative;
-    left: -60px;
-    bottom: -10px;
+    left: -50px;
+    bottom: -4px;
 }
         
 .bottom-cards-container
@@ -474,7 +476,7 @@ h3
 
 @media screen and (width <= 900px)
 {
-    .time, .date, .temp-grid, .temp-grid-pipe, .hourly-info
+    .time, .date, .temp-grid, .temp-grid-pipe, .hourly-info,
     {
         left: -40px;
         transition: 0.5s;
@@ -514,6 +516,7 @@ h3
     {
         font-size: small;
         transition: 0.5s;
+        display: inline;
     }
 
     .top-container
@@ -530,7 +533,7 @@ h3
         width: 20px;
     }
 
-    .top-container .city-img
+    .top-container #city-img
     {
         height: 90px;
         transition: 0.5s;

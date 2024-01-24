@@ -4,34 +4,54 @@
         <title>Weather</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="../css/style.css">
+        <script src="../javascript/node.js"></script>
     </head>
     <body>
         <div class="top-container">
-            <img class="city-img" src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\cityImage.svg" alt="image" height="110" width="110">
+            <img id="city-img" src="..\..\docs\assets\Images\HTML & CSS\Icons for cities\anadyr.svg" alt="image" height="110" width="110">
             <div class="city-selection">
-                <select class="option">
-                    <option>New Delhi</option>
-                    <option>London</option>
-                    <option>Paris</option>
-                    <option>Los Angeles</option>
-                </select>
+                <input type="text" placeholder="Select a City!!" list="city-options" onchange="dropdown('city-img',this.value)" onfocus="this.value=''">
+                <datalist id="city-options">
+                    <option value="anadyr"></option>
+                    <option value="auckland"></option>
+                    <option value="bangkok"></option>
+                    <option value="brokenhill"></option>
+                    <option value="dublin"></option>
+                    <option value="jamaica"></option>
+                    <option value="juba"></option>
+                    <option value="karachi"></option>
+                    <option value="kolkata"></option>
+                    <option value="london"></option>
+                    <option value="losangeles"></option>
+                    <option value="maseru"></option>
+                    <option value="moscow"></option>
+                    <option value="newyork"></option>
+                    <option value="nome"></option>
+                    <option value="perth"></option>
+                    <option value="seoul"></option>
+                    <option value="troll"></option>
+                    <option value="vienna"></option>
+                    <option value="vostok"></option>
+                    <option value="winnipeg"></option>
+                    <option value="yangon"></option>
+                </datalist>
                 <div>
                     <p class="time">
                         <time id="time">
-                            10:10:<span id="sec">44</span>
+                            10:10:<p id="sec">46</p>
                         </time>
-                        <img src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\amState.svg" alt="am or pm" height="50" width="50">
+                        <img id="state-img" src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\amState.svg" alt="am or pm" height="50" width="50">
                     </p>
-                    <p class="date">01-Mar-2020</p>
+                    <p class="date" id="datejs">01-Mar-2020</p>
                 </div>
             </div>
             <div class="temp-grid">
                 <p class="type">Temp &deg;C</p>
-                <p class="value">25 &deg;C</p>
+                <p class="value" id="tempid">25 &deg;C</p>
                 <br>
                 <br>
                 <p class="type">Temp F </p>
-                <p class="value">78 F</p>
+                <p class="value" id="farenid">78 F</p>
             </div>
             <div class="temp-grid-pipe">
                 <div class="pipe"></div>
@@ -39,11 +59,11 @@
             </div>
             <div class="temp-grid">
                 <p class="type">Humidity</p>
-                <p class="value">26&percnt;</p>
+                <p class="value" id="humidityid">26&percnt;</p>
                 <br>
                 <br>
                 <p class="type">Precipitation</p>
-                <p class="value">0&percnt;</p>
+                <p class="value" id="precipitationid">0&percnt;</p>
             </div>
             <div class="hourly-info">
                 <div class="hourly-column">
@@ -56,7 +76,7 @@
                     <div class="vanishing-pipe"></div>
                 </div>
                 <div class="hourly-column">
-                    <p>1 PM</p>
+                    <p class="change-time">1 PM</p>
                     <p class="hourly-info-pipe"></p>
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIconBlack.svg" alt="condition" height="30" width="30">
                     <p>23&deg;C</p>
@@ -65,7 +85,7 @@
                     <div class="vanishing-pipe"></div>
                 </div>
                 <div class="hourly-column">
-                    <p>2 PM</p>
+                    <p class="change-time">2 PM</p>
                     <p class="hourly-info-pipe"></p>
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="condition" height="30" width="30">
                     <p>24&deg;C</p>
@@ -74,7 +94,7 @@
                     <div class="vanishing-pipe"></div>
                 </div>
                 <div class="hourly-column">
-                    <p>3 PM</p>
+                    <p class="change-time">3 PM</p>
                     <p class="hourly-info-pipe"></p>
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="condition" height="30" width="30">
                     <p>22&deg;C</p>
@@ -83,7 +103,7 @@
                     <div class="vanishing-pipe"></div>
                 </div>
                 <div class="hourly-column">
-                    <p>4 PM</p>
+                    <p class="change-time">4 PM</p>
                     <p class="hourly-info-pipe"></p>
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg" alt="condition" height="30" width="30">
                     <p>21&deg;C</p>
