@@ -111,7 +111,6 @@ function dropdown (imgid, newimg)
     setTimeout(updatedTime,1000)
   }updatedTime()
 }
-
 else
 {
   alert("Invalid City")
