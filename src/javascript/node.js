@@ -14,7 +14,7 @@ function dropdown (imgid, newimg)
   document.getElementById('precipitationid').innerText = `${(cityData[newimg].precipitation)}`
   const [date, time] = cityData[newimg].dateAndTime.split(', ')
   document.getElementById('datejs').innerText = date.replaceAll('/', '-')
-  const [currenttime, state] = time.split(' ')
+  let [currenttime, state] = time.split(' ')
   const [hr, min, sec] = currenttime.split(':')
   document.getElementById('time').innerText = hr + ':' + min
   document.getElementById('sec').innerText = ':' + sec
@@ -26,11 +26,13 @@ function dropdown (imgid, newimg)
     document.getElementById('state-img').src = '../../docs/assets/Images/HTML & CSS/General Images & Icons/amState.svg'
   }
 
-  const changeTime= document.querySelectorAll('.change-time')
-  const timeForcast= Array.from(changeTime).map((element) => element.textContent)
+  let changeTime= document.querySelectorAll('.change-time')
+  let timeForcast= Array.from(changeTime).map(
+    (element) => element.textContent
+    )
   for (let i = 0, currentTime = hr; i < timeForcast.length; i++) 
   {
-    if (state == 'AM') 
+    if (state === 'AM') 
     {
       if (currentTime < 11) 
       {
