@@ -5,17 +5,28 @@
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
+    <div class="total-page">   
         <div class="machine-grid">
             <div class="beverage-selection">
-                <button>1 cup</button><br>
-                <button>1 carafe</button>
-                <div class="drinrk-selector">
-                    <label for="coffee">Coffee</label>
+                <div class="cup-selector">
+                    <button id="cups">1 cup</button>
+                    <button id="cups">1 carafe</button>
+                </div>
+                <div class="drink-selector">
+                    <div class="drink-names">
+                        <p>Coffee lattee</p>
+                    </div>
+                    <div class="radio-buttons">
+                    <label for="coffee"></label>
                     <input type="radio" id="coffee" name="drink">
-                    <label for="latee">Latee</label>
+                    <label for="latee"></label>
                     <input type="radio" id="latee" name="drink">
-                    <label for="hotwater">Hot water</label>
+                    <label for="hotwater"></label>
                     <input type="radio" id="hotwater" name="drink">
+                    </div>
+                    <div class="hotwater">
+                        Hot water
+                    </div>
                 </div>                
             </div>
             <div class="process-indicator">
@@ -59,81 +70,86 @@
                 <input type="range" id="water-level" list="marker" min="0" max="20" /><br>
                 <datalist id="marker">
                     <option value="0">0</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">20</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">40</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">60</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">80</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">100</option>
                 </datalist>
                 <label for="bean-level">Bean Level</label><br>
                 <input type="range" id="bean-level" list="marker" min="0" max="20" /><br>
                 <datalist id="marker">
                     <option value="0">0</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">20</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">40</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">60</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">80</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">100</option>
                 </datalist>
                 <label for="milk-level">Milk Level</label><br>
                 <input type="range" id="milk-level" list="marker" min="0" max="20" />
                 <datalist id="marker">
                     <option value="0">0</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">20</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">40</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">60</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">80</option>
-                    <option value="0"></option>
-                    <option value="0"></option>
-                    <option value="0"></option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
                     <option value="0">100</option>
                 </datalist>
 
             </div>
-            <button>ON</button>
+
 
         </div>
+        <button id="power" onclick="switchstate()">ON</button>
+        <p class="state">Power</p>
+    </div>   
+    <script src="../javascript/node.js"></script>
+
     </body>
 </html>
