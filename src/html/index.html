@@ -9,13 +9,50 @@
             <div class="beverage-selection">
                 <button>1 cup</button><br>
                 <button>1 carafe</button>
-                <button>summa</button>
-                <input type="radio" id="cofee">
-                <input type="radio" id="cofee">
-                <input type="radio" id="cofee">
+                <div class="drinrk-selector">
+                    <label for="coffee">Coffee</label>
+                    <input type="radio" id="coffee" name="drink">
+                    <label for="latee">Latee</label>
+                    <input type="radio" id="latee" name="drink">
+                    <label for="hotwater">Hot water</label>
+                    <input type="radio" id="hotwater" name="drink">
+                </div>                
             </div>
             <div class="process-indicator">
-
+                <div class="ingridient-led">
+                    <div>
+                        Low Water<br><div class="led"></div>
+                    </div>
+                    <div>
+                        Low Bean<br><div class="led"></div>
+                    </div>
+                    <div>
+                        Low Milk<br><div class="led"></div>
+                    </div>
+                </div>
+                <div class="process-led">
+                    <label for="chamber">Chamber</label>
+                    <input type="range" id="chamber" list="marker" min="0" max="20" />
+                    <label for="Dispenser">Dispenser</label>
+                    <input type="range" id="Dispenser" list="marker" min="0" max="20" />
+                    <div class="current-process">
+                        <div class="led" id="stay"></div> Purging<br><br>
+                        <div class="led" id="stay"></div> Heating<br><br>
+                        <div class="led" id="stay"></div> Grinding<br><br>
+                        <div class="led" id="stay"></div> Brewing<br><br>
+                        <div class="led" id="stay"></div> Dispensing<br><br>
+                    </div>
+                </div>
+                <div class="counter">
+                    <div class="counter-allign">
+                        <p>Elapsed Time</p>
+                        <input type="text" id="elapsedtime" placeholder="0">
+                    </div>
+                    <div class="counter-allign">
+                        <p>Total cups</p>
+                        <input type="text" id="totalcups" placeholder="0">
+                    </div>
+                </div>
             </div>            
             <div class="level-indicator">
                 <label for="water-level">Water Level</label><br>
