@@ -10,7 +10,7 @@
         <div class="top-container">
             <img id="city-img" src="..\..\docs\assets\Images\HTML & CSS\Icons for cities\anadyr.svg" alt="image" height="110" width="110">
             <div class="city-selection">
-                <input type="text" placeholder="Select a City!!" list="city-options" onchange="dropdown('city-img',this.value)" onfocus="this.value=''">
+                <input type="text" placeholder="Select City!!" list="city-options" onfocus="this.value=''" class="city-input">
                 <datalist id="city-options">
                     <option value="anadyr"></option>
                     <option value="auckland"></option>
@@ -124,20 +124,12 @@
                 <div class="card1">
                     <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="rainyicon">
                 </div>
-                <div class="card">
+                <div class="card-display">
                     <p>Display Top</p>
                 </div>
-                <div class="card">
-                    <select>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                    </select>
+                <div class="card-input">
+                    <input type="number" placeholder="3" min="3" max="10" class="cities-counter">
+                    
                 </div>
             </div>
             <div class="city-container">
@@ -162,125 +154,8 @@
                             <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
                         </div>
                     </div>
-                    <div class="card-container">
-                        <div class="item1">
-                            New Delhi
-                        </div>
-                        <div class="item2">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon">25&deg;C
-                        </div>
-                        <div class="item3">
-                            10:00AM
-                        </div>
-                        <div class="item4">
-                            2-MAR-2020
-                        </div>
-                        <div class="item5">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon">56%
-                        </div>
-                        <div class="item6">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
-                        </div>
-                    </div>
-                    <div class="card-container">
-                        <div class="item1">
-                            New Delhi
-                        </div>
-                        <div class="item2">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon">25&deg;C
-                        </div>
-                        <div class="item3">
-                            10:00AM
-                        </div>
-                        <div class="item4">
-                            2-MAR-2020
-                        </div>
-                        <div class="item5">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon">56%
-                        </div>
-                        <div class="item6">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
-                        </div>
-                    </div>
-                    <div class="card-container">
-                        <div class="item1">
-                            New Delhi
-                        </div>
-                        <div class="item2">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon"> 25&deg;C
-                        </div>
-                        <div class="item3">
-                            10:00AM
-                        </div>
-                        <div class="item4">
-                            2-MAR-2020
-                        </div>
-                        <div class="item5">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon">56%
-                        </div>
-                        <div class="item6">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
-                        </div>
-                    </div>
-                    <div class="card-container">
-                        <div class="item1">
-                            New Delhi
-                        </div>
-                        <div class="item2">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon"> 25&deg;C
-                        </div>
-                        <div class="item3">
-                            10:00AM
-                        </div>
-                        <div class="item4">
-                            2-MAR-2020
-                        </div>
-                        <div class="item5">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon">56%
-                        </div>
-                        <div class="item6">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
-                        </div>
-                    </div>
-                    <div class="card-container">
-                        <div class="item1">
-                            New Delhi
-                        </div>
-                        <div class="item2">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon"> 25&deg;C
-                        </div>
-                        <div class="item3">
-                            10:00AM
-                        </div>
-                        <div class="item4">
-                            2-MAR-2020
-                        </div>
-                        <div class="item5">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon">56%
-                        </div>
-                        <div class="item6">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
-                        </div>
-                    </div>
-                    <div class="card-container">
-                        <div class="item1">
-                            New Delhi
-                        </div>
-                        <div class="item2">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon"> 25&deg;C
-                        </div>
-                        <div class="item3">
-                            10:00AM
-                        </div>
-                        <div class="item4">
-                            2-MAR-2020
-                        </div>
-                        <div class="item5">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon">56%
-                        </div>
-                        <div class="item6">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
-                        </div>
+                    
+                    
                     </div>
                 </div>
             </div>

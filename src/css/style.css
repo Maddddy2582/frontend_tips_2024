@@ -1,5 +1,11 @@
 @import url("../../docs/assets/Images/HTML & CSS/files/vars.css");
 
+*
+{
+    font-family: Arial, Helvetica, sans-serif;;
+    margin: 0;
+}
+
 body
 {
     background-color: black;
@@ -25,7 +31,7 @@ p
     color: white;
 }
 
-input
+.city-input
 {
     background-color: var(--bg-grey-tile);
     color: white;
@@ -153,11 +159,6 @@ h3
   
 }
 
-*
-{
-    font-family: Arial, Helvetica, sans-serif;;
-    margin: 0;
-}
 
 .mid-bg
 {
@@ -183,17 +184,27 @@ h3
 {
     background-color: black;
     display: flex;
+    align-items: center;
     position: sticky;
     top: 0;
+    gap: 10px;
     z-index: 1;
+    padding-right: 40px;
 }
 
 .card
 {
-    flex-grow: 0.1;
-    padding-top: 20px;
+    flex-grow: 0.1; 
 }
 
+.card-display{
+    width: max-content;
+}
+.card-input{
+    width: 60px;
+    font-size: medium;
+    
+}
 .card option
 {
     color: black;
@@ -244,7 +255,8 @@ h3
     gap: 50px;
     justify-content: left;
     overflow-x: scroll;
-    padding: 40px;
+    padding: 60px 80px;
+    justify-content: center;
 }
 
 .main-city-container::-webkit-scrollbar
@@ -261,12 +273,13 @@ h3
     background-size: 90%;
     height: 200px;
     position: sticky;
-    width: 200px;
+    width: 250px;
     border-radius: 20px;
     display: grid;
     grid-template: repeat(4,20px)/90px 90px;
     row-gap: 10px;
     transition: 0.5s;
+    padding: 10px;
     grid-template-areas: "a b"
     "c ."
     "d ."
@@ -284,7 +297,6 @@ h3
 {
     color: white;
     grid-area: a;
-    margin-left: 10px;
     margin-top: 3px;
 }
 
@@ -339,8 +351,7 @@ h3
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
     position: relative;
-    right: -65px;
-    top: px;
+    right: -75px;
 }
         
 .filter
@@ -364,7 +375,7 @@ h3
 {
     display: grid;
     gap: 20px 50px;
-    padding: 60px;
+    padding: 80px;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-auto-rows: minmax(30px,auto);
 }
@@ -500,6 +511,11 @@ h3
         position: relative;
         transition: 0.5s;
     }
+
+    .mid-head
+    {
+        padding-left: 150px;
+    }
 }
 
 @media screen and (width <= 850px) 
@@ -577,6 +593,11 @@ h3
         height: 1em;
         left: -100px;
         transition: 0.8s;
+    }
+
+    .mid-head
+    {
+        padding-left: 150px;
     }
 }
 
