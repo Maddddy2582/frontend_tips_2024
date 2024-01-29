@@ -164,8 +164,30 @@ function resetTime()
   document.querySelector('.hourly-info').style.visibility='hidden'
 }
 
+let cardNum;
+function midcontainer()
+{
+  const numberOfCities= document.querySelector('.cities-counter')
+  numberOfCities.addEventListener('change',(f)=>{
+    cardNum= f.target.value
+    cardClone(cardNum);
+  })
+}
 
-
+function  cardClone()
+{
+  const mainCityContainer= document.querySelector('.main-city-container')
+  const cardContainer= document.querySelector('.card-container')
+  while(mainCityContainer.firstChild)
+  {
+    mainCityContainer.removeChild(mainCityContainer.firstChild)
+  }
+  for(let i=0;i<Number(cardNum);i++)
+  {
+    const cloneCard= cardContainer.cloneNode(true)
+    mainCityContainer.appendChild(cloneCard)
+  }
+}
 
 
 
