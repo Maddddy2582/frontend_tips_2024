@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="../css/style.css">
         <script src="../javascript/node.js"></script>
+        <script src="../javascript/topcontainer.js"></script>
+        <script src="../javascript/midcontainer.js"></script>
     </head>
     <body>
         <div class="top-container">
@@ -116,13 +118,13 @@
                     Top cities around the world
                 </div>
                 <div class="card1">
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon">
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon" id="sunny-icon-class">
                 </div>
                 <div class="card1">
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg" alt="snowflake">
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg" alt="snowflake" id="snowy-icon-class">
                 </div>
                 <div class="card1">
-                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="rainyicon">
+                    <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg" alt="rainyicon" id="rainy-icon-class">
                 </div>
                 <div class="card-display">
                     <p>Display Top</p>
@@ -139,7 +141,7 @@
                             New Delhi
                         </div>
                         <div class="item2">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon">25&deg;C
+                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg" alt="sunnyicon"><span id="sunnyid">25&deg;C</span>
                         </div>
                         <div class="item3">
                             10:00AM
@@ -148,14 +150,12 @@
                             2-MAR-2020
                         </div>
                         <div class="item5">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon">56%
+                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg" alt="humudityicon"><span id="humid">56%</span>
                         </div>
                         <div class="item6">
-                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation">10%
+                            <img src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg" alt="precipitation"><span id="precepid">10%</span>
                         </div>
-                    </div>
-                    
-                    
+                    </div>                    
                     </div>
                 </div>
             </div>
