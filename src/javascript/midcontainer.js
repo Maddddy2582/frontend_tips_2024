@@ -36,10 +36,11 @@ function midcontainer()
         }
     }
 
-    sunnycitiesTemp.sort((a, b) => b - a);
-    snowycitiesPrecep.sort((a, b) => b - a);
-    rainyCitiesHumidity.sort((a, b) => b - a);
-
+    sunnycities.sort((a, b) => b - a);
+    
+    snowycities.sort((a, b) => b - a);
+    rainycities.sort((a, b) => parseInt(cityData[b].humidity) - parseInt(cityData[a].humidity));
+    console.log(rainycities)
 
     const sunnyIconClass= document.getElementById('sunny-icon-class')
     sunnyIconClass.addEventListener('click',function()
@@ -64,16 +65,15 @@ function midcontainer()
         
         for(let j=0;j<sunnycities.length;j++)
         {
-        console.log(nodeList[j]);
-        const Item=document.querySelector('.item1');
         nodeList[j].style.backgroundImage= `url('../../docs/assets/Images/HTML & CSS/Icons for cities/${sunnycities[j]}.svg')`
-        Item.textContent=`${sunnycities[j]}`
-        document.querySelector('#sunnyid').textContent=`${cityData[sunnycities[j]].temperature}`
+        nodeList[j].querySelector('.item1').textContent=`${sunnycities[j]}`
+        nodeList[j].querySelector('#sunnyid').textContent=`${cityData[sunnycities[j]].temperature}`
         const [date, time] = (cityData[sunnycities[j]].dateAndTime).split(', ')
-        document.querySelector('.item3').textContent=`${time}`
-        document.querySelector('.item4').textContent=`${date}`
-        document.querySelector('#humid').textContent=`${cityData[sunnycities[j]].humidity}`
-        document.querySelector('#precepid').textContent=`${cityData[sunnycities[j]].precipitation}`
+        nodeList[j].querySelector('.item3').textContent=`${time}`
+        console.log(document.querySelector('.item3').textContent);
+        nodeList[j].querySelector('.item4').textContent=`${date}`
+        nodeList[j].querySelector('#humid').textContent=`${cityData[sunnycities[j]].humidity}`
+        nodeList[j].querySelector('#precepid').textContent=`${cityData[sunnycities[j]].precipitation}`
         }
 
 
