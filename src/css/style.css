@@ -213,13 +213,13 @@ h3 {
   color: black;
 }
 
-.weather-icon {
+.card1 {
   flex-grow: 0.1;
   padding-top: 20px;
   position: relative;
 }
 
-.weather-icon::after {
+.card1::after {
   background: skyblue;
   content: "";
   display: block;
@@ -228,7 +228,7 @@ h3 {
   width: 0%;
 }
 
-.weather-icon:hover::after {
+.card1:hover::after {
   width: 80%;
 }
 
@@ -249,6 +249,7 @@ h3 {
   display: flex;
   flex-wrap: nowrap;
   gap: 50px;
+  justify-content: left;
   overflow-x: scroll;
   padding: 60px 80px;
   justify-content: center;
@@ -258,7 +259,7 @@ h3 {
   display: none;
 }
 
-.city-card-container {
+.card-container {
   background-color: rgb(21 21 25);
   background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
   background-position: right bottom;
@@ -281,7 +282,7 @@ h3 {
     "f .";
 }
 
-.city-card-container:hover {
+.card-container:hover {
   box-shadow: 0 0 15px 0 rgb(255 255 255);
   transform: scale(1.1);
 }
@@ -318,6 +319,58 @@ h3 {
 .card-city-precipitation {
   color: white;
   grid-area: f;
+}
+
+#rightbutton {
+  color: black;
+  position: absolute;
+  right: 0px;
+  top: 230px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  z-index: 5;
+}
+
+#leftbutton {
+  color: black;
+  position: absolute;
+  left: 0px;
+  top: 230px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  z-index: 5;
+}
+
+.border-bottom {
+  border-bottom: 2px solid skyblue;
+}
+
+#rightbutton {
+  color: black;
+  position: absolute;
+  right: 0px;
+  top: 230px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  z-index: 5;
+}
+
+#leftbutton {
+  color: black;
+  position: absolute;
+  left: 0px;
+  top: 230px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  z-index: 5;
+}
+
+.border-bottom {
+  border-bottom: 2px solid skyblue;
 }
 
 .bottom-container {

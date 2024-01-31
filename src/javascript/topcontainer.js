@@ -158,4 +158,5 @@ function resetTime()
   document.getElementById('sec').innerText =" "
   document.getElementById('datejs').innerText ="__-__-__"
   document.querySelector('.hourly-info').style.visibility='hidden'
+  document.querySelector('#city-img').src= "../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg"
 }
