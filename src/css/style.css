@@ -9,7 +9,7 @@
 body
 {
     background-color: black;
-    min-width: 850px;
+    min-width: 900px;
 }
 
 .top-container
@@ -215,21 +215,13 @@ h3
     flex-grow: 0.1;
     padding-top: 20px;
     position: relative;
+    justify-content: center;
+    padding-bottom: 10p;
 }
 
-.card1::after
+.card1:hover
 {
-    background: skyblue;
-    content: '';
-    display: block;
-    height: 2px;
-    transition: 0.5s;
-    width: 0%;
-}
-
-.card1:hover::after
-{
-    width: 80%;
+    transform: scale(1.1);
 }
 
 .mid-container > div
@@ -253,12 +245,15 @@ h3
     display: flex;
     flex-wrap: nowrap;
     gap: 50px;
-    justify-content: left;
     overflow-x: scroll;
-    padding: 60px 80px;
+    margin: 60px 80px;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+.main-container-container{
+    display: flex;
     justify-content: center;
 }
-
 .main-city-container::-webkit-scrollbar
 {
     display: none;
@@ -270,14 +265,14 @@ h3
     background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
     background-position: right bottom;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 70%;
     height: 200px;
     position: sticky;
     width: 250px;
     border-radius: 20px;
     display: grid;
-    grid-template: repeat(4,20px)/90px 90px;
-    row-gap: 10px;
+    grid-template: repeat(5,30px)/120px 90px;
+    gap: 10px 30px;
     transition: 0.5s;
     padding: 10px;
     grid-template-areas: "a b"
@@ -289,8 +284,8 @@ h3
 
 .card-container:hover
 {
-    box-shadow: 0 0 15px 0 rgb(255 255 255);
-    transform: scale(1.1);
+    box-shadow: 0 0 6px 0 rgb(255 255 255);
+    transform: scale(1.05);
 }
 
 .item1
@@ -331,6 +326,35 @@ h3
 {
     color: white;
     grid-area: f;
+}
+
+#rightbutton
+{
+    color: black; 
+    position: absolute; 
+    right: 0px; 
+    top: 230px; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50px;
+    z-index: 5;
+}
+
+#leftbutton
+{
+    color: black; 
+    position: absolute; 
+    left: 0px; 
+    top: 230px; 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50px;
+    z-index: 5;
+}
+
+.border-bottom
+{
+    border-bottom: 2px solid skyblue;
 }
 
 .bottom-container 
