@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cofee Machine</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+    <div class="total-page">   
+        <div class="machine-grid">
+            <div class="beverage-selection">
+                <div class="cup-selector">
+                    <button id="cups">1 cup</button>
+                    <button id="cups">1 carafe</button>
+                </div>
+                <div class="drink-selector">
+                    <div class="drink-names">
+                        <p>Coffee lattee</p>
+                    </div>
+                    <div class="radio-buttons">
+                    <label for="coffee"></label>
+                    <input type="radio" id="coffee" name="drink">
+                    <label for="latee"></label>
+                    <input type="radio" id="latee" name="drink">
+                    <label for="hotwater"></label>
+                    <input type="radio" id="hotwater" name="drink">
+                    </div>
+                    <div class="hotwater">
+                        Hot water
+                    </div>
+                </div>                
+            </div>
+            <div class="process-indicator">
+                <div class="ingridient-led">
+                    <div>
+                        Low Water<br><div class="led"></div>
+                    </div>
+                    <div>
+                        Low Bean<br><div class="led"></div>
+                    </div>
+                    <div>
+                        Low Milk<br><div class="led"></div>
+                    </div>
+                </div>
+                <div class="process-led">
+                    <label for="chamber">Chamber</label>
+                    <input type="range" id="chamber" list="marker" min="0" max="20" />
+                    <label for="Dispenser">Dispenser</label>
+                    <input type="range" id="Dispenser" list="marker" min="0" max="20" />
+                    <div class="current-process">
+                        <div class="led" id="stay"></div> Purging<br><br>
+                        <div class="led" id="stay"></div> Heating<br><br>
+                        <div class="led" id="stay"></div> Grinding<br><br>
+                        <div class="led" id="stay"></div> Brewing<br><br>
+                        <div class="led" id="stay"></div> Dispensing<br><br>
+                    </div>
+                </div>
+                <div class="counter">
+                    <div class="counter-allign">
+                        <p>Elapsed Time</p>
+                        <input type="text" id="elapsedtime" placeholder="0">
+                    </div>
+                    <div class="counter-allign">
+                        <p>Total cups</p>
+                        <input type="text" id="totalcups" placeholder="0">
+                    </div>
+                </div>
+            </div>            
+            <div class="level-indicator">
+                <label for="water-level">Water Level</label><br>
+                <input type="range" id="water-level" list="marker" min="0" max="20" /><br>
+                <datalist id="marker">
+                    <option value="0">0</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">20</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">40</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">60</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">80</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">100</option>
+                </datalist>
+                <label for="bean-level">Bean Level</label><br>
+                <input type="range" id="bean-level" list="marker" min="0" max="20" /><br>
+                <datalist id="marker">
+                    <option value="0">0</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">20</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">40</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">60</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">80</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">100</option>
+                </datalist>
+                <label for="milk-level">Milk Level</label><br>
+                <input type="range" id="milk-level" list="marker" min="0" max="20" />
+                <datalist id="marker">
+                    <option value="0">0</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">20</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">40</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">60</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">80</option>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <div class="indicator"></div>
+                    <option value="0">100</option>
+                </datalist>
+
+            </div>
+
+
+        </div>
+        <button id="power" onclick="switchstate()">ON</button>
+        <p class="state">Power</p>
+    </div>   
+    <script src="../javascript/node.js"></script>
+
+    </body>
+</html>

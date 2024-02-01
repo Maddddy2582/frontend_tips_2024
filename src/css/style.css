@@ -1,3 +1,225 @@
+
+.total-page
+{
+    border: 2px solid black;
+    width: max-content;
+    background-color: rgb(209, 242, 242);
+    margin-left: 300px;
+}
+.machine-grid
+{
+    display: grid;
+    grid-template-columns: max-content 500px;
+    grid-template-rows: max-content max-content;
+}
+
+.beverage-selection
+{
+    background-color: rgb(209, 242, 242);
+    border: 2px solid rgb(12, 0, 62);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.level-indicator
+{
+    background-color: rgb(209, 242, 242);
+    border: 2px solid rgb(12, 0, 62);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.process-indicator
+{
+
+    background-color: rgb(209, 242, 242);
+    border: 2px solid rgb(12, 0, 62);
+    border-radius: 10px;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.level-indicator>input
+{
+    width: 400px;
+}
+
+.level-indicator>label
+{
+    font-size: small;
+    font-weight: bold;
+}
+
+datalist 
+  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 400px;
+  }
+  
+  option {
+    padding: 0;
+  }
+  
+  .level-indicator > input[type="range"] 
+  {
+    width: 400px;
+    margin: 0;
+  }
+
+
+ .ingridient-led
+ {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-right: 100px;
+ } 
+
+ .led
+ {
+    background-color: rgb(148, 206, 206);
+    border: 2px solid rgb(12, 0, 62);
+    height: 20px;
+    width: 50px;
+ }
+
+ .process-led
+ {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+
+ }
+ .process-led > label
+ {
+    padding-left: 10px;
+ }
+
+ .process-led input[type="range"] 
+{
+    appearance: slider-vertical;
+    width: 80px;
+    position: relative;
+    bottom: -30px;
+    left: -50px
+}
+
+.current-preocess
+{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+#stay
+{
+    display: inline-block;
+}
+
+.counter
+{
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    padding-top: 50px;
+}
+
+.counter input[type="text"]
+{
+    height: 20px;
+    position: relative;
+}
+
+.counter p
+{
+    display: inline;
+}
+
+#power
+{
+    width: max-content;
+    position: relative;
+    left: 440px;
+    top: 10px;
+    background-color:rgb(85, 83, 97);
+    color: white;
+    border: 2px solid blue;
+
+}
+
+.state
+{
+    position: relative;
+    left: 440px;
+    top: 10px;
+}
+
+.indicator
+{
+    background-color: black;
+    height: 6px;
+    width: 0.5px;
+    position: relative;
+    bottom: 10px;
+}
+
+#cups
+{
+    background-color:rgb(85, 83, 97);
+    color: white;
+    height: 30px;
+    width: 100px;
+    border: 2px solid blue;
+}
+
+.cup-selector
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.drink-selector
+{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    align-content: space-evenly;
+}
+
+.drink-names
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    word-spacing: 50px;
+}
+
+.hotwater
+{
+    justify-content: center;
+}
+
+.radio-buttons
+{
+    justify-items: center;
+}
+
+input[type="radio"]
+{
+    padding: 20px;
+}
+=======
 @import url("../../docs/assets/Images/HTML & CSS/files/vars.css");
 
 body
@@ -637,3 +859,4 @@ h3
         transition: 0.8s;
     }
 }
+
