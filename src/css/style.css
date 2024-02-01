@@ -347,32 +347,6 @@ h3 {
   border-bottom: 2px solid skyblue;
 }
 
-#rightbutton {
-  color: black;
-  position: absolute;
-  right: 0px;
-  top: 230px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  z-index: 5;
-}
-
-#leftbutton {
-  color: black;
-  position: absolute;
-  left: 0px;
-  top: 230px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  z-index: 5;
-}
-
-.border-bottom {
-  border-bottom: 2px solid skyblue;
-}
-
 .bottom-container {
   position: relative;
   bottom: -40px;
