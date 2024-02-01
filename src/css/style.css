@@ -328,7 +328,7 @@ h3
     grid-area: f;
 }
 
-#rightbutton
+.rightbutton
 {
     color: black; 
     position: absolute; 
@@ -340,7 +340,7 @@ h3
     z-index: 5;
 }
 
-#leftbutton
+.leftbutton
 {
     color: black; 
     position: absolute; 

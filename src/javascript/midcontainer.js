@@ -1,6 +1,10 @@
 let cardNum;
+
+
+
 function midcontainer()
 {
+    hidebutton()
 
     
     const cityValue = document.querySelector('.city-input')
@@ -37,17 +41,21 @@ function midcontainer()
     }
     rainycities.sort((a, b) => parseInt(cityData[b].humidity) - parseInt(cityData[a].humidity));
 
-
+    function setTime(anycity,k)
+{
+    console.log(anycity,k);
+    let liveTime= new Date().toLocaleString("en-US",{timeZone:cityData[anycity[k]].timeZone})
+    let [date, time] = liveTime.split(', ')
+    return date,time;
+}
 //----------------------SUNNY CITIES---------------------------------------------
     const sunnyIconClass= document.getElementById('sunny-icon-class')
     sunnyIconClass.addEventListener('click',function()
     {
+        hidebutton()
         sunnyIconClass.classList.add('border-bottom')
         snowyIconClass.classList.remove('border-bottom')
         rainyIconClass.classList.remove('border-bottom')
-        //document.querySelector('.card1').style.borderBottom="2px solid skyblue";
-        // let counterValue= document.querySelector('.cities-counter')
-        // counterValue.value= 3;
         const mainCityContainer= document.querySelector('.main-city-container')
         const cardContainer= document.querySelector('.card-container')
         while(mainCityContainer.firstChild)
@@ -62,14 +70,14 @@ function midcontainer()
         let nodeList= document.querySelectorAll(".card-container");
         for(let j=0;j<sunnycities.length;j++)
         {
+        setTime(sunnycities,j)
+        //setInterval(setTime,1000)
+        nodeList[j].querySelector('.item3').textContent=`${time}`
+        nodeList[j].querySelector('.item4').textContent=`${date}`  
         nodeList[j].style.backgroundImage= `url('../../docs/assets/Images/HTML & CSS/Icons for cities/${sunnycities[j]}.svg')`
         nodeList[j].querySelector('.item1').textContent=`${sunnycities[j]}`
         nodeList[j].querySelector('#midicon').src = '../../docs/assets/Images/HTML & CSS/Weather Icons/sunnyIcon.svg'
         nodeList[j].querySelector('#sunnyid').textContent=`${cityData[sunnycities[j]].temperature}`
-        const [date, time] = (cityData[sunnycities[j]].dateAndTime).split(', ')
-        nodeList[j].querySelector('.item3').textContent=`${time}`
-        console.log(document.querySelector('.item3').textContent);
-        nodeList[j].querySelector('.item4').textContent=`${date}`
         nodeList[j].querySelector('#humid').textContent=`${cityData[sunnycities[j]].humidity}`
         nodeList[j].querySelector('#precepid').textContent=`${cityData[sunnycities[j]].precipitation}`
         }
@@ -80,6 +88,7 @@ function midcontainer()
     const snowyIconClass= document.getElementById('snowy-icon-class')
     snowyIconClass.addEventListener('click',function()
     {
+        hidebutton()
         sunnyIconClass.classList.remove('border-bottom')
         snowyIconClass.classList.add('border-bottom')
         rainyIconClass.classList.remove('border-bottom')
@@ -120,6 +129,7 @@ function midcontainer()
     const rainyIconClass= document.getElementById('rainy-icon-class')
     rainyIconClass.addEventListener('click',function()
     {
+        showbutton()
         sunnyIconClass.classList.remove('border-bottom')
         snowyIconClass.classList.remove('border-bottom')
         rainyIconClass.classList.add('border-bottom')
@@ -155,6 +165,7 @@ function midcontainer()
         }
         let numberOfCities= document.querySelector('.cities-counter')
         numberOfCities.addEventListener('change',(f)=>{
+        showbutton()    
         cardNum= f.target.value
         const mainCityContainer= document.querySelector('.main-city-container')
         const cardContainer= document.querySelector('.card-container')
@@ -185,30 +196,37 @@ function midcontainer()
     })
     
     });
-
-    document.querySelector('#leftbutton').addEventListener('click',function()
+    document.querySelector('.leftbutton').addEventListener('click',function()
     {
-        document.querySelector('.main-city-container').style.position= "relative";
-        document.querySelector('.main-city-container').style.right= "50px";
-    
-    
-    
+        document.querySelector('.main-city-container').scrollLeft -= 150;
     });
-
-    document.querySelector('#rightbutton').addEventListener('click',function()
+    document.querySelector('.rightbutton').addEventListener('click',function()
     {
-        document.querySelector('.main-city-container').style.position= "relative";
-        document.querySelector('.main-city-container').style.left= "50px";
-    
-    
-    
+        document.querySelector('.main-city-container').scrollLeft += 150;    
     });
 }    
 
 
 
-    
 
+function hidebutton()
+{
+    document.querySelector('.leftbutton').style.visibility= 'hidden';
+    document.querySelector('.rightbutton').style.visibility= 'hidden';
+}
 
-
+function showbutton()
+{
+    let counterValue= document.querySelector('.cities-counter')
+    if(counterValue.value>4)
+    {
+        document.querySelector('.leftbutton').style.visibility= 'visible';
+        document.querySelector('.rightbutton').style.visibility= 'visible';
+    }
+    else
+    {
+        document.querySelector('.leftbutton').style.visibility= 'hidden';
+        document.querySelector('.rightbutton').style.visibility= 'hidden';
+    }
+}
 
