@@ -319,11 +319,156 @@ h3
     grid-area: f;
 }
 
+.bottom-container 
+{
+    position: relative;
+    bottom: -40px;
+}
+        
+.cont-container
+{
+    display: flex;
+}
+        
+.glance
+{
+    flex-grow: 8;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    position: relative;
+    right: -65px;
+    top: 300px;
+}
+        
+.filter
+{
+    flex-grow: 1;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+        
+.updown-arrow img
+{
+    flex-grow: 0.1;
+    height: 1.5em;
+    position: relative;
+    left: -60px;
+    bottom: -10px;
+}
+        
+.bottom-cards-container
+{
+    display: grid;
+    gap: 20px 50px;
+    padding: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: minmax(30px,auto);
+}
+         
+.bottom-cards
+{
+    display: grid;
+    gap: 10px 30px;    
+    grid-template-areas:
+    "a b"
+    "c d";
+    color: white;
+    background-color: #2e2e2e;
+    justify-content: space-between;
+    padding: 20px;
+}
+        
+.bottom-cards:hover
+{
+    transform: scale(0.8);
+    box-shadow: 5px 5px 5px 0 whitesmoke;
+}
+         
+.continent-name
+{
+    grid-area: a;
+    font-size: large;
+    color: yellow;
+    font-family: Arial, Helvetica, sans-serif;
+}
+         
+.city-temperature
+{
+    grid-area: b;
+    font-weight: bolder;
+    font-size: x-large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+         
+.city-name-time
+{
+    grid-area: c;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+         
+.city-humidity
+{
+    grid-area: d;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@media screen and (width <= 1300px)
+{
+    .glance
+    {
+        position: relative;
+        font-size: large;
+        transition: 0.8s;
+    }
+
+    .filter
+    {
+        font-size: large;
+        position: relative;
+        right: 70px;
+        transition: 0.8s;
+    }
+
+    .updown-arrow img
+    {
+        height: 1em;
+        left: -110px;
+        transition: 0.8s;
+    }
+}
+
+
 @media screen and (width <= 1000px) 
 {
     .vanishing-pipe
     {
         display: none;
+    }
+    
+    .glance
+    {
+        position: relative;
+        font-size: large;
+        transition: 0.8s;
+    }
+
+    .filter
+    {
+        font-size: large;
+        position: relative;
+        right: 70px;
+        transition: 0.8s;
+    }
+
+    .updown-arrow img
+    {
+        height: 1em;
+        left: -110px;
+        transition: 0.8s;
     }
 }
 
@@ -408,6 +553,28 @@ h3
     {
         flex-wrap: wrap;
     }
+
+    .glance
+    {
+        position: relative;
+        font-size: small;
+        transition: 0.8s;
+    }
+
+    .filter
+    {
+        font-size: small;
+        position: relative;
+        right: 70px;
+        transition: 0.8s;
+    }
+
+    .updown-arrow img
+    {
+        height: 1em;
+        left: -100px;
+        transition: 0.8s;
+    }
 }
 
 @media screen and (width <= 750px) 
@@ -446,5 +613,27 @@ h3
         position: relative;
         transition: 0.5s;
         width: 70%;
+    }
+
+    .glance
+    {
+        position: relative;
+        font-size: small;
+        transition: 0.8s;
+    }
+
+    .filter
+    {
+        font-size: small;
+        position: relative;
+        right: 70px;
+        transition: 0.8s;
+    }
+
+    .updown-arrow img
+    {
+        height: 1em;
+        left: -90px;
+        transition: 0.8s;
     }
 }
