@@ -1,19 +1,16 @@
 @import url("../../docs/assets/Images/HTML & CSS/files/vars.css");
 
-*
-{
+* {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
 }
 
-body
-{
+body {
   background-color: black;
   min-width: 850px;
 }
 
-.top-container
-{
+.top-container {
   background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/background.svg");
   background-size: cover;
   display: flex;
@@ -21,18 +18,15 @@ body
   white-space: nowrap;
 }
 
-.city-selection
-{
+.city-selection {
   display: grid;
 }
 
-p
-{
+p {
   color: white;
 }
 
-.city-input
-{
+.city-input {
   background-color: var(--bg-grey-tile);
   color: white;
   cursor: pointer;
@@ -46,13 +40,11 @@ p
   text-transform: capitalize;
 }
 
-option
-{
+option {
   color: black;
 }
 
-.time
-{
+.time {
   color: bisque;
   font-size: 23px;
   font-weight: bolder;
@@ -63,8 +55,7 @@ option
   display: inline;
 }
 
-.date
-{
+.date {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -74,15 +65,13 @@ option
   position: relative;
 }
 
-#sec
-{
+#sec {
   font-size: 12px;
   font-weight: bolder;
   display: inline;
 }
 
-.temp-grid
-{
+.temp-grid {
   align-items: center;
   color: white;
   display: grid;
@@ -91,51 +80,44 @@ option
   position: relative;
 }
 
-.type
-{
+.type {
   font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
 }
 
-.value
-{
+.value {
   font-family: Arial, Helvetica, sans-serif;
   font-size: xx-large;
   font-weight: bolder;
-} 
+}
 
-.temp-grid-pipe
-{
+.temp-grid-pipe {
   align-items: center;
   display: grid;
   position: relative;
   row-gap: 30px;
 }
 
-.pipe
-{
+.pipe {
   background-color: white;
   height: 50px;
   width: 2px;
 }
 
-.hourly-info-pipe
-{
+.hourly-info-pipe {
   background-color: white;
   height: 25px;
   width: 1px;
 }
 
-.vanishing-pipe
-{
+.vanishing-pipe {
   background-color: white;
   height: 25px;
   margin-top: 36px;
   width: 1px;
 }
 
-.hourly-info
-{
+.hourly-info {
   display: grid;
   grid-auto-flow: column;
   justify-content: space-evenly;
@@ -143,30 +125,26 @@ option
   width: 60%;
 }
 
-.hourly-column
-{
+.hourly-column {
   display: grid;
   justify-items: center;
   row-gap: 10px;
 }
 
-h3
-{
+h3 {
   color: white;
   font-size: larger;
   font-weight: bolder;
 }
 
-.mid-bg
-{
+.mid-bg {
   background-color: rgb(6 6 6);
   border-radius: 30px 30px 0 0;
   position: relative;
   top: -20px;
 }
 
-.mid-head
-{
+.mid-head {
   flex-grow: 8;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
@@ -177,8 +155,7 @@ h3
   white-space: nowrap;
 }
 
-.mid-container
-{
+.mid-container {
   background-color: black;
   display: flex;
   align-items: center;
@@ -189,67 +166,56 @@ h3
   padding-right: 40px;
 }
 
-.card
-{
-  flex-grow: 0.1; 
+.card {
+  flex-grow: 0.1;
 }
 
-.card-display
-{
+.card-display {
   width: max-content;
 }
 
-.card-input
-{
+.card-input {
   width: 60px;
   font-size: medium;
 }
 
-.card option
-{
+.card option {
   color: black;
 }
 
-.card1
-{
+.card1 {
   flex-grow: 0.1;
   padding-top: 20px;
   position: relative;
 }
 
-.card1::after
-{
+.card1::after {
   background: skyblue;
-  content: '';
+  content: "";
   display: block;
   height: 2px;
   transition: 0.5s;
   width: 0%;
 }
 
-.card1:hover::after
-{
+.card1:hover::after {
   width: 80%;
 }
 
-.mid-container > div
-{
+.mid-container > div {
   color: white;
   position: sticky;
 }
 
-.card-container img
-{
+.card-container img {
   height: 1em;
 }
 
-.city-container  
-{
+.city-container {
   justify-content: center;
 }
 
-.main-city-container
-{
+.main-city-container {
   display: flex;
   flex-wrap: nowrap;
   gap: 50px;
@@ -258,13 +224,11 @@ h3
   justify-content: center;
 }
 
-.main-city-container::-webkit-scrollbar
-{
+.main-city-container::-webkit-scrollbar {
   display: none;
 }
 
-.card-container
-{
+.card-container {
   background-color: rgb(21 21 25);
   background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
   background-position: right bottom;
@@ -275,76 +239,67 @@ h3
   width: 250px;
   border-radius: 20px;
   display: grid;
-  grid-template: repeat(4,20px)/90px 90px;
+  grid-template: repeat(4, 20px) / 90px 90px;
   row-gap: 10px;
   transition: 0.5s;
   padding: 10px;
-  grid-template-areas: "a b"
-  "c ."
-  "d ."
-  "e ."
-  "f .";
+  grid-template-areas:
+    "a b"
+    "c ."
+    "d ."
+    "e ."
+    "f .";
 }
 
-.card-container:hover
-{
+.card-container:hover {
   box-shadow: 0 0 15px 0 rgb(255 255 255);
   transform: scale(1.1);
 }
 
-.item1
-{
+.item1 {
   color: white;
   grid-area: a;
   margin-top: 3px;
 }
 
-.item2
-{
+.item2 {
   color: white;
   grid-area: b;
   justify-self: right;
   margin-right: 10px;
 }
 
-.item3
-{
+.item3 {
   color: white;
   grid-area: c;
 }
 
-.item4
-{
+.item4 {
   color: white;
   font-size: small;
   grid-area: d;
 }
 
-.item5
-{
+.item5 {
   color: white;
   grid-area: e;
 }
 
-.item6
-{
+.item6 {
   color: white;
   grid-area: f;
 }
 
-.bottom-container 
-{
+.bottom-container {
   position: relative;
   bottom: -40px;
 }
-    
-.cont-container
-{
+
+.cont-container {
   display: flex;
 }
-    
-.glance
-{
+
+.glance {
   flex-grow: 8;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
@@ -352,311 +307,317 @@ h3
   position: relative;
   right: -75px;
 }
-    
-.filter
-{
+
+.filter {
   flex-grow: 1;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-large;
 }
-    
-.updown-arrow img
-{
+
+.updown-arrow img {
   flex-grow: 0.1;
   height: 1.5em;
   position: relative;
   left: -50px;
   bottom: -4px;
 }
-    
-.bottom-cards-container
-{
+
+.bottom-cards-container {
   display: grid;
   gap: 20px 50px;
   padding: 80px;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  grid-auto-rows: minmax(30px,auto);
+  grid-auto-rows: minmax(30px, auto);
 }
-     
-.bottom-cards
-{
+
+.bottom-cards {
   display: grid;
-  gap: 10px 30px;  
+  gap: 10px 30px;
   grid-template-areas:
-  "a b"
-  "c d";
+    "a b"
+    "c d";
   color: white;
   background-color: #2e2e2e;
   justify-content: space-between;
   padding: 20px;
 }
-    
-.bottom-cards:hover
-{
+
+.bottom-cards:hover {
   transform: scale(0.8);
   box-shadow: 5px 5px 5px 0 whitesmoke;
 }
-     
-.continent-name
-{
+
+.continent-name {
   grid-area: a;
   font-size: large;
   color: yellow;
   font-family: Arial, Helvetica, sans-serif;
 }
-     
-.city-temperature
-{
+
+.city-temperature {
   grid-area: b;
   font-weight: bolder;
   font-size: x-large;
   font-family: Arial, Helvetica, sans-serif;
 }
-     
-.city-name-time
-{
+
+.city-name-time {
   grid-area: c;
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
 }
-     
-.city-humidity
-{
+
+.city-humidity {
   grid-area: d;
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media screen and (width <= 1300px)
-{
-  .glance
-  {
+@media screen and (width <= 1300px) {
+  .glance {
     position: relative;
     font-size: large;
     transition: 0.8s;
   }
 
-  .filter
-  {
+  .filter {
     font-size: large;
     position: relative;
     right: 70px;
     transition: 0.8s;
   }
 
-  .updown-arrow img
-  {
+  .updown-arrow img {
     height: 1em;
     left: -110px;
     transition: 0.8s;
   }
 }
 
-
-@media screen and (width <= 1000px) 
-{
-  .vanishing-pipe
-  {
+@media screen and (width <= 1000px) {
+  .vanishing-pipe {
     display: none;
   }
-  
-  .glance
-  {
+
+  .glance {
     position: relative;
     font-size: large;
     transition: 0.8s;
   }
 
-  .filter
-  {
+  .filter {
     font-size: large;
     position: relative;
     right: 70px;
     transition: 0.8s;
   }
 
-  .updown-arrow img
-  {
+  .updown-arrow img {
     height: 1em;
     left: -110px;
     transition: 0.8s;
   }
 }
 
-@media screen and (width <= 900px)
-{
-  .time, .date, .temp-grid, .temp-grid-pipe, .hourly-info,
-  {
+@media screen and (width <= 900px) {
+  .time,
+  .date,
+  .temp-grid,
+  .temp-grid-pipe,
+  .hourly-info {
     left: -40px;
     transition: 0.5s;
   }
-  
-  .hourly-info > div
-  {
+
+  .hourly-info > div {
     padding: 3px;
     transition: 0.5s;
   }
 
-  .value
-  {
+  .value {
     font-size: x-large;
     transition: 0.5s;
   }
 
-  .option
-  {
+  .option {
     left: -30px;
     position: relative;
     transition: 0.5s;
   }
 
-  .mid-head
-  {
+  .mid-head {
     padding-left: 150px;
   }
 }
 
-@media screen and (width <= 850px) 
-{
-  .option, .temp-grid, .temp-grid-pipe
-  {
+@media screen and (width <= 850px) {
+  .option,
+  .temp-grid,
+  .temp-grid-pipe {
     font-size: large;
     left: -35px;
     position: relative;
     transition: 0.5s;
   }
 
-  .time, .sec, .date, .hourly-info
-  {
+  .time,
+  .sec,
+  .date,
+  .hourly-info {
     font-size: small;
     transition: 0.5s;
     display: inline;
   }
 
-  .top-container
-  {
+  .top-container {
     padding-left: 20px;
     padding-right: 20px;
     transition: 0.5s;
   }
 
-  .hourly-column img
-  {
+  .hourly-column img {
     height: 20px;
     transition: 0.5s;
     width: 20px;
   }
 
-  .top-container #city-img
-  {
+  .top-container #city-img {
     height: 90px;
     transition: 0.5s;
     width: 70px;
   }
 
-  .temp-grid
-  {
+  .temp-grid {
     padding-left: 20px;
     padding-right: 20px;
     transition: 0.5s;
   }
 
-  .heading
-  {
+  .heading {
     font-weight: 150;
   }
 
-  .things-to-sort
-  {
+  .things-to-sort {
     flex-wrap: wrap;
   }
 
-  .glance
-  {
+  .glance {
     position: relative;
     font-size: small;
     transition: 0.8s;
   }
 
-  .filter
-  {
+  .filter {
     font-size: small;
     position: relative;
     right: 70px;
     transition: 0.8s;
   }
 
-  .updown-arrow img
-  {
+  .updown-arrow img {
     height: 1em;
     left: -100px;
     transition: 0.8s;
   }
 
-  .mid-head
-  {
+  .mid-head {
     padding-left: 150px;
   }
 }
 
-@media screen and (width <= 750px) 
-{
-  .temp-grid
-  {
+@media screen and (width <= 750px) {
+  .temp-grid {
     padding-left: 15px;
     padding-right: 10px;
     transition: 0.5s;
   }
 
-  .option
-  {
+  .option {
     left: -30px;
     position: relative;
   }
 }
 
-@media screen and (width <=700px)
-{
-  .top-container
-  {
+@media screen and (width <=700px) {
+  .top-container {
     padding-left: 10px;
     padding-right: 10px;
     transition: 0.5s;
   }
 
-  .type
-  {
+  .type {
     font-size: small;
   }
 
-  .option
-  {
+  .option {
     left: -30px;
     position: relative;
     transition: 0.5s;
     width: 70%;
   }
 
-  .glance
-  {
+  .glance {
     position: relative;
     font-size: small;
     transition: 0.8s;
   }
 
-  .filter
-  {
+  .filter {
     font-size: small;
     position: relative;
     right: 70px;
     transition: 0.8s;
   }
 
-  .updown-arrow img
-  {
+  .updown-arrow img {
     height: 1em;
     left: -90px;
     transition: 0.8s;
   }
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  color: black;
+  background-color: rgb(250, 240, 240);
+  opacity: 70%;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 20;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.modal p {
+  color: black;
+}
+
+.close-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
 }

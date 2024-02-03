@@ -3,8 +3,11 @@
     <head>
         <title>Weather</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/style.css">
-        <script src="../javascript/node.js"></script>
+        <script src="../javascript/index.js" type="module"></script>
+        <script src="../javascript/topContainer.js" type="module"></script>
+        <script src="../javascript/invalidContition.js" type="module"></script>
     </head>
     <body>
         <div class="top-container">
@@ -110,6 +113,14 @@
                 </div>
             </div>
         </div>
+        <div class="modal hidden">
+            <button class="close-modal">&times;</button>
+            <h1>Invalid city Name🙁</h1><br>
+            <p>
+                Please enter a valid city name 🤘
+            </p>
+          </div>
+          <div class="overlay hidden"></div>
         <div class="mid-bg">
             <div class="mid-container">
                 <div class="mid-head">
