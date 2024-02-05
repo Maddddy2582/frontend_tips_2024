@@ -1,4 +1,4 @@
-export function changeFourValues(cityData, city) {
+export function updateWeatherElements(cityData, city) {
   const [celciusVal] = cityData[city].temperature.split("\u00B0");
   document.getElementById("tempid").innerText = `${cityData[city].temperature}`;
   document.getElementById("farenid").innerText =

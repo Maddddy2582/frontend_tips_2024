@@ -1,4 +1,4 @@
-export function changeHours(cityData, city, hours, state) {
+export function updateWeatherForecast(cityData, city, hours, state) {
   const changeTime = document.querySelectorAll(".change-time");
   const timeForcast = Array.from(changeTime).map(
     (element) => element.textContent
@@ -8,15 +8,13 @@ export function changeHours(cityData, city, hours, state) {
   const cloudTemp = Array.from(changeTempClass).map(
     (element) => element.textContent
   );
-  //console.log(hours);
-  console.log(state);
   let summa;
   for (let i = 0, currentTime = Number(hours); i < timeForcast.length; i++) {
     if (state === "AM") {
-      summa = changeStateAm(currentTime, timeForcast, changeTime, state, i);
+      summa = updateStateAm(currentTime, timeForcast, changeTime, state, i);
       currentTime = summa;
     } else {
-      summa = changeStatePm(currentTime, timeForcast, changeTime, state, i);
+      summa = updateStatePm(currentTime, timeForcast, changeTime, state, i);
       currentTime = summa;
     }
     for (let j = 0; j < 5; j++) {
@@ -27,7 +25,7 @@ export function changeHours(cityData, city, hours, state) {
   }
 }
 
-function changeStatePm(currentTime, timeForcast, changeTime, state, i) {
+function updateStatePm(currentTime, timeForcast, changeTime, state, i) {
   if (currentTime < 11) {
     currentTime++;
     timeForcast[i] = currentTime + "PM";
@@ -46,7 +44,7 @@ function changeStatePm(currentTime, timeForcast, changeTime, state, i) {
   return currentTime;
 }
 
-function changeStateAm(currentTime, timeForcast, changeTime, state, i) {
+function updateStateAm(currentTime, timeForcast, changeTime, state, i) {
   if (currentTime < 11) {
     currentTime++;
     timeForcast[i] = currentTime + "AM";
@@ -83,17 +81,36 @@ function changeTempValues(cityData, city) {
   ).innerText = `${cityData[city].nextFiveHrs[3]}`;
 }
 
+function isCloudy(cloudTempData) {
+  return cloudTempData > 23 && cloudTempData < 29;
+}
+
+function isRainy(cloudTempData) {
+  return cloudTempData <= 18;
+}
+
+function isWindy(cloudTempData) {
+  return cloudTempData > 18 && cloudTempData <= 22;
+}
+
+function isSunny(cloudTempData) {
+  return cloudTempData > 29;
+}
+
 function changeimg(cloudTempData, j) {
-  if (cloudTempData > 23 && cloudTempData < 29) {
+  if (isCloudy(cloudTempData)) {
     document.querySelectorAll(".cloud-img")[j].src =
       "../../docs/assets/Images/HTML & CSS/Weather Icons/cloudyIcon.svg";
-  } else if (cloudTempData <= 18) {
+  }
+  if (isRainy(cloudTempData)) {
     document.querySelectorAll(".cloud-img")[j].src =
       "../../docs/assets/Images/HTML & CSS/Weather Icons/rainyIconBlack.svg";
-  } else if (cloudTempData > 18 && cloudTempData <= 22) {
+  }
+  if (isWindy(cloudTempData)) {
     document.querySelectorAll(".cloud-img")[j].src =
       "../../docs/assets/Images/HTML & CSS/Weather Icons/windyIcon.svg";
-  } else {
+  }
+  if (isSunny(cloudTempData)) {
     document.querySelectorAll(".cloud-img")[j].src =
       "../../docs/assets/Images/HTML & CSS/Weather Icons/sunnyIcon.svg";
   }
