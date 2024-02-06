@@ -8,14 +8,28 @@ export function updateWeatherForecast(cityData, city, hours, state) {
   const cloudTemp = Array.from(changeTempClass).map(
     (element) => element.textContent
   );
-  let summa;
+  let changeTimeState, states;
   for (let i = 0, currentTime = Number(hours); i < timeForcast.length; i++) {
     if (state === "AM") {
-      summa = updateStateAm(currentTime, timeForcast, changeTime, state, i);
-      currentTime = summa;
+      [changeTimeState, states] = updateStateAm(
+        currentTime,
+        timeForcast,
+        changeTime,
+        state,
+        i
+      );
+      currentTime = changeTimeState;
+      state = states;
     } else {
-      summa = updateStatePm(currentTime, timeForcast, changeTime, state, i);
-      currentTime = summa;
+      [changeTimeState, states] = updateStatePm(
+        currentTime,
+        timeForcast,
+        changeTime,
+        state,
+        i
+      );
+      currentTime = changeTimeState;
+      state = states;
     }
     for (let j = 0; j < 5; j++) {
       let [cloudTempData] = cloudTemp[j].split("\u00B0");
@@ -41,7 +55,7 @@ function updateStatePm(currentTime, timeForcast, changeTime, state, i) {
     state = "PM";
     changeTime[i].textContent = timeForcast[i];
   }
-  return currentTime;
+  return [currentTime, state];
 }
 
 function updateStateAm(currentTime, timeForcast, changeTime, state, i) {
@@ -60,7 +74,7 @@ function updateStateAm(currentTime, timeForcast, changeTime, state, i) {
     state = "AM";
     changeTime[i].textContent = timeForcast[i];
   }
-  return currentTime;
+  return [currentTime, state];
 }
 
 function changeTempValues(cityData, city) {

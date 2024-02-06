@@ -40,7 +40,7 @@
         <p class="value" id="tempid"></p>
         <br />
         <br />
-        <p class="type">Temp F</p>
+        <p class="type">Temp &deg;F</p>
         <p class="value" id="farenid"></p>
       </div>
       <div class="temp-grid-pipe">
@@ -140,19 +140,19 @@
     <div class="mid-bg">
       <div class="mid-container">
         <div class="mid-head">Top cities around the world</div>
-        <div class="card1">
+        <div class="weather-icon">
           <img
             src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg"
             alt="sunnyicon"
           />
         </div>
-        <div class="card1">
+        <div class="weather-icon">
           <img
             src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg"
             alt="snowflake"
           />
         </div>
-        <div class="card1">
+        <div class="weather-icon">
           <img
             src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg"
             alt="rainyicon"
@@ -174,22 +174,22 @@
       <div class="city-container">
         <div class="main-city-container">
           <div class="card-container">
-            <div class="item1">New Delhi</div>
-            <div class="item2">
+            <div class="card-city-name">New Delhi</div>
+            <div class="card-city-icon">
               <img
                 src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg"
                 alt="sunnyicon"
               />25&deg;C
             </div>
-            <div class="item3">10:00AM</div>
-            <div class="item4">2-MAR-2020</div>
-            <div class="item5">
+            <div class="card-city-time">10:00AM</div>
+            <div class="card-city-date">2-MAR-2020</div>
+            <div class="card-city-humidity">
               <img
                 src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg"
                 alt="humudityicon"
               />56%
             </div>
-            <div class="item6">
+            <div class="card-city-precipitation">
               <img
                 src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg"
                 alt="precipitation"
@@ -201,15 +201,17 @@
     </div>
     <div class="bottom-container">
       <div class="cont-container">
-        <div class="glance">Cities across Continents at a Glance</div>
-        <div class="filter">Continent Name</div>
+        <div class="bottom-container-heading">
+          Cities across Continents at a Glance
+        </div>
+        <div class="filter-cityname">Continent Name</div>
         <div class="updown-arrow">
           <img
             src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\arrowDown.svg"
             alt="down-arrow"
           />
         </div>
-        <div class="filter">Temperature</div>
+        <div class="filter-cityname">Temperature</div>
         <div class="updown-arrow">
           <img
             src="..\..\docs\assets\Images\HTML & CSS\General Images & Icons\arrowUp.svg"
@@ -348,6 +350,6 @@
     </div>
   </body>
   <script src="../javascript/index.js" type="module"></script>
-  <script src="../javascript/topContainer.js" type="module"></script>
-  <script src="../javascript/invalidCondition.js" type="module"></script>
+  <script src="../javascript/top-container.js" type="module"></script>
+  <script src="../javascript/invalid-condition.js" type="module"></script>
 </html>
