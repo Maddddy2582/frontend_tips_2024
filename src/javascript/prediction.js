@@ -1,4 +1,11 @@
-export function updateWeatherForecast(cityData, city, hours, state) {
+/**
+ *
+ * @param cityData
+ * @param city
+ * @param hours
+ * @param state
+ */
+export function updateWeatherForecast (cityData, city, hours, state) {
   const changeTime = document.querySelectorAll(".change-time");
   const timeForcast = Array.from(changeTime).map(
     (element) => element.textContent
@@ -39,7 +46,15 @@ export function updateWeatherForecast(cityData, city, hours, state) {
   }
 }
 
-function updateStatePm(currentTime, timeForcast, changeTime, state, i) {
+/**
+ *
+ * @param currentTime
+ * @param timeForcast
+ * @param changeTime
+ * @param state
+ * @param i
+ */
+function updateStatePm (currentTime, timeForcast, changeTime, state, i) {
   if (currentTime < 11) {
     currentTime++;
     timeForcast[i] = currentTime + "PM";
@@ -58,7 +73,15 @@ function updateStatePm(currentTime, timeForcast, changeTime, state, i) {
   return [currentTime, state];
 }
 
-function updateStateAm(currentTime, timeForcast, changeTime, state, i) {
+/**
+ *
+ * @param currentTime
+ * @param timeForcast
+ * @param changeTime
+ * @param state
+ * @param i
+ */
+function updateStateAm (currentTime, timeForcast, changeTime, state, i) {
   if (currentTime < 11) {
     currentTime++;
     timeForcast[i] = currentTime + "AM";
@@ -69,7 +92,7 @@ function updateStateAm(currentTime, timeForcast, changeTime, state, i) {
     state = "PM";
     changeTime[i].textContent = timeForcast[i];
   } else if (currentTime === 12) {
-    timeForcast[i] = `1AM`;
+    timeForcast[i] = "1AM";
     currentTime = 1;
     state = "AM";
     changeTime[i].textContent = timeForcast[i];
@@ -77,7 +100,12 @@ function updateStateAm(currentTime, timeForcast, changeTime, state, i) {
   return [currentTime, state];
 }
 
-function changeTempValues(cityData, city) {
+/**
+ *
+ * @param cityData
+ * @param city
+ */
+function changeTempValues (cityData, city) {
   document.getElementById(
     "change-temp-now"
   ).innerText = `${cityData[city].temperature}`;
@@ -95,23 +123,44 @@ function changeTempValues(cityData, city) {
   ).innerText = `${cityData[city].nextFiveHrs[3]}`;
 }
 
-function isCloudy(cloudTempData) {
+/**
+ *
+ * @param cloudTempData
+ */
+function isCloudy (cloudTempData) {
   return cloudTempData > 23 && cloudTempData < 29;
 }
 
-function isRainy(cloudTempData) {
+/**
+ *
+ * @param cloudTempData
+ */
+function isRainy (cloudTempData) {
   return cloudTempData <= 18;
 }
 
-function isWindy(cloudTempData) {
+/**
+ *
+ * @param cloudTempData
+ */
+function isWindy (cloudTempData) {
   return cloudTempData > 18 && cloudTempData <= 22;
 }
 
-function isSunny(cloudTempData) {
+/**
+ *
+ * @param cloudTempData
+ */
+function isSunny (cloudTempData) {
   return cloudTempData > 29;
 }
 
-function changeimg(cloudTempData, j) {
+/**
+ *
+ * @param cloudTempData
+ * @param j
+ */
+function changeimg (cloudTempData, j) {
   if (isCloudy(cloudTempData)) {
     document.querySelectorAll(".cloud-img")[j].src =
       "../../docs/assets/Images/HTML & CSS/Weather Icons/cloudyIcon.svg";

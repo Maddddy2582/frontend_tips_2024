@@ -1,7 +1,11 @@
 import { updateTopContainerData } from "./dateandtime.js";
 import { invalidCityName } from "./invalid-condition.js";
 
-export function topContainer(cityData) {
+/**
+ *
+ * @param cityData
+ */
+export function topContainer (cityData) {
   const cityInput = document.querySelector(".city-input");
   cityInput.addEventListener("change", (event) => {
     let city = event.target.value;

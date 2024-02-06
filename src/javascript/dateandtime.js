@@ -2,14 +2,19 @@ import { updateWeatherElements } from "./forecast.js";
 import { updateWeatherForecast } from "./prediction.js";
 let intervalTime;
 
-export function updateTopContainerData(cityData, city) {
-  let absoluteTime = new Date().toLocaleString("en-US", {
-    timeZone: cityData[city].timeZone,
+/**
+ *
+ * @param cityData
+ * @param city
+ */
+export function updateTopContainerData (cityData, city) {
+  const absoluteTime = new Date().toLocaleString("en-US", {
+    timeZone: cityData[city].timeZone
   });
-  let [date, time] = absoluteTime.split(", ");
-  let [currenttime, state] = time.split(" ");
-  let [hours, min, sec] = currenttime.split(":");
-  let [month, day, year] = date.split("/");
+  const [date, time] = absoluteTime.split(", ");
+  const [currenttime, state] = time.split(" ");
+  const [hours, min, sec] = currenttime.split(":");
+  const [month, day, year] = date.split("/");
   const months = [
     "Jan",
     "Feb",
@@ -23,7 +28,7 @@ export function updateTopContainerData(cityData, city) {
     "Aug",
     "Oct",
     "Nov",
-    "Dec",
+    "Dec"
   ];
 
   document.getElementById("sec").innerText = ":" + sec;
@@ -44,12 +49,20 @@ export function updateTopContainerData(cityData, city) {
   );
 }
 
-function updateMainImage(city) {
+/**
+ *
+ * @param city
+ */
+function updateMainImage (city) {
   document.getElementById("city-img").src =
     "../../docs/assets/Images/HTML & CSS/Icons for cities/" + city + ".svg";
 }
 
-function updateState(state) {
+/**
+ *
+ * @param state
+ */
+function updateState (state) {
   if (state === "PM") {
     document.getElementById("state-img").src =
       "../../docs/assets/Images/HTML & CSS/General Images & Icons/pmState.svg";

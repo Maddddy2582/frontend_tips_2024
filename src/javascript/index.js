@@ -10,16 +10,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const cityData = await data.json();
     topContainer(cityData);
     dynamicCityOptions(cityData);
-    let city = "anadyr";
+    const city = "anadyr";
     document.getElementsByName("city-dropdown")[0].placeholder = "anadyr";
     updateTopContainerData(cityData, city);
   };
   loadCitiesDetails();
 });
 
-function dynamicCityOptions(cityData) {
+/**
+ *
+ * @param cityData
+ */
+function dynamicCityOptions (cityData) {
   const cityList = document.getElementById("city-options");
-  let cityNameArr = [];
+  const cityNameArr = [];
   for (const city in cityData) {
     cityNameArr.push(city);
     cityNameArr.sort();
