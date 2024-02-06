@@ -1,5 +1,6 @@
 import { updateWeatherElements } from "./forecast.js";
 import { updateWeatherForecast } from "./prediction.js";
+let intervalTime;
 
 export function updateTopContainerData(cityData, city) {
   let absoluteTime = new Date().toLocaleString("en-US", {
@@ -8,52 +9,40 @@ export function updateTopContainerData(cityData, city) {
   let [date, time] = absoluteTime.split(", ");
   let [currenttime, state] = time.split(" ");
   let [hours, min, sec] = currenttime.split(":");
-  document.getElementById("time").innerText = hours + ":";
-  document.querySelector(".minutes").innerText = min;
+  let [month, day, year] = date.split("/");
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Aug",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
 
-  document.getElementById("datejs").innerText = date.replaceAll("/", "-");
+  document.getElementById("sec").innerText = ":" + sec;
+  document.getElementById("time").innerText = hours + ":" + min + ":";
+  document.getElementById("sec").innerText = sec;
+  document.getElementById("datejs").innerText =
+    day + "-" + months[month - 1] + "-" + year;
   document.querySelector(".hourly-info").style.visibility = "visible";
-  updateSeconds(cityData, city);
-  //   updateMinutes(cityData, city);
+
   updateMainImage(city);
   updateState(state);
   updateWeatherElements(cityData, city);
   updateWeatherForecast(cityData, city, hours, state);
-  setInterval(() => updateSeconds(cityData, city), 1000);
-  //console.log((document.querySelector(".minutes").innerText = "madav"));
-  //setInterval(() => updateMinutes(cityData, city), 6000);
+  clearInterval(intervalTime);
+  intervalTime = setInterval(
+    () => updateTopContainerData(cityData, city),
+    1000
+  );
 }
-
-export function updateSeconds(cityData, city) {
-  let absoluteTime = new Date().toLocaleString("en-US", {
-    timeZone: cityData[city].timeZone,
-  });
-  let [date, time] = absoluteTime.split(", ");
-  let [currenttime, state] = time.split(" ");
-  let [hours, min, sec] = currenttime.split(":");
-  document.getElementById("sec").innerText = sec;
-  if (sec == 0) {
-    let absoluteTime = new Date().toLocaleString("en-US", {
-      timeZone: cityData[city].timeZone,
-    });
-    let [date, time] = absoluteTime.split(", ");
-    let [currenttime, state] = time.split(" ");
-    let [hours, min, sec] = currenttime.split(":");
-    //document.getElementById("sec").innerText = ":" + sec;
-    document.querySelector(".minutes").innerText = min;
-  }
-}
-
-// export function updateMinutes(cityData, city) {
-//   let absoluteTime = new Date().toLocaleString("en-US", {
-//     timeZone: cityData[city].timeZone,
-//   });
-//   let [date, time] = absoluteTime.split(", ");
-//   let [currenttime, state] = time.split(" ");
-//   let [hours, min, sec] = currenttime.split(":");
-//   //document.getElementById("sec").innerText = ":" + sec;
-//   document.getElementById("time").innerText = hours + ":" + min;
-// }
 
 function updateMainImage(city) {
   document.getElementById("city-img").src =

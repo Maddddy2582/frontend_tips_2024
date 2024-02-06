@@ -76,6 +76,11 @@ option {
   position: relative;
 }
 
+#state-img {
+  position: relative;
+  bottom: -6px;
+}
+
 #sec {
   font-size: 12px;
   font-weight: bolder;
@@ -168,6 +173,7 @@ h3 {
 
 .mid-container {
   background-color: black;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   position: sticky;
@@ -385,209 +391,6 @@ h3 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@media screen and (width <= 1300px) {
-  .glance {
-    position: relative;
-    font-size: large;
-    transition: 0.8s;
-  }
-
-  .filter {
-    font-size: large;
-    position: relative;
-    right: 70px;
-    transition: 0.8s;
-  }
-
-  .updown-arrow img {
-    height: 1em;
-    left: -110px;
-    transition: 0.8s;
-  }
-}
-
-@media screen and (width <= 1000px) {
-  .vanishing-pipe {
-    display: none;
-  }
-
-  .glance {
-    position: relative;
-    font-size: large;
-    transition: 0.8s;
-  }
-
-  .filter {
-    font-size: large;
-    position: relative;
-    right: 70px;
-    transition: 0.8s;
-  }
-
-  .updown-arrow img {
-    height: 1em;
-    left: -110px;
-    transition: 0.8s;
-  }
-}
-
-@media screen and (width <= 900px) {
-  .time,
-  .date,
-  .temp-grid,
-  .temp-grid-pipe,
-  .hourly-info {
-    left: -40px;
-    transition: 0.5s;
-  }
-
-  .hourly-info > div {
-    padding: 3px;
-    transition: 0.5s;
-  }
-
-  .value {
-    font-size: x-large;
-    transition: 0.5s;
-  }
-
-  .option {
-    left: -30px;
-    position: relative;
-    transition: 0.5s;
-  }
-
-  .mid-head {
-    padding-left: 150px;
-  }
-}
-
-@media screen and (width <= 850px) {
-  .option,
-  .temp-grid,
-  .temp-grid-pipe {
-    font-size: large;
-    left: -35px;
-    position: relative;
-    transition: 0.5s;
-  }
-
-  .time,
-  .sec,
-  .date,
-  .hourly-info {
-    font-size: small;
-    transition: 0.5s;
-    display: inline;
-  }
-
-  .top-container {
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: 0.5s;
-  }
-
-  .hourly-column img {
-    height: 20px;
-    transition: 0.5s;
-    width: 20px;
-  }
-
-  .top-container #city-img {
-    height: 90px;
-    transition: 0.5s;
-    width: 70px;
-  }
-
-  .temp-grid {
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: 0.5s;
-  }
-
-  .heading {
-    font-weight: 150;
-  }
-
-  .things-to-sort {
-    flex-wrap: wrap;
-  }
-
-  .glance {
-    position: relative;
-    font-size: small;
-    transition: 0.8s;
-  }
-
-  .filter {
-    font-size: small;
-    position: relative;
-    right: 70px;
-    transition: 0.8s;
-  }
-
-  .updown-arrow img {
-    height: 1em;
-    left: -100px;
-    transition: 0.8s;
-  }
-
-  .mid-head {
-    padding-left: 150px;
-  }
-}
-
-@media screen and (width <= 750px) {
-  .temp-grid {
-    padding-left: 15px;
-    padding-right: 10px;
-    transition: 0.5s;
-  }
-
-  .option {
-    left: -30px;
-    position: relative;
-  }
-}
-
-@media screen and (width <=700px) {
-  .top-container {
-    padding-left: 10px;
-    padding-right: 10px;
-    transition: 0.5s;
-  }
-
-  .type {
-    font-size: small;
-  }
-
-  .option {
-    left: -30px;
-    position: relative;
-    transition: 0.5s;
-    width: 70%;
-  }
-
-  .glance {
-    position: relative;
-    font-size: small;
-    transition: 0.8s;
-  }
-
-  .filter {
-    font-size: small;
-    position: relative;
-    right: 70px;
-    transition: 0.8s;
-  }
-
-  .updown-arrow img {
-    height: 1em;
-    left: -90px;
-    transition: 0.8s;
-  }
-}
-
 .hidden {
   display: none;
 }
@@ -631,4 +434,92 @@ h3 {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+@media screen and (width <= 1300px) {
+  .glance {
+    position: relative;
+    font-size: large;
+    transition: 0.8s;
+  }
+
+  .filter {
+    font-size: large;
+    position: relative;
+    right: 70px;
+    transition: 0.8s;
+  }
+
+  .updown-arrow img {
+    height: 1em;
+    left: -110px;
+    transition: 0.8s;
+  }
+}
+
+@media screen and (width <= 1000px) {
+  .vanishing-pipe {
+    display: none;
+  }
+
+  .glance {
+    position: relative;
+    font-size: large;
+    transition: 0.8s;
+  }
+
+  .filter {
+    font-size: large;
+    position: relative;
+    right: 70px;
+    transition: 0.8s;
+  }
+
+  .updown-arrow img {
+    height: 1em;
+    left: -95px;
+    transition: 0.8s;
+  }
+}
+
+@media screen and (width <= 900px) {
+  .time,
+  .date,
+  .temp-grid,
+  .temp-grid-pipe,
+  .hourly-info {
+    left: -40px;
+    transition: 0.5s;
+  }
+
+  .hourly-info > div {
+    padding: 3px;
+    transition: 0.5s;
+  }
+
+  .value {
+    font-size: x-large;
+    transition: 0.5s;
+  }
+
+  .option {
+    left: -60px;
+    position: relative;
+    transition: 0.5s;
+  }
+
+  .mid-head {
+    padding-left: 150px;
+  }
+
+  .city-input {
+    position: relative;
+    left: -30px;
+  }
+
+  #sec,
+  #state-img {
+    position: relative;
+    left: -40px;
+  }
 }
