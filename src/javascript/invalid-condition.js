@@ -9,10 +9,18 @@ const btnCloseModal = document.querySelector(".close-modal");
  * @param cityData
  * @param city
  */
-export function invalidCityName (cityData, city) {
+export function invalidCityName(cityData, city) {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
   document.querySelector(".city-input").style.visibility = "hidden";
+  const summa = document.querySelector(".overlay");
+  summa.addEventListener("click", function () {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+    document.querySelector(".city-input").style.visibility = "visible";
+    document.querySelector(".city-input").value = "Anadyr";
+    updateTopContainerData(cityData, city);
+  });
 
   btnCloseModal.addEventListener("click", function () {
     modal.classList.add("hidden");
