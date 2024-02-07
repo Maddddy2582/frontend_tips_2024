@@ -8,125 +8,127 @@
   </head>
   <body>
     <div class="top-container">
-      <img
-        id="city-img"
-        src="..\..\docs\assets\Images\HTML & CSS\Icons for cities\anadyr.svg"
-        alt="image"
-        height="110"
-        width="110"
-      />
-      <div class="city-selection">
-        <input
-          type="text"
-          placeholder="Select City!!"
-          list="city-options"
-          name="citydropdown"
-          onfocus="this.value=''"
-          class="city-input"
+      <div class="top-container-slide">
+        <img
+          id="city-img"
+          src="..\..\docs\assets\Images\HTML & CSS\Icons for cities\anadyr.svg"
+          alt="image"
+          height="110"
+          width="110"
         />
-        <datalist id="city-options"></datalist>
-        <div>
-          <p class="time">
-            <time id="time">
-              <p id="sec"></p>
-            </time>
-            <img id="state-img" alt=" " height="50" width="50" />
-          </p>
-          <p class="date" id="datejs"></p>
-        </div>
-      </div>
-      <div class="temp-grid">
-        <p class="type">Temp &deg;C</p>
-        <p class="value" id="tempid"></p>
-        <br />
-        <br />
-        <p class="type">Temp &deg;F</p>
-        <p class="value" id="farenid"></p>
-      </div>
-      <div class="temp-grid-pipe">
-        <div class="pipe"></div>
-        <div class="pipe"></div>
-      </div>
-      <div class="temp-grid">
-        <p class="type">Humidity</p>
-        <p class="value" id="humidityid"></p>
-        <br />
-        <br />
-        <p class="type">Precipitation</p>
-        <p class="value" id="precipitationid"></p>
-      </div>
-      <div class="hourly-info">
-        <div class="hourly-column">
-          <p>NOW</p>
-          <p class="hourly-info-pipe"></p>
-          <img
-            class="cloud-img"
-            src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\cloudyIcon.svg"
-            alt="condition"
-            height="30"
-            width="30"
+        <div class="city-selection">
+          <input
+            type="text"
+            placeholder="Select City!!"
+            list="city-options"
+            name="citiesdropdown"
+            onfocus="this.value=''"
+            class="city-input"
           />
-          <p id="change-temp-now" class="tempValue">25&deg;C</p>
+          <datalist id="city-options"></datalist>
+          <div>
+            <p class="time">
+              <time id="time">
+                <p id="sec"></p>
+              </time>
+              <img id="state-img" alt=" " height="50" width="50" />
+            </p>
+            <p class="date" id="datejs"></p>
+          </div>
         </div>
-        <div>
-          <div class="vanishing-pipe"></div>
+        <div class="temp-grid">
+          <p class="type">Temp &deg;C</p>
+          <p class="value" id="tempid"></p>
+          <br />
+          <br />
+          <p class="type">Temp &deg;F</p>
+          <p class="value" id="farenid"></p>
         </div>
-        <div class="hourly-column">
-          <p class="change-time"></p>
-          <p class="hourly-info-pipe"></p>
-          <img
-            class="cloud-img"
-            src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIconBlack.svg"
-            alt="condition"
-            height="30"
-            width="30"
-          />
-          <p id="change-temp1" class="tempValue"></p>
+        <div class="temp-grid-pipe">
+          <div class="pipe"></div>
+          <div class="pipe"></div>
         </div>
-        <div>
-          <div class="vanishing-pipe"></div>
+        <div class="temp-grid">
+          <p class="type">Humidity</p>
+          <p class="value" id="humidityid"></p>
+          <br />
+          <br />
+          <p class="type">Precipitation</p>
+          <p class="value" id="precipitationid"></p>
         </div>
-        <div class="hourly-column">
-          <p class="change-time"></p>
-          <p class="hourly-info-pipe"></p>
-          <img
-            class="cloud-img"
-            src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg"
-            alt="condition"
-            height="30"
-            width="30"
-          />
-          <p id="change-temp2" class="tempValue"></p>
-        </div>
-        <div>
-          <div class="vanishing-pipe"></div>
-        </div>
-        <div class="hourly-column">
-          <p class="change-time"></p>
-          <p class="hourly-info-pipe"></p>
-          <img
-            class="cloud-img"
-            src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg"
-            alt="condition"
-            height="30"
-            width="30"
-          />
-          <p id="change-temp3" class="tempValue"></p>
-        </div>
-        <div>
-          <div class="vanishing-pipe"></div>
-        </div>
-        <div class="hourly-column">
-          <p class="change-time"></p>
-          <p class="hourly-info-pipe"></p>
-          <img
-            class="cloud-img"
-            src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg"
-            alt="condition"
-            height="30"
-            width="30"
-          />
-          <p id="change-temp4" class="tempValue"></p>
+        <div class="hourly-info">
+          <div class="hourly-column">
+            <p>NOW</p>
+            <p class="hourly-info-pipe"></p>
+            <img
+              class="cloud-img"
+              src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\cloudyIcon.svg"
+              alt="condition"
+              height="30"
+              width="30"
+            />
+            <p id="change-temp-now" class="tempValue"></p>
+          </div>
+          <div>
+            <div class="vanishing-pipe"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="change-time"></p>
+            <p class="hourly-info-pipe"></p>
+            <img
+              class="cloud-img"
+              src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIconBlack.svg"
+              alt="condition"
+              height="30"
+              width="30"
+            />
+            <p id="change-temp1" class="tempValue"></p>
+          </div>
+          <div>
+            <div class="vanishing-pipe"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="change-time"></p>
+            <p class="hourly-info-pipe"></p>
+            <img
+              class="cloud-img"
+              src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg"
+              alt="condition"
+              height="30"
+              width="30"
+            />
+            <p id="change-temp2" class="tempValue"></p>
+          </div>
+          <div>
+            <div class="vanishing-pipe"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="change-time"></p>
+            <p class="hourly-info-pipe"></p>
+            <img
+              class="cloud-img"
+              src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg"
+              alt="condition"
+              height="30"
+              width="30"
+            />
+            <p id="change-temp3" class="tempValue"></p>
+          </div>
+          <div>
+            <div class="vanishing-pipe"></div>
+          </div>
+          <div class="hourly-column">
+            <p class="change-time"></p>
+            <p class="hourly-info-pipe"></p>
+            <img
+              class="cloud-img"
+              src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\windyIcon.svg"
+              alt="condition"
+              height="30"
+              width="30"
+            />
+            <p id="change-temp4" class="tempValue"></p>
+          </div>
         </div>
       </div>
     </div>

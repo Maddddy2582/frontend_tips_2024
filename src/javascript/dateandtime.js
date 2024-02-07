@@ -7,9 +7,9 @@ let intervalTime;
  * @param cityData
  * @param city
  */
-export function updateTopContainerData (cityData, city) {
+export function updateTopContainerData(cityData, city) {
   const absoluteTime = new Date().toLocaleString("en-US", {
-    timeZone: cityData[city].timeZone
+    timeZone: cityData[city].timeZone,
   });
   const [date, time] = absoluteTime.split(", ");
   const [currenttime, state] = time.split(" ");
@@ -28,14 +28,14 @@ export function updateTopContainerData (cityData, city) {
     "Aug",
     "Oct",
     "Nov",
-    "Dec"
+    "Dec",
   ];
 
   document.getElementById("sec").innerText = ":" + sec;
   document.getElementById("time").innerText = hours + ":" + min + ":";
   document.getElementById("sec").innerText = sec;
   document.getElementById("datejs").innerText =
-    day + "-" + months[month - 1] + "-" + year;
+    day.padStart(2, 0) + " - " + months[month - 1] + " - " + year;
   document.querySelector(".hourly-info").style.visibility = "visible";
 
   updateMainImage(city);
@@ -53,7 +53,7 @@ export function updateTopContainerData (cityData, city) {
  *
  * @param city
  */
-function updateMainImage (city) {
+function updateMainImage(city) {
   document.getElementById("city-img").src =
     "../../docs/assets/Images/HTML & CSS/Icons for cities/" + city + ".svg";
 }
@@ -62,7 +62,7 @@ function updateMainImage (city) {
  *
  * @param state
  */
-function updateState (state) {
+function updateState(state) {
   if (state === "PM") {
     document.getElementById("state-img").src =
       "../../docs/assets/Images/HTML & CSS/General Images & Icons/pmState.svg";

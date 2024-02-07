@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     topContainer(cityData);
     dynamicCityOptions(cityData);
     const city = "anadyr";
-    document.getElementsByName("citydropdown")[0].placeholder = "anadyr";
+    document.getElementsByName("citiesdropdown")[0].placeholder = "anadyr";
     updateTopContainerData(cityData, city);
   };
   loadCitiesDetails();

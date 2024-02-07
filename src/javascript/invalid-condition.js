@@ -12,12 +12,12 @@ const btnCloseModal = document.querySelector(".close-modal");
 export function invalidCityName(cityData, city) {
   modal.classList.remove("hidden");
   overlay.classList.remove("hidden");
-  document.querySelector(".city-input").style.visibility = "hidden";
-  const summa = document.querySelector(".overlay");
-  summa.addEventListener("click", function () {
+  document.querySelector(".city-input").disabled = true;
+  const closeModal = document.querySelector(".overlay");
+  closeModal.addEventListener("click", function () {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
-    document.querySelector(".city-input").style.visibility = "visible";
+    document.querySelector(".city-input").disabled = false;
     document.querySelector(".city-input").value = "Anadyr";
     updateTopContainerData(cityData, city);
   });
@@ -25,7 +25,7 @@ export function invalidCityName(cityData, city) {
   btnCloseModal.addEventListener("click", function () {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
-    document.querySelector(".city-input").style.visibility = "visible";
+    document.querySelector(".city-input").disabled = false;
     document.querySelector(".city-input").value = "Anadyr";
     updateTopContainerData(cityData, city);
   });

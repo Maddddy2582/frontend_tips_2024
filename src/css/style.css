@@ -13,9 +13,22 @@ body {
 .top-container {
   background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/background.svg");
   background-size: cover;
+}
+
+.top-container-slide {
+  animation: slide-in 1.5s ease-out;
   display: flex;
   padding: 40px;
   white-space: nowrap;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translatey(-250px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 .city-selection {
@@ -85,6 +98,7 @@ option {
   font-size: 12px;
   font-weight: bolder;
   display: inline;
+  color: bisque;
 }
 
 .temp-grid {
