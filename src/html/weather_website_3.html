@@ -36,28 +36,40 @@
             <p class="date" id="datejs"></p>
           </div>
         </div>
-        <div class="temp-grid">
-          <p class="type">Temp &deg;C</p>
-          <p class="value" id="tempid"></p>
-          <br />
-          <br />
-          <p class="type">Temp &deg;F</p>
-          <p class="value" id="farenid"></p>
-        </div>
-        <div class="temp-grid-pipe">
-          <div class="pipe"></div>
-          <div class="pipe"></div>
-        </div>
-        <div class="temp-grid">
-          <p class="type">Humidity</p>
-          <p class="value" id="humidityid"></p>
-          <br />
-          <br />
-          <p class="type">Precipitation</p>
-          <p class="value" id="precipitationid"></p>
+        <div class="weather-elements">
+          <div class="temp-hum-precep-flex">
+            <div>
+              <p class="type">Temp &deg;C</p>
+              <br />
+              <p class="value" id="tempid"></p>
+            </div>
+            <div class="temp-hum-precep-flex-pipe">
+              <div class="pipe"></div>
+            </div>
+            <div>
+              <p class="type">Humidity</p>
+              <br />
+              <p class="value" id="humidityid"></p>
+            </div>
+          </div>
+          <div class="temp-hum-precep-flex">
+            <div>
+              <p class="type">Temp &deg;F</p>
+              <br />
+              <p class="value" id="farenid"></p>
+            </div>
+            <div class="temp-hum-precep-flex-pipe">
+              <div class="pipe"></div>
+            </div>
+            <div>
+              <p class="type">Precipitation</p>
+              <br />
+              <p class="value" id="precipitationid"></p>
+            </div>
+          </div>
         </div>
         <div class="hourly-info">
-          <div class="hourly-column">
+          <div class="hourly-info-columns">
             <p>NOW</p>
             <p class="hourly-info-pipe"></p>
             <img
@@ -72,7 +84,7 @@
           <div>
             <div class="vanishing-pipe"></div>
           </div>
-          <div class="hourly-column">
+          <div class="hourly-info-columns">
             <p class="change-time"></p>
             <p class="hourly-info-pipe"></p>
             <img
@@ -87,7 +99,7 @@
           <div>
             <div class="vanishing-pipe"></div>
           </div>
-          <div class="hourly-column">
+          <div class="hourly-info-columns">
             <p class="change-time"></p>
             <p class="hourly-info-pipe"></p>
             <img
@@ -102,7 +114,7 @@
           <div>
             <div class="vanishing-pipe"></div>
           </div>
-          <div class="hourly-column">
+          <div class="hourly-info-columns">
             <p class="change-time"></p>
             <p class="hourly-info-pipe"></p>
             <img
@@ -117,7 +129,7 @@
           <div>
             <div class="vanishing-pipe"></div>
           </div>
-          <div class="hourly-column">
+          <div class="hourly-info-columns">
             <p class="change-time"></p>
             <p class="hourly-info-pipe"></p>
             <img
@@ -140,7 +152,7 @@
     </div>
     <div class="overlay hidden"></div>
     <div class="mid-bg">
-      <div class="mid-container">
+      <div class="mid-container-head">
         <div class="mid-head">Top cities around the world</div>
         <div class="weather-icon">
           <img
@@ -160,10 +172,10 @@
             alt="rainyicon"
           />
         </div>
-        <div class="card-display">
+        <div class="mid-container-head-text">
           <p>Display Top</p>
         </div>
-        <div class="card-input">
+        <div class="mid-container-head-input">
           <input
             type="number"
             placeholder="3"
@@ -175,7 +187,7 @@
       </div>
       <div class="city-container">
         <div class="main-city-container">
-          <div class="card-container">
+          <div class="city-card-container">
             <div class="card-city-name">New Delhi</div>
             <div class="card-city-icon">
               <img

@@ -57,9 +57,8 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   height: 38px;
-  margin-bottom: 10px;
   margin-left: 40px;
-  margin-top: 30px;
+  margin-top: 55px;
   width: 150px;
   text-transform: capitalize;
 }
@@ -101,13 +100,14 @@ option {
   color: bisque;
 }
 
-.temp-grid {
+.temp-hum-precep-flex {
   align-items: center;
   color: white;
-  display: grid;
+  display: flex;
   padding-left: 30px;
   padding-right: 30px;
   position: relative;
+  justify-items: center;
 }
 
 .type {
@@ -121,11 +121,10 @@ option {
   font-weight: bolder;
 }
 
-.temp-grid-pipe {
+.temp-hum-precep-flex-pipe {
   align-items: center;
-  display: grid;
+  padding: 30px;
   position: relative;
-  row-gap: 30px;
 }
 
 .pipe {
@@ -143,7 +142,7 @@ option {
 .vanishing-pipe {
   background-color: white;
   height: 25px;
-  margin-top: 36px;
+  margin-top: 50px;
   width: 1px;
 }
 
@@ -155,7 +154,7 @@ option {
   width: 60%;
 }
 
-.hourly-column {
+.hourly-info-columns {
   display: grid;
   justify-items: center;
   row-gap: 10px;
@@ -185,7 +184,7 @@ h3 {
   white-space: nowrap;
 }
 
-.mid-container {
+.mid-container-head {
   background-color: black;
   border-radius: 25px;
   display: flex;
@@ -201,11 +200,11 @@ h3 {
   flex-grow: 0.1;
 }
 
-.card-display {
+.mid-container-head-text {
   width: max-content;
 }
 
-.card-input {
+.mid-container-head-input {
   width: 60px;
   font-size: medium;
 }
@@ -233,12 +232,12 @@ h3 {
   width: 80%;
 }
 
-.mid-container > div {
+.mid-container-head > div {
   color: white;
   position: sticky;
 }
 
-.card-container img {
+.city-card-container img {
   height: 1em;
 }
 
@@ -259,7 +258,7 @@ h3 {
   display: none;
 }
 
-.card-container {
+.city-card-container {
   background-color: rgb(21 21 25);
   background-image: url("../../docs/assets/Images/HTML & CSS/General Images & Icons/cityImage.svg");
   background-position: right bottom;
@@ -282,7 +281,7 @@ h3 {
     "f .";
 }
 
-.card-container:hover {
+.city-card-container:hover {
   box-shadow: 0 0 15px 0 rgb(255 255 255);
   transform: scale(1.1);
 }
@@ -499,8 +498,7 @@ h3 {
 @media screen and (width <= 900px) {
   .time,
   .date,
-  .temp-grid,
-  .temp-grid-pipe,
+  .temp-hum-precep-flex,
   .hourly-info {
     left: -40px;
     transition: 0.5s;
