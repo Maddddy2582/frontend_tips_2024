@@ -1,6 +1,7 @@
 "use strict";
 import { updateTopContainerData } from "./dateandtime.js";
 import { topContainer } from "./top-container.js";
+import { midContainer } from "./midcontainer.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const loadCitiesDetails = async () => {
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cityData = await data.json();
     topContainer(cityData);
     dynamicCityOptions(cityData);
+    midContainer(cityData);
     const city = "anadyr";
     document.getElementsByName("citiesdropdown")[0].placeholder = "anadyr";
     updateTopContainerData(cityData, city);

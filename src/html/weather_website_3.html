@@ -158,18 +158,21 @@
           <img
             src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg"
             alt="sunnyicon"
+            id="sunny-icon-class"
           />
         </div>
         <div class="weather-icon">
           <img
             src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\snowflakeIcon.svg"
             alt="snowflake"
+            id="snowy-icon-class"
           />
         </div>
         <div class="weather-icon">
           <img
             src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\rainyIcon.svg"
             alt="rainyicon"
+            id="rainy-icon-class"
           />
         </div>
         <div class="mid-container-head-text">
@@ -182,34 +185,39 @@
             min="3"
             max="10"
             class="cities-counter"
+            value="3"
           />
         </div>
       </div>
       <div class="city-container">
-        <div class="main-city-container">
-          <div class="city-card-container">
-            <div class="card-city-name">New Delhi</div>
-            <div class="card-city-icon">
-              <img
-                src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg"
-                alt="sunnyicon"
-              />25&deg;C
-            </div>
-            <div class="card-city-time">10:00AM</div>
-            <div class="card-city-date">2-MAR-2020</div>
-            <div class="card-city-humidity">
-              <img
-                src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg"
-                alt="humudityicon"
-              />56%
-            </div>
-            <div class="card-city-precipitation">
-              <img
-                src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg"
-                alt="precipitation"
-              />10%
+        <div class="main-container-container">
+          <button id="leftbutton">&lt;</button>
+          <div class="main-city-container">
+            <div class="city-card-container">
+              <div class="card-city-name">New Delhi</div>
+              <div class="card-city-icon">
+                <img
+                  src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\sunnyIcon.svg"
+                  alt="sunnyicon"
+                /><span id="card-city-temp">25&deg;C</span>
+              </div>
+              <div class="card-city-time">10:00AM</div>
+              <div class="card-city-date">2-MAR-2020</div>
+              <div class="card-city-humidity">
+                <img
+                  src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\humidityIcon.svg"
+                  alt="humudityicon"
+                />56%
+              </div>
+              <div class="card-city-precipitation">
+                <img
+                  src="..\..\docs\assets\Images\HTML & CSS\Weather Icons\precipitationIcon.svg"
+                  alt="precipitation"
+                />10%
+              </div>
             </div>
           </div>
+          <button id="rightbutton">&gt;</button>
         </div>
       </div>
     </div>
@@ -366,4 +374,5 @@
   <script src="../javascript/index.js" type="module"></script>
   <script src="../javascript/top-container.js" type="module"></script>
   <script src="../javascript/invalid-condition.js" type="module"></script>
+  <script src="../javascript/midcontainer.js"></script>
 </html>
