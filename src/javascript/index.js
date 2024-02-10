@@ -1,7 +1,6 @@
-"use strict";
-import { updateTopContainerData } from "./dateandtime.js";
-import { topContainer } from "./top-container.js";
-import { midContainer } from "./midcontainer.js";
+import { updateTopContainerData } from "./topcontainer/dateandtime.js";
+import { topContainer } from "./topcontainer/top-container.js";
+import { midContainer } from "./midcontainer/midcontainer.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const loadCitiesDetails = async () => {
