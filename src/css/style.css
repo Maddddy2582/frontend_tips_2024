@@ -259,7 +259,6 @@ h3 {
   background-repeat: no-repeat;
   background-size: 60%;
   height: 200px;
-  position: sticky;
   width: 250px;
   border-radius: 20px;
   display: grid;
@@ -284,11 +283,11 @@ h3 {
     transform: scale(1, 0.025);
   }
 }
-
+/* 
 .city-card-container:hover {
   box-shadow: 0 0 15px 0 rgb(255 255 255);
   transform: scale(1.1);
-}
+} */
 
 .card-city-name {
   color: white;
