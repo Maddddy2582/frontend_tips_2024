@@ -45,10 +45,9 @@ export function midContainer(cityData) {
     sunnyIconClass.classList.add("border-bottom");
     snowyIconClass.classList.remove("border-bottom");
     rainyIconClass.classList.remove("border-bottom");
+    cloningCards("sunny", sunnycities, cityData);
     document.querySelector(".city-card-container").style.animation =
       "wipe-enter 1s";
-
-    cloningCards("sunny", sunnycities, cityData);
 
     document.querySelector(".cities-counter").disabled = true;
   });
@@ -60,9 +59,9 @@ export function midContainer(cityData) {
     sunnyIconClass.classList.remove("border-bottom");
     snowyIconClass.classList.add("border-bottom");
     rainyIconClass.classList.remove("border-bottom");
+    cloningCards("snowflake", snowycities, cityData);
     document.querySelector(".city-card-container").style.animation =
       "wipe-enter 1s";
-    cloningCards("snowflake", snowycities, cityData);
     document.querySelector(".cities-counter").disabled = true;
   });
 
@@ -83,16 +82,14 @@ export function midContainer(cityData) {
       showbutton();
       document.querySelector(".city-card-container").style.animation = "none";
       cardNum = f.target.value;
-      console.log(rainycities);
-
-      cloningCards("rainy", rainycities.splice(0, cardNum), cityData);
+      cloningCards("rainy", rainycities.slice(0, cardNum), cityData);
     });
   });
   document.querySelector("#leftbutton").addEventListener("click", function () {
-    document.querySelector(".main-city-container").scrollLeft -= 150;
+    document.querySelector(".main-city-container").scrollLeft -= 260;
   });
   document.querySelector("#rightbutton").addEventListener("click", function () {
-    document.querySelector(".main-city-container").scrollLeft += 150;
+    document.querySelector(".main-city-container").scrollLeft += 260;
   });
 }
 //---------------------------------------------------------
@@ -106,7 +103,7 @@ function showbutton() {
   if (counterValue.value > 5) {
     document.querySelector("#leftbutton").style.visibility = "visible";
     document.querySelector("#rightbutton").style.visibility = "visible";
-    document.querySelector(".main-city-container").scrollLeft += 300;
+    document.querySelector(".main-city-container").scrollLeft += 310;
   } else {
     document.querySelector("#leftbutton").style.visibility = "hidden";
     document.querySelector("#rightbutton").style.visibility = "hidden";
@@ -114,7 +111,6 @@ function showbutton() {
 }
 function setTime(liveTime, nodeList, j) {
   let [date, time] = liveTime.split(", ");
-  // console.log(...time);
   nodeList[j].querySelector(".card-city-time").textContent = `${time}`;
   return date;
 }

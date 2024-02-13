@@ -196,10 +196,6 @@ h3 {
   padding-right: 40px;
 }
 
-/* .card {
-  flex-grow: 0.1;
-} */
-
 .mid-container-head-text {
   width: max-content;
 }
@@ -208,10 +204,6 @@ h3 {
   width: 60px;
   font-size: medium;
 }
-
-/* .card option {
-  color: black;
-} */
 
 .weather-icon {
   flex-grow: 0.1;
@@ -227,10 +219,6 @@ h3 {
   transition: 0.5s;
   width: 0%;
 }
-
-/* .weather-icon:hover::after {
-  width: 80%;
-} */
 
 .mid-container-head > div {
   color: white;
@@ -249,8 +237,7 @@ h3 {
   display: flex;
   flex-wrap: nowrap;
   gap: 50px;
-  /* justify-content: left; */
-  overflow-x: scroll;
+  overflow-x: hidden;
   padding: 20px 0;
   margin: 60px 80px;
   justify-content: flex-start;
@@ -340,23 +327,21 @@ h3 {
 #rightbutton {
   color: black;
   position: absolute;
-  right: 0px;
+  right: 20px;
   top: 230px;
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  z-index: 5;
 }
 
 #leftbutton {
   color: black;
   position: absolute;
-  left: 0px;
+  left: 15px;
   top: 230px;
   width: 40px;
   height: 40px;
   border-radius: 50px;
-  z-index: 5;
 }
 
 .border-bottom {
@@ -471,7 +456,7 @@ h3 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 30%;
+  height: 38%;
   background-color: rgb(0 0 0 / 60%);
   backdrop-filter: blur(3px);
   z-index: 5;
