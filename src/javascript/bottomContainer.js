@@ -1,11 +1,12 @@
+import { clickContinent } from "./sortBottomCards";
+import { clickTemperature } from "./sortBottomCards";
+
+
 let countries = [];
 const bottomCardContainer = document.querySelector(".bottom-cards-container");
-const continentNameArrow = document.querySelector(".continent-arrow");
-const tempNameArrow = document.querySelector(".temp-arrow");
-const sortArrow = document.querySelector(".sort-arrow");
-const sortTempArrow = document.querySelector(".sort-temp-arrow");
+
 let currentTempValue = true;
-let arrow = 0;
+
 
 export function bottomContainer(cityData) {
   //Getting continents name
@@ -30,6 +31,7 @@ function allContinentCities(cityData, continents, currentTempValue) {
     return sortTemp;
   }
   countries = [];
+  console.log(continents)
   continents.forEach((element) => {
     countries.push(
       Object.keys(cityData)
@@ -39,48 +41,35 @@ function allContinentCities(cityData, continents, currentTempValue) {
         .sort(sortCities(cityData, currentTempValue))
     );
   });
+  console.log(countries)
   const totalCountries = countries.flat();
+  console.log(totalCountries)
   displayCards(cityData, totalCountries);
 }
 
-function clickContinent(cityData, continents) {
-  continentNameArrow.addEventListener("click", function () {
-    continents.reverse();
-    if (arrow == 0) {
-      arrow = 1;
-    } else {
-      arrow = 0;
-    }
-    let arrowName = arrow ? "Down" : "Up";
-    sortArrow.src = `../../docs/assets/Images/HTML & CSS/General Images & Icons/arrow${arrowName}.svg`;
-    allContinentCities(cityData, continents, currentTempValue);
-  });
-}
 
-function clickTemperature(cityData, continents) {
-  tempNameArrow.addEventListener("click", function () {
-    currentTempValue = currentTempValue ? false : true;
 
-    if (arrow == 0) {
-      arrow = 1;
-    } else {
-      arrow = 0;
-    }
-    let arrowName = arrow ? "Down" : "Up";
-    sortTempArrow.src = `../../docs/assets/Images/HTML & CSS/General Images & Icons/arrow${arrowName}.svg`;
-    allContinentCities(cityData, continents, currentTempValue);
+function findTime(cityData,element)
+{
+  const absoluteTime = new Date().toLocaleString("en-US", {
+    timeZone: cityData[element].timeZone,
   });
+  const [hr,min]= absoluteTime.split(", ")[1].split(":")
+  return (`${hr}:${min}`)
 }
 
 function displayCards(cityData, totalCountries) {
+
   bottomCardContainer.innerHTML = " ";
   totalCountries.slice(0, 12).forEach((element) => {
+    const liveTime =findTime(cityData,element)
+
     const HTML = `<div class="bottom-cards">
         <div class="continent-name">${
           cityData[element].timeZone.split("/")[0]
         }</div>
         <div class="city-temperature">${cityData[element].temperature}</div>
-        <div class="city-name-time">${cityData[element].cityName}</div>
+        <div class="city-name-time">${cityData[element].cityName} , ${liveTime}</div>
         <div class="city-humidity">
           <img
             src="../../docs/assets/Images/HTML & CSS/Weather Icons/humidityIcon.svg"
@@ -95,3 +84,9 @@ function displayCards(cityData, totalCountries) {
     bottomCardContainer.insertAdjacentHTML("beforeend", HTML);
   });
 }
+
+
+
+
+
+
