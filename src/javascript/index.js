@@ -1,6 +1,7 @@
 import { updateTopContainerData } from "./topcontainer/dateandtime.js";
 import { topContainer } from "./topcontainer/top-container.js";
 import { midContainer } from "./midcontainer/midcontainer.js";
+import { bottomContainer } from "./bottomContainer.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const loadCitiesDetails = async () => {
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     topContainer(cityData);
     dynamicCityOptions(cityData);
     midContainer(cityData);
+    bottomContainer(cityData);
     const city = "anadyr";
     document.getElementsByName("citiesdropdown")[0].placeholder = "anadyr";
     updateTopContainerData(cityData, city);
