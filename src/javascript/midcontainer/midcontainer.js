@@ -1,14 +1,11 @@
-// let cardNum;
 const mainCityContainer = document.querySelector(".main-city-container");
 let counterValue = document.querySelector(".cities-counter");
+
 counterValue.value = 3;
 export function midContainer(cityData) {
-  // hidebutton();
-  // function defaultSortType() {
-  //   cloningCards("sunny", sunnycities, cityData);
-  // }
-  // defaultSortType();
-
+  const sunnyIconClass = document.getElementById("sunny-icon-class");
+  const snowyIconClass = document.getElementById("snowy-icon-class");
+  const rainyIconClass = document.getElementById("rainy-icon-class");
   hideLeftButton();
   hideRightButton();
   const cityValue = document.querySelector(".city-input");
@@ -46,12 +43,20 @@ export function midContainer(cityData) {
   );
 
   //----------------------SUNNY CITIES---------------------------------------------
-  const sunnyIconClass = document.getElementById("sunny-icon-class");
+
+  counterValue.value = 3;
+  hideLeftButton();
+  hideRightButton();
+  sunnyIconClass.classList.add("border-bottom");
+  snowyIconClass.classList.remove("border-bottom");
+  rainyIconClass.classList.remove("border-bottom");
+  cloningCards("sunny", sunnycities, cityData);
+  document.querySelector(".cities-counter").disabled = true;
+
   sunnyIconClass.addEventListener("click", function () {
     counterValue.value = 3;
     hideLeftButton();
     hideRightButton();
-    // hidebutton();
     sunnyIconClass.classList.add("border-bottom");
     snowyIconClass.classList.remove("border-bottom");
     rainyIconClass.classList.remove("border-bottom");
@@ -60,7 +65,7 @@ export function midContainer(cityData) {
   });
 
   //---------------------------SNOWY CITIES--------------------------------
-  const snowyIconClass = document.getElementById("snowy-icon-class");
+
   snowyIconClass.addEventListener("click", function () {
     counterValue.value = 2;
     hideLeftButton();
@@ -73,7 +78,7 @@ export function midContainer(cityData) {
   });
 
   //--------------RAINY CITIES-------------------------------------------------
-  const rainyIconClass = document.getElementById("rainy-icon-class");
+
   rainyIconClass.addEventListener("click", function () {
     counterValue.value = 3;
     sunnyIconClass.classList.remove("border-bottom");

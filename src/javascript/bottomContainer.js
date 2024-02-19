@@ -1,12 +1,10 @@
-import { clickContinent } from "./sortBottomCards";
-import { clickTemperature } from "./sortBottomCards";
-
+import { clickContinent } from "./sortBottomCards.js";
+import { clickTemperature } from "./sortBottomCards.js";
 
 let countries = [];
 const bottomCardContainer = document.querySelector(".bottom-cards-container");
-
-let currentTempValue = true;
-
+export let currentTempValue = true;
+let clearTime;
 
 export function bottomContainer(cityData) {
   //Getting continents name
@@ -22,7 +20,7 @@ export function bottomContainer(cityData) {
   allContinentCities(cityData, continents, currentTempValue);
 }
 
-function allContinentCities(cityData, continents, currentTempValue) {
+export function allContinentCities(cityData, continents, currentTempValue) {
   function sortCities(cityData, currentTempValue) {
     const sortTemp = (a, b) =>
       currentTempValue
@@ -31,8 +29,9 @@ function allContinentCities(cityData, continents, currentTempValue) {
     return sortTemp;
   }
   countries = [];
-  console.log(continents)
+  console.log(continents);
   continents.forEach((element) => {
+    console.log(Object.keys(cityData));
     countries.push(
       Object.keys(cityData)
         .filter((key) =>
@@ -41,35 +40,39 @@ function allContinentCities(cityData, continents, currentTempValue) {
         .sort(sortCities(cityData, currentTempValue))
     );
   });
-  console.log(countries)
+  console.log(countries);
   const totalCountries = countries.flat();
-  console.log(totalCountries)
+  clearInterval(clearTime);
+  clearTime = setInterval(() => {
+    displayCards(cityData, totalCountries);
+  }, 1000);
+
   displayCards(cityData, totalCountries);
 }
 
-
-
-function findTime(cityData,element)
-{
+function findTime(cityData, element) {
   const absoluteTime = new Date().toLocaleString("en-US", {
     timeZone: cityData[element].timeZone,
   });
-  const [hr,min]= absoluteTime.split(", ")[1].split(":")
-  return (`${hr}:${min}`)
+  const [time, sessions] = absoluteTime.split(", ")[1].split(" ");
+  const [hr, min] = time.split(":");
+  const session = sessions;
+  return `${hr}:${min} ${session}`;
 }
 
 function displayCards(cityData, totalCountries) {
-
   bottomCardContainer.innerHTML = " ";
   totalCountries.slice(0, 12).forEach((element) => {
-    const liveTime =findTime(cityData,element)
+    const liveTime = findTime(cityData, element);
 
     const HTML = `<div class="bottom-cards">
         <div class="continent-name">${
           cityData[element].timeZone.split("/")[0]
         }</div>
         <div class="city-temperature">${cityData[element].temperature}</div>
-        <div class="city-name-time">${cityData[element].cityName} , ${liveTime}</div>
+        <div class="city-name-time">${
+          cityData[element].cityName
+        } , ${liveTime}</div>
         <div class="city-humidity">
           <img
             src="../../docs/assets/Images/HTML & CSS/Weather Icons/humidityIcon.svg"
@@ -84,9 +87,3 @@ function displayCards(cityData, totalCountries) {
     bottomCardContainer.insertAdjacentHTML("beforeend", HTML);
   });
 }
-
-
-
-
-
-
