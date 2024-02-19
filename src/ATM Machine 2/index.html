@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATM Machine</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h3>ATM Machine</h3>
+    <div class="atm">
+      <form class="sign-in">
+        <input
+          type="number"
+          placeholder="Account Number"
+          class="account-number"
+        />
+        <input type="number" placeholder="Enter pin" class="account-pin" />
+        <button class="btn-submit">Submit</button>
+      </form>
+      <section class="ui">
+        <h4 class="welcome"></h4>
+        <main class="atm-machine">
+          <div class="withdraw">
+            <button class="btn-withdraw">Withdraw</button>
+            <input
+              class="withdraw-amount"
+              type="number"
+              placeholder="Withdraw amount"
+            />
+          </div>
+          <div class="deposit">
+            <button class="btn-deposit">Deposit</button>
+            <input
+              class="deposit-amount"
+              type="number"
+              placeholder="Deposit amount"
+            />
+          </div>
+          <div class="balance">
+            <button class="btn-balance">Balance</button>
+          </div>
+          <div class="logout">
+            <button class="btn-logout">Log Out</button>
+          </div>
+        </main>
+      </section>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

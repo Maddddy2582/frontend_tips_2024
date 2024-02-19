@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 10px;
+  border: solid black 2px;
+  text-align: center;
+}
+h3 {
+  text-transform: uppercase;
+  padding: 25px;
+}
+.atm {
+  display: inline-flex;
+  gap: 50px;
+}
+.sign-in {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome {
+  text-align: start;
+  padding: 10px;
+}
+
+.account-number,
+.account-pin,
+.btn-submit {
+  width: 250px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.ui {
+  opacity: 0;
+}
+
+.withdraw-amount,
+.deposit-amount {
+  width: 200px;
+  margin: 10px;
+  padding: 5px;
+}
+
+.btn-balance,
+.btn-home,
+.btn-deposit,
+.btn-withdraw {
+  width: 100px;
+  padding: 5px;
+  margin: 10px;
+}
