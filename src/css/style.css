@@ -20,6 +20,7 @@ body {
   display: flex;
   padding: 40px;
   white-space: nowrap;
+  justify-content: center;
 }
 
 @keyframes slide-in {
