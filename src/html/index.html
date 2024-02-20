@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main class="sprinkler-system">
+      <div class="selector-section">
+        <p class="selector-text">Selector</p>
+        <div class="selector-bottom">
+          <div class="checkbox-flex">
+            <p class="checkbox-label">Run Mode?</p>
+            <input type="checkbox" id="mode-selector" />
+          </div>
+          <div class="radio-box">
+            <div class="radio-topsection">
+              <p class="radio-back">Back</p>
+              <p class="radio-left">Left</p>
+            </div>
+            <div class="radio-btns">
+              <input type="radio" id="front" name="zone-selector" />
+              <input type="radio" id="back" name="zone-selector" />
+              <input type="radio" id="right" name="zone-selector" />
+              <input type="radio" id="left" name="zone-selector" />
+            </div>
+            <div class="radio-bottomsection">
+              <p class="radio-front">Front</p>
+              <p class="radio-right">Right</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="zone-config">
+        <p class="zone-label">Zone configuration</p>
+        <div class="zone-config-bottom">
+          <div class="zone-range">
+            <p>Zone Order</p>
+            <input type="range" min="1" max="4" class="zone-slider" />
+          </div>
+          <div class="zone-input">
+            <p>Zone Time (Sec)</p>
+            <input type="number" />
+          </div>
+        </div>
+      </div>
+      <div class="zone-indicators">
+        <p class="zone-indicators-label">Zone Indicators</p>
+        <div class="zone-indicators-bottom">
+          <div class="zone-left">LEFT</div>
+          <div class="zone-config-middle">
+            <div class="zone-front">FRONT</div>
+            <div class="zone-back">BACK</div>
+          </div>
+          <div class="zone-right">RIGHT</div>
+        </div>
+      </div>
+      <div class="timer">
+        <p class="timer-label">Timer</p>
+        <time>
+          <p class="total-timer">01:00</p>
+        </time>
+      </div>
+      <div class="footer">
+        <button class="off-btn">OFF</button>
+        <p>Power</p>
+      </div>
+    </main>
+  </body>
+  <script src="../javascript/script.js"></script>
+</html>
