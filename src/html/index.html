@@ -12,7 +12,7 @@
         <p class="selector-text">Selector</p>
         <div class="selector-bottom">
           <div class="checkbox-flex">
-            <p class="checkbox-label">Run Mode?</p>
+            <p class="checkbox-label">SETUP MODE</p>
             <input type="checkbox" id="mode-selector" />
           </div>
           <div class="radio-box">
@@ -38,11 +38,25 @@
         <div class="zone-config-bottom">
           <div class="zone-range">
             <p>Zone Order</p>
-            <input type="range" min="1" max="4" class="zone-slider" />
+            <input
+              type="range"
+              min="1"
+              max="4"
+              class="zone-slider"
+              list="values"
+              step="1"
+              value="0"
+            />
+            <datalist id="values" class="zone-slider">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </datalist>
           </div>
           <div class="zone-input">
             <p>Zone Time (Sec)</p>
-            <input type="number" />
+            <input type="number" class="zone-seconds" />
           </div>
         </div>
       </div>
@@ -60,11 +74,11 @@
       <div class="timer">
         <p class="timer-label">Timer</p>
         <time>
-          <p class="total-timer">01:00</p>
+          <p class="total-timer">00:<span class="seconds">00</span></p>
         </time>
       </div>
       <div class="footer">
-        <button class="off-btn">OFF</button>
+        <button class="off-btn">ON</button>
         <p>Power</p>
       </div>
     </main>
