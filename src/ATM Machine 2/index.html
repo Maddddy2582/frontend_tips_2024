@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,44 +7,53 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <h3>ATM Machine</h3>
-    <div class="atm">
-      <form class="sign-in">
-        <input
-          type="number"
-          placeholder="Account Number"
-          class="account-number"
-        />
-        <input type="number" placeholder="Enter pin" class="account-pin" />
-        <button class="btn-submit">Submit</button>
-      </form>
-      <section class="ui">
-        <h4 class="welcome"></h4>
-        <main class="atm-machine">
-          <div class="withdraw">
-            <button class="btn-withdraw">Withdraw</button>
-            <input
-              class="withdraw-amount"
-              type="number"
-              placeholder="Withdraw amount"
-            />
+    <div class="atm background">
+      <div>
+        <div class="panel sign-in in-box">
+          <input
+            type="number"
+            placeholder="Account Number"
+            class="account-number"
+          />
+          <input type="number" placeholder="Enter pin" class="account-pin" />
+          <button class="btn-submit">Submit</button>
+        </div>
+
+        <div class="account-details panel">
+          <h3 class="welcome-msg"></h3>
+          <p class="acc-name"></p>
+          <p class="acc-num"></p>
+          <p class="acc-bal"></p>
+          <button class="continue-btn">Continue</button>
+        </div>
+
+        <div class="panel in-box" id="buttons">
+          <h4>Select a function to perform:</h4>
+          <button class="main-withdraw-btn">Withdraw</button>
+          <button class="main-deposit-btn">Deposit</button>
+          <button class="main-balance-btn">Balance</button>
+        </div>
+
+        <div class="withdraw-panel panel">
+          <p>Enter the amount you want to withdraw:</p>
+          <input
+            class="withdraw-amount"
+            type="number"
+            placeholder="Withdraw amount"
+          />
+          <button class="withdraw-btn btn-style">WITHDRAW</button>
+        </div>
+        <div class="panel withdraw-msg">Withdraw Successful 🎉</div>
+        <div class="panel wait-msg">Please wait...</div>
+        <div class="panel error-msg">Insufficient Funds 😰</div>
+        <div class="panel receipt">
+          <p>Do you want a receipt?</p>
+          <div class="receipt-btns">
+            <button class="btn-style">Yes</button>
+            <button class="btn-style">No</button>
           </div>
-          <div class="deposit">
-            <button class="btn-deposit">Deposit</button>
-            <input
-              class="deposit-amount"
-              type="number"
-              placeholder="Deposit amount"
-            />
-          </div>
-          <div class="balance">
-            <button class="btn-balance">Balance</button>
-          </div>
-          <div class="logout">
-            <button class="btn-logout">Log Out</button>
-          </div>
-        </main>
-      </section>
+        </div>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>

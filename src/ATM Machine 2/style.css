@@ -2,25 +2,42 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 body {
   margin: 10px;
-  border: solid black 2px;
   text-align: center;
-}
-h3 {
-  text-transform: uppercase;
-  padding: 25px;
-}
-.atm {
-  display: inline-flex;
-  gap: 50px;
-}
-.sign-in {
-  display: flex;
-  flex-direction: column;
+  font-size: 20px;
+  /* background-color: black; */
 }
 
+.atm {
+  padding: 10px;
+  display: flex;
+  gap: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.border {
+  border: solid black;
+}
+.panel {
+  display: flex;
+  flex-direction: column;
+  padding: 310px 170px 300px;
+}
+.background {
+  background-image: url("../../docs/Images/atm.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 45%;
+}
+.in-box {
+  position: relative;
+  bottom: 90px;
+  align-items: center;
+}
 .welcome {
   text-align: start;
   padding: 10px;
@@ -28,28 +45,97 @@ h3 {
 
 .account-number,
 .account-pin,
-.btn-submit {
-  width: 250px;
-  margin: 10px;
-  padding: 5px;
-}
-
-.ui {
-  opacity: 0;
-}
-
 .withdraw-amount,
 .deposit-amount {
-  width: 200px;
+  width: 250px;
   margin: 10px;
+  height: 40px;
+  font-size: 20px;
   padding: 5px;
 }
-
-.btn-balance,
-.btn-home,
-.btn-deposit,
-.btn-withdraw {
-  width: 100px;
+.btn-submit,
+.main-withdraw-btn,
+.main-deposit-btn,
+.main-balance-btn,
+.btn-style,
+.continue-btn {
+  width: 250px;
+  height: 40px;
+  font-size: 20px;
   padding: 5px;
+  border-radius: 10px;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  position: relative;
+  bottom: 90px;
+}
+
+.continue-btn {
+  margin-left: 50px;
+}
+
+.withdraw-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  bottom: 90px;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+}
+h4 {
+  color: white;
+}
+.atm-label {
+  /* opacity: 0; */
+  color: white;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  position: relative;
+  bottom: 90px;
+}
+
+.withdraw-msg,
+.wait-msg,
+.error-msg {
+  position: relative;
+  bottom: 90px;
+  color: white;
+}
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.receipt {
+  position: relative;
+  bottom: 90px;
+  color: white;
+}
+
+.receipt-btns {
+  display: flex;
+  gap: 20px;
   margin: 10px;
+}
+
+.receipt-btns button {
+  width: 100px;
 }
