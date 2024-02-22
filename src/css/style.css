@@ -48,28 +48,35 @@
 }
 
 .radio-btns {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 10px;
 }
 
 .radio-back {
   position: relative;
-  left: 50px;
+  left: 45px;
+  top: 10px;
+  color: white;
 }
 
 .radio-left {
   position: relative;
-  right: 10px;
+  top: 10px;
+  color: white;
 }
 
 .radio-front {
   position: relative;
-  left: 10px;
+  bottom: 10px;
+  color: white;
 }
 
 .radio-right {
   position: relative;
-  right: 50px;
+  right: 40px;
+  bottom: 10px;
+  color: white;
 }
 
 .radio-topsection {
@@ -81,10 +88,11 @@
 .radio-bottomsection {
   display: flex;
   justify-content: space-between;
-  /* margin: 20px; */
-  /* margin-right: 60px; */
 }
-
+.zone-slider {
+  display: flex;
+  column-gap: 28px;
+}
 .zone-config {
   background-color: rgb(90, 155, 90);
   border: 2px solid black;
@@ -201,9 +209,18 @@ time {
   height: 40px;
 }
 
-.reser-btn {
+.reset-btn {
   position: relative;
   width: max-content;
-  left: 380px;
+  left: 350px;
   bottom: 70px;
+  opacity: 0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.btn {
+  transform: scale(2);
 }

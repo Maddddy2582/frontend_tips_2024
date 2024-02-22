@@ -9,11 +9,11 @@
   <body>
     <div>
       <main class="sprinkler-system">
-        <div class="selector-section">
+        <div class="selector-section hidden">
           <p class="selector-text">Selector</p>
           <div class="selector-bottom">
             <div class="checkbox-flex">
-              <p class="checkbox-label">SETUP MODE</p>
+              <p class="checkbox-label">RUN MODE</p>
               <input type="checkbox" id="mode-selector" />
             </div>
             <div class="radio-box">
@@ -22,10 +22,30 @@
                 <p class="radio-left">Left</p>
               </div>
               <div class="radio-btns">
-                <input type="radio" id="front" name="zone-selector" />
-                <input type="radio" id="back" name="zone-selector" />
-                <input type="radio" id="right" name="zone-selector" />
-                <input type="radio" id="left" name="zone-selector" />
+                <input
+                  type="radio"
+                  id="front"
+                  name="zone-selector"
+                  class="btn"
+                />
+                <input
+                  type="radio"
+                  id="back"
+                  name="zone-selector"
+                  class="btn"
+                />
+                <input
+                  type="radio"
+                  id="right"
+                  name="zone-selector"
+                  class="btn"
+                />
+                <input
+                  type="radio"
+                  id="left"
+                  name="zone-selector"
+                  class="btn"
+                />
               </div>
               <div class="radio-bottomsection">
                 <p class="radio-front">Front</p>
@@ -34,7 +54,7 @@
             </div>
           </div>
         </div>
-        <div class="zone-config">
+        <div class="zone-config hidden">
           <p class="zone-label">Zone configuration</p>
           <div class="zone-config-bottom">
             <div class="zone-range">
@@ -49,39 +69,47 @@
                 value="0"
               />
               <datalist id="values" class="zone-slider">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="1" label="1"></option>
+                <option value="2" label="2"></option>
+                <option value="3" label="3"></option>
+                <option value="4" label="4"></option>
               </datalist>
             </div>
             <div class="zone-input">
               <p>Zone Time (Sec)</p>
-              <input type="number" class="zone-seconds" />
+              <input
+                type="number"
+                class="zone-seconds"
+                placeholder="0"
+                min="0"
+                max="15"
+              />
             </div>
           </div>
         </div>
-        <div class="zone-indicators">
+        <div class="zone-indicators hidden">
           <p class="zone-indicators-label">Zone Indicators</p>
           <div class="zone-indicators-bottom">
-            <div class="zone-left">LEFT</div>
+            <div class="zone-left led" id="left">LEFT</div>
             <div class="zone-config-middle">
-              <div class="zone-front">FRONT</div>
-              <div class="zone-back">BACK</div>
+              <div class="zone-front led" id="frontled">FRONT</div>
+              <div class="zone-back led" id="backled">BACK</div>
             </div>
-            <div class="zone-right">RIGHT</div>
+            <div class="zone-right led" id="rightled">RIGHT</div>
           </div>
         </div>
-        <div class="timer">
+        <div class="timer hidden">
           <p class="timer-label">Timer</p>
           <time>
-            <p class="total-timer">00:<span class="seconds">00</span></p>
+            <p class="total-timer">
+              <span class="minutes">00:</span><span class="seconds">00</span>
+            </p>
           </time>
         </div>
         <div class="footer">
           <button class="off-btn">ON</button>
           <p>Power</p>
-          <button class="reser-btn">RESET</button>
+          <button class="reset-btn">RESET</button>
         </div>
       </main>
     </div>
