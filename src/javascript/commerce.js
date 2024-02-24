@@ -97,9 +97,7 @@ class Store {
 
   addItemstoCart() {
     cartItem = [...new Set(this.currentuser.cart)];
-    cartItem.forEach((element) => {
-      addingItemstoCart(element);
-    });
+    addingItemstoCart(cartItem);
   }
 
   calculateTotalAmount() {
@@ -204,20 +202,27 @@ const addingItemsTobuyerPage = function (element) {
   itemsToDisplay.insertAdjacentHTML("beforeend", HTML);
 };
 
-const addingItemstoCart = function (element) {
-  let HTML = `<div class="cart-item">
+const addingItemstoCart = function (cartItem) {
+  itemsInCart.innerHTML = "";
+  cartItem.forEach((element) => {
+    let HTML = `<div class="cart-item">
   <div class="product-img"></div>
   <p class="product-name">${element.itemname}</p>
   <p class="product-quantity">Quantity:${element.itemquantity}</p>
   <p class="product-cost">Price: $${element.itemcost}</p>
   </div>`;
-  itemsInCart.insertAdjacentHTML("beforeend", HTML);
+    itemsInCart.insertAdjacentHTML("beforeend", HTML);
+  });
 };
 
 itemsToDisplay.addEventListener("click", function (e) {
   itemsList.forEach((element) => {
     if (element.itemid == Number(e.target.getAttribute("id"))) {
       shop.currentuser.cart.push(element);
+      const quantityvalue = document.getElementsByClassName(
+        `${element.itemid}`
+      )[0].value;
+      console.log(quantityvalue);
     }
   });
 });
@@ -231,12 +236,3 @@ cartBtn.addEventListener("click", function () {
 buyerBackBtn.addEventListener("click", function () {
   shop.showPanel(buyerPage);
 });
-// shop.signin("Madav", "Maddy");
-
-// // shop.addtocart(100, 30);
-// console.log(usersList);
-// console.log(shop.currentuser);
-
-// console.log(shop.getselectedidquantity(101));
-
-// console.log(shop.currentuser);
