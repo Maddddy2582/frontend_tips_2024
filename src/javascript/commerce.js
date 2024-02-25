@@ -53,6 +53,7 @@ let quantityvalue;
 usersList = [];
 itemsList = [];
 
+
 // Class to create new item
 class Items {
   static itemidgenerator = 1;
@@ -85,6 +86,7 @@ class Store {
       alert("User dosen't exist please create an account");
       return;
     }
+    let credentials = false;
     usersList.forEach((element) => {
       if (element.name == username && element.password == userpassword) {
         if(element.isBuyer == true)
@@ -92,15 +94,18 @@ class Store {
           shop.showPanel(buyerPage);
           this.currentuser = element;
           this.addItemstobuyerPage();
+          credentials = true;
         }
         else
         {
           this.currentuser = element;
           addingItemstoSellerPage()
           shop.showPanel(sellerPage)
+          credentials = true;
         }
       } 
     });
+    if(!credentials) alert("Wrong credentials")
   }
 
   // Method to get the quantity of the required items
@@ -108,7 +113,6 @@ class Store {
     let available;
     itemsList.forEach((element) => {
       if (element.itemid === itemid) {
-        console.log(element.itemquantity);
         available = element.itemquantity;
       }
     });
@@ -193,9 +197,9 @@ createNewAccountBtn.addEventListener("click", function () {
   shop.showPanel(createAccountPage);
 });
 
-// Creating new account button
-createAccountBtn.addEventListener("click", function () {
-  if (!inputNameCreate.value || !inputPasswordCreate.value) {
+//Function to create new account
+const createNewUser = function(){
+  if (!inputNameCreate.value || !inputPasswordCreate.value || !selectUserType.value) {
     alert("Text field can't be blank");
     return;
   }
@@ -208,7 +212,31 @@ createAccountBtn.addEventListener("click", function () {
   inputNameCreate.value = "";
   inputPasswordCreate.value = "";
   shop.showPanel(logInPage);
-});
+}
+
+// Creating new account button
+createAccountBtn.addEventListener("click", function () {
+  if(usersList.length == 0)
+  {
+    createNewUser()
+  }
+  else{
+    let userexist = false;
+    usersList.forEach((element)=> {
+      if(element.name == inputNameCreate.value)
+      {
+        userexist = true
+        alert("Username taken :(")
+        inputNameCreate.value = "";
+        inputPasswordCreate.value = "";
+      }
+   })
+    if(!userexist)
+    {
+      createNewUser()
+    }
+  }
+});   
 
 // Back button in create account page
 backBtn.addEventListener("click", function () {
@@ -256,6 +284,7 @@ const addingItemstoCart = function (cartItem) {
   <div class="product-img"></div>
   <p class="product-name">${element.itemname}</p>
   <p class="product-quantity">Selected Quantity: ${element.itemselected}</p>
+  <p class="product-id">Product id: ${element.itemid}</p>
   <p class="product-cost">Total Price: $${element.itemcost*element.itemselected}</p>
   </div>`;
     itemsInCart.insertAdjacentHTML("beforeend", HTML);
@@ -275,7 +304,6 @@ itemsToDisplay.addEventListener("click", function (e) {
       }
       else
       {
-
         shop.currentuser.cart.push(element);
         element.itemselected = quantityvalue
       }
@@ -287,16 +315,7 @@ itemsToDisplay.addEventListener("click", function (e) {
 cartBtn.addEventListener("click", function () {
   shop.addItemstoCart();
   shop.showPanel(buyerCartPage);
-  cartItem.forEach(element=>{
-    itemsList.forEach(item => {
-        if(item.itemid == element.itemid)
-        {
-          item.itemquantity -= element.itemselected;
-        }
-     });
-  })
-  console.log(cartItem)
-   totalAmount.textContent = `$${shop.calculateTotalAmount()}`;
+  totalAmount.textContent = `$${shop.calculateTotalAmount()}`;
 });
 
 // Back button in checkout page
@@ -311,6 +330,14 @@ checkoutBtn.addEventListener("click",function()
     alert("Your cart is Empty")
   }
   else{
+    cartItem.forEach(element=>{
+      itemsList.forEach(item => {
+          if(item.itemid == element.itemid)
+          {
+            item.itemquantity -= element.itemselected;
+          }
+       });
+    })
     shop.showPanel(successPage)
   }
 })
@@ -388,7 +415,6 @@ addItemsBtn.addEventListener("click",function(){
 
 // Function to modify items
 sellerAllItem.addEventListener("click",function(e){
-  console.log(e.target.getAttribute("class"))
   if(e.target.getAttribute("class") == "btn-modify")
   {
     shop.showPanel(sellerModifyPage)
@@ -427,3 +453,5 @@ addItem("Laptop", 35000, 160 , "", "John");
 addItem("Mouse", 500, 50 , "", "noella");
 addItem("Microproccesor", 2000, 200, "", "Mitchelle");
 addItem("Arduino", 1000, 70 , "", "Robert");
+
+
