@@ -17,10 +17,18 @@ const buyerCartPage = document.querySelector(".buyer-cart-page");
 const itemsInCart = document.querySelector(".items-in-cart");
 const totalAmount = document.querySelector(".total-amount");
 const buyerBackBtn = document.querySelector(".btn-buyer-back");
+const homepageBtn = document.querySelector(".btn-homepage");
+const logoutBtn = document.querySelector(".btn-logout")
+const checkoutBtn = document.querySelector(".btn-checkout")
+const successPage = document.querySelector(".success-page")
+const sellerPage = document.querySelector(".seller-page")
+const logo = document.querySelector(".logo-img")
+
 // const productToCartBtn = document.querySelectorAll(".btn-product-tocart");
 console.log(btnCreateAccount);
 let settype;
 let cartItem;
+let quantityvalue;
 
 class Items {
   static itemidgenerator = 1;
@@ -34,6 +42,7 @@ class Items {
     this.itemcost = itemcost;
     this.itemquantity = itemquantity;
     this.isAvailable = true;
+    this.itemselected = 0;
     Items.itemidgenerator++;
   }
 }
@@ -51,11 +60,20 @@ class Store {
     }
     usersList.forEach((element) => {
       if (element.name == username && element.password == userpassword) {
-        shop.showPanel(buyerPage);
-        this.currentuser = element;
-        this.addItemstobuyerPage();
-      } else {
-        alert("User dosen't exist please create an account");
+        if(element.isBuyer == true)
+        {
+          shop.showPanel(buyerPage);
+          this.currentuser = element;
+          this.addItemstobuyerPage();
+        }
+        else
+        {
+          shop.showPanel(sellerPage)
+          this.currentuser = element;
+        }
+      } 
+      else {
+        
       }
     });
   }
@@ -90,9 +108,9 @@ class Store {
   // }
 
   addItemstobuyerPage() {
-    itemsList.forEach((element) => {
-      addingItemsTobuyerPage(element);
-    });
+
+      addingItemsTobuyerPage(itemsList);
+
   }
 
   addItemstoCart() {
@@ -103,7 +121,7 @@ class Store {
   calculateTotalAmount() {
     let total = 0;
     cartItem.forEach((element) => {
-      total += element.itemcost;
+      total += element.itemcost*element.itemselected;
     });
     return total;
   }
@@ -129,7 +147,7 @@ class User {
     this.id = User.useridgenerator;
     this.password = password;
     this.isBuyer = isBuyer;
-    User.generator++;
+    User.useridgenerator++;
   }
 }
 
@@ -149,6 +167,13 @@ const addItem = function (itemname, itemcost, itemquantity) {
 const shop = new Store();
 shop.showPanel(logInPage);
 
+
+// Logo
+logo.addEventListener("click",function()
+{
+  shop.showPanel(logInPage);
+});
+
 // Creating new Account button
 createNewAccountBtn.addEventListener("click", function () {
   shop.showPanel(createAccountPage);
@@ -156,6 +181,8 @@ createNewAccountBtn.addEventListener("click", function () {
 
 backBtn.addEventListener("click", function () {
   shop.showPanel(logInPage);
+  inputNameCreate.value = "";
+  inputPasswordCreate.value = "";
 });
 
 btnCreateAccount.addEventListener("click", function () {
@@ -169,8 +196,9 @@ btnCreateAccount.addEventListener("click", function () {
     settype = false;
   }
   addUser(inputNameCreate.value, inputPasswordCreate.value, settype);
+  inputNameCreate.value = "";
+  inputPasswordCreate.value = "";
   shop.showPanel(logInPage);
-  console.log(usersList);
 });
 
 btnSignin.addEventListener("click", function () {
@@ -179,8 +207,11 @@ btnSignin.addEventListener("click", function () {
     return;
   }
   shop.signin(inputNameSignin.value, inputPasswordSignin.value);
+  inputNameSignin.value = "";
+  inputPasswordSignin.value = ""; 
 });
 
+// addUser(1,1,true)
 addItem("Laptop", 35000, 160);
 addItem("Mouse", 500, 50);
 addItem("Microproccesor", 2000, 200);
@@ -188,18 +219,24 @@ addItem("Arduino", 1000, 70);
 addItem("Node mcu", 700, 500);
 addItem("Speakers", 3000, 50);
 addItem("Mobile", 20000, 20);
-console.log(itemsList);
+addItem("Speakers", 3000, 50);
+
 
 const addingItemsTobuyerPage = function (element) {
-  let HTML = `<div class="buyer-items">
-  <div class="product-img"></div>
-  <p class="product-name">${element.itemname}</p>
-  <p class="product-cost">Price: $${element.itemcost}</p>
-  <p class="product-quantity">Available Quantity: ${element.itemquantity}</p>
-  <input class="input-quantity ${element.itemid}" type="number" min="1" value="1" />
-  <button class="btn-product-tocart" id="${element.itemid}">Add to cart</button>
-  </div>`;
-  itemsToDisplay.insertAdjacentHTML("beforeend", HTML);
+  itemsToDisplay.innerHTML = "";
+  itemsList.forEach((element)=>
+  {
+    let HTML = `<div class="buyer-items">
+    <div class="product-img"></div>
+    <p class="product-name">${element.itemname}</p>
+    <p class="product-cost">Price: $${element.itemcost}</p>
+    <p class="product-quantity">Available Quantity: ${element.itemquantity}</p>
+    <input class="input-quantity ${element.itemid}" type="number" min="1" value="1" />
+    <button class="btn-product-tocart" id="${element.itemid}">Add to cart</button>
+    </div>`;
+    itemsToDisplay.insertAdjacentHTML("beforeend", HTML);
+
+  });
 };
 
 const addingItemstoCart = function (cartItem) {
@@ -208,8 +245,8 @@ const addingItemstoCart = function (cartItem) {
     let HTML = `<div class="cart-item">
   <div class="product-img"></div>
   <p class="product-name">${element.itemname}</p>
-  <p class="product-quantity">Quantity:${element.itemquantity}</p>
-  <p class="product-cost">Price: $${element.itemcost}</p>
+  <p class="product-quantity">Selected Quantity: ${element.itemselected}</p>
+  <p class="product-cost">Total Price: $${element.itemcost*element.itemselected}</p>
   </div>`;
     itemsInCart.insertAdjacentHTML("beforeend", HTML);
   });
@@ -218,11 +255,19 @@ const addingItemstoCart = function (cartItem) {
 itemsToDisplay.addEventListener("click", function (e) {
   itemsList.forEach((element) => {
     if (element.itemid == Number(e.target.getAttribute("id"))) {
-      shop.currentuser.cart.push(element);
       const quantityvalue = document.getElementsByClassName(
         `${element.itemid}`
       )[0].value;
-      console.log(quantityvalue);
+      if(element.itemquantity < quantityvalue)
+      {
+        alert("Not enough stock")
+      }
+      else
+      {
+
+        shop.currentuser.cart.push(element);
+        element.itemselected = quantityvalue
+      }
     }
   });
 });
@@ -230,9 +275,41 @@ itemsToDisplay.addEventListener("click", function (e) {
 cartBtn.addEventListener("click", function () {
   shop.addItemstoCart();
   shop.showPanel(buyerCartPage);
-  totalAmount.textContent = `$${shop.calculateTotalAmount()}`;
+  cartItem.forEach(element=>{
+    itemsList.forEach(item => {
+        if(item.itemid == element.itemid)
+        {
+          item.itemquantity -= element.itemselected;
+        }
+      
+    });
+  })
+  console.log(cartItem)
+   totalAmount.textContent = `$${shop.calculateTotalAmount()}`;
 });
 
 buyerBackBtn.addEventListener("click", function () {
   shop.showPanel(buyerPage);
 });
+
+checkoutBtn.addEventListener("click",function()
+{
+  if(totalAmount.textContent == "$0"){
+    alert("Your cart is Empty")
+  }
+  else{
+    shop.showPanel(successPage)
+  }
+})
+
+homepageBtn.addEventListener("click",function(){
+  shop.currentuser.cart = [];
+  shop.showPanel(buyerPage)
+  shop.addItemstobuyerPage()
+});
+
+logoutBtn.addEventListener("click",function()
+{
+  shop.showPanel(logInPage)
+});
+

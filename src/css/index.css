@@ -67,7 +67,9 @@ body {
 .btn-checkout,
 .btn-add-items,
 .btn-buyer-back,
-.btn-seller-back {
+.btn-seller-back,
+.btn-logout,
+.btn-homepage{
   padding: 10px;
   border-radius: 40px;
   cursor: pointer;
@@ -85,7 +87,9 @@ body {
 .btn-checkout:hover,
 .btn-add-items:hover,
 .btn-buyer-back:hover,
-.btn-seller-back:hover {
+.btn-seller-back:hover,
+.btn-logout:hover,
+.btn-homepage:hover {
   box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.3);
 }
 /* buyer page */
@@ -115,7 +119,7 @@ body {
   min-width: 300px;
 }
 .input-quantity {
-  width: 50px;
+  width: 60px;
   padding: 10px;
 }
 .product-img,
@@ -158,6 +162,14 @@ body {
   width: 300px;
   height: 50px;
   margin: 10px;
+}
+
+.success-page
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .hidden {
   display: none;
