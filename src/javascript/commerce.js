@@ -23,6 +23,15 @@ const checkoutBtn = document.querySelector(".btn-checkout")
 const successPage = document.querySelector(".success-page")
 const sellerPage = document.querySelector(".seller-page")
 const logo = document.querySelector(".logo-img")
+const toAddPageBtn = document.querySelector(".btn-to-add-page")
+const sellerAddPage = document.querySelector(".seller-add-page")
+const backSellerBtn = document.querySelector(".btn-seller-back")
+const addItemsBtn = document.querySelector(".btn-add-items")
+const inputSellerItemName = document.querySelector(".input-seller-item-name")
+const inputSellerItemCost = document.querySelector(".input-seller-item-cost")
+const inputSellerItemQuantity = document.querySelector(".input-seller-item-quantity")
+const sellerAllItem= document.querySelector(".seller-all-item")
+
 
 // const productToCartBtn = document.querySelectorAll(".btn-product-tocart");
 console.log(btnCreateAccount);
@@ -30,17 +39,20 @@ let settype;
 let cartItem;
 let quantityvalue;
 
+
 class Items {
   static itemidgenerator = 1;
-  itemcost = "";
   itemname = "";
+  itemcost = "";
   itemquantity = "";
+  itemaddedby = "";
   isAvailable = true;
-  constructor(itemname, itemcost, itemquantity) {
+  constructor(itemname, itemcost, itemquantity, itemaddedby) {
     this.itemid = Items.itemidgenerator;
     this.itemname = itemname;
     this.itemcost = itemcost;
     this.itemquantity = itemquantity;
+    this.itemaddedby = itemaddedby
     this.isAvailable = true;
     this.itemselected = 0;
     Items.itemidgenerator++;
@@ -68,12 +80,12 @@ class Store {
         }
         else
         {
-          shop.showPanel(sellerPage)
           this.currentuser = element;
+          addingItemstoSellerPage()
+          shop.showPanel(sellerPage)
         }
       } 
       else {
-        
       }
     });
   }
@@ -90,27 +102,9 @@ class Store {
     return available;
   }
 
-  // Method to add items to cart
-  // addtocart(selectedItemId, selectedQuantity) {
-  //   itemsList.forEach((element) => {
-  //     if (
-  //       element.itemid === selectedItemId &&
-  //       element.itemquantity > selectedQuantity
-  //     ) {
-  //       usersList.forEach((user) => {
-  //         if (user.id === this.currentuser.id) {
-  //           this.currentuser.cart.push(element);
-  //         }
-  //       });
-  //       element.itemquantity -= selectedQuantity;
-  //     }
-  //   });
-  // }
 
   addItemstobuyerPage() {
-
-      addingItemsTobuyerPage(itemsList);
-
+     addingItemsTobuyerPage(itemsList);
   }
 
   addItemstoCart() {
@@ -125,6 +119,15 @@ class Store {
     });
     return total;
   }
+
+  sellerAddItem(){
+    addingItemstoSellerPage()
+  }
+
+  // addItemstoSellerCart() {
+  //   sellerCartItem = [...new Set(this.currentuser.cart)];
+  //   addingItemstoCart(cartItem);
+  // }
 
   // Method to show the required
   showPanel(selectedPanel) {
@@ -160,8 +163,8 @@ const addUser = function (name, password, isBuyer) {
 };
 
 //Adding new items to the shop
-const addItem = function (itemname, itemcost, itemquantity) {
-  itemsList.push(new Items(itemname, itemcost, itemquantity));
+const addItem = function (itemname, itemcost, itemquantity, itemaddedby) {
+  itemsList.push(new Items(itemname, itemcost, itemquantity, itemaddedby));
 };
 
 const shop = new Store();
@@ -212,6 +215,7 @@ btnSignin.addEventListener("click", function () {
 });
 
 // addUser(1,1,true)
+addUser(2,2,false)
 addItem("Laptop", 35000, 160);
 addItem("Mouse", 500, 50);
 addItem("Microproccesor", 2000, 200);
@@ -219,23 +223,22 @@ addItem("Arduino", 1000, 70);
 addItem("Node mcu", 700, 500);
 addItem("Speakers", 3000, 50);
 addItem("Mobile", 20000, 20);
-addItem("Speakers", 3000, 50);
-
 
 const addingItemsTobuyerPage = function (element) {
   itemsToDisplay.innerHTML = "";
-  itemsList.forEach((element)=>
-  {
-    let HTML = `<div class="buyer-items">
-    <div class="product-img"></div>
-    <p class="product-name">${element.itemname}</p>
-    <p class="product-cost">Price: $${element.itemcost}</p>
-    <p class="product-quantity">Available Quantity: ${element.itemquantity}</p>
-    <input class="input-quantity ${element.itemid}" type="number" min="1" value="1" />
-    <button class="btn-product-tocart" id="${element.itemid}">Add to cart</button>
-    </div>`;
-    itemsToDisplay.insertAdjacentHTML("beforeend", HTML);
-
+  itemsList.forEach((element)=>{
+    if(element.itemquantity>0)
+    {
+      let HTML = `<div class="buyer-items">
+      <div class="product-img"></div>
+      <p class="product-name">${element.itemname}</p>
+      <p class="product-cost">Price: $${element.itemcost}</p>
+      <p class="product-quantity">Available Quantity: ${element.itemquantity}</p>
+      <input class="input-quantity ${element.itemid}" type="number" min="1" value="1" />
+      <button class="btn-product-tocart" id="${element.itemid}">Add to cart</button>
+      </div>`;
+      itemsToDisplay.insertAdjacentHTML("beforeend", HTML);
+      }
   });
 };
 
@@ -251,6 +254,32 @@ const addingItemstoCart = function (cartItem) {
     itemsInCart.insertAdjacentHTML("beforeend", HTML);
   });
 };
+
+const addingItemstoSellerPage = function (){
+  itemsList.forEach(element=>{
+    if(element.itemaddedby == shop.currentuser.id)
+    {
+      shop.currentuser.cart.push(element)
+    }
+  });
+  let sellerCartItem = [...new Set(shop.currentuser.cart)]
+  sellerAllItem.innerHTML = "";
+  sellerCartItem.forEach((element)=>{
+
+    if(element.itemaddedby == shop.currentuser.id)
+    {
+
+      let HTML = `<div class="seller-items">
+      <div class="seller-product-img"></div>
+      <p class="seller-product-name">${element.itemname}</p>
+      <p class="seller-product-cost">Price: $${element.itemcost}</p>
+      <p class="seller-product-quantity">Available Quantity: ${element.itemquantity}</p>
+    </div>`;
+      sellerAllItem.insertAdjacentHTML("beforeend",HTML)
+    }
+
+  })    
+}
 
 itemsToDisplay.addEventListener("click", function (e) {
   itemsList.forEach((element) => {
@@ -313,3 +342,23 @@ logoutBtn.addEventListener("click",function()
   shop.showPanel(logInPage)
 });
 
+toAddPageBtn.addEventListener("click",function(){
+  shop.showPanel(sellerAddPage)
+})
+
+backSellerBtn.addEventListener("click",function(){
+  shop.showPanel(sellerPage)
+})
+
+addItemsBtn.addEventListener("click",function(){
+  if(!inputSellerItemName.value || !inputSellerItemCost.value || !inputSellerItemQuantity.value)
+  {
+    alert("Text field can't be empty")
+    return;
+  }
+   addItem(inputSellerItemName.value,
+    Number(inputSellerItemCost.value),
+    Number(inputSellerItemQuantity.value),
+    shop.currentuser.id)
+  shop.sellerAddItem()
+})
