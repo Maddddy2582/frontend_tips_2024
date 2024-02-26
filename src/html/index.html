@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soliton Cart</title>
-    <link rel="icon" type="image/png" href="solitonlogo.png"  />
+    <link rel="icon" type="image/png" href="solitonlogo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -67,17 +67,18 @@
           <i style="font-size: 70px" class="fa">+</i>
         </div>
         <div class="seller-items-to-display">
-          <h3>Click the above button to add items to shop</h3><br />
+          <h3>Click the above button to add items to shop</h3>
+          <br />
           <h3>Items sold by Me:</h3>
-        <div class="seller-all-item">
-          <!-- <div class="seller-items">
+          <div class="seller-all-item">
+            <!-- <div class="seller-items">
             <div class="seller-product-img"></div>
             <p class="seller-product-name">Name of the product</p>
             <p class="seller-product-cost">Cost of the product</p>
             <p class="seller-product-quantity">Quantity</p>
             <button class="btn-modify">Modify</button>
           </div> -->
-        </div>
+          </div>
         </div>
       </section>
 
@@ -88,12 +89,17 @@
           placeholder="Item name"
           class="input-seller-item-name"
         />
-        <input type="number" placeholder="Cost" class="input-seller-item-cost" />
+        <input
+          type="number"
+          placeholder="Cost"
+          class="input-seller-item-cost"
+        />
         <input
           type="number"
           placeholder="Quantity"
           class="input-seller-item-quantity"
         />
+        <input type="file" class="item-img" accept="image/png, image/jpg" />
 
         <button class="btn-add-items">Add items</button>
         <button class="btn-seller-back btn-end">Back</button>
@@ -106,11 +112,20 @@
           placeholder="Item name"
           class="seller-modify-item-name"
         />
-        <input type="number" placeholder="Cost" class="seller-modify-item-cost" />
+        <input
+          type="number"
+          placeholder="Cost"
+          class="seller-modify-item-cost"
+        />
         <input
           type="number"
           placeholder="Quantity"
           class="seller-modify-item-quantity"
+        />
+        <input
+          type="file"
+          class="item-img-modify-page"
+          accept="image/png, image/jpg"
         />
 
         <button class="btn-modify-items">Modify</button>
@@ -180,7 +195,6 @@
         <button class="btn-homepage btn-end">Continue Shopping</button>
         <button class="btn-logout btn-end">Logout</button>
       </section>
-      
     </main>
   </body>
   <script src="../javascript/commerce.js"></script>
