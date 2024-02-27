@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 70%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  height: 100vh;
+  color: rgb(47, 47, 125);
+  background-image: linear-gradient(to top left, #76a1c4 0%, #7d72e1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  position: relative;
+  width: 100rem;
+  height: 80rem;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 15px;
+  display: flex;
+}
+
+.player-1,
+.player-2 {
+  display: flex;
+  flex: 50%;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px;
+}
+
+.player-name {
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.player-1-remaining-time,
+.player-2-remaining-time {
+  padding: 30px;
+  border-radius: 20px;
+  margin: 30px;
+  width: 200px;
+  background-color: rgb(119, 102, 213);
+  color: white;
+  font-size: 35px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  border-color: black;
+}
+.play-area {
+  position: absolute;
+  right: 35%;
+  margin-top: 30%;
+  z-index: 2;
+}
+.cell {
+  /* padding: 45px; */
+  font-weight: 900;
+  font-size: 40px;
+  width: 120px;
+  height: 120px;
+  border: 1px rgb(73, 73, 118) solid;
+  border-radius: 15px;
+  cursor: pointer;
+  text-align: center;
+  padding: 30px;
+}
+
+.btn-start {
+  position: absolute;
+  left: 44%;
+  color: rgb(47, 47, 125);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 25px;
+  padding: 25px;
+  border: none;
+  border-radius: 20px;
+  text-transform: uppercase;
+  top: 85%;
+}
+
+.btn-start:hover {
+  box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.3);
+}
+
+.status {
+  padding: 10px;
+  font-size: x-large;
+  text-align: center;
+}
