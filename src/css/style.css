@@ -28,7 +28,11 @@ body {
 .add-board-page,
 .create-account-page,
 .add-task-page,
-.project-summary-page {
+.project-summary-page,
+.add-new-member,
+.remove-member,
+.add-task-page-member,
+.project-summary-page-member {
   border-radius: 10px;
   border: solid 1px gray;
   display: flex;
@@ -42,7 +46,9 @@ body {
 
 .input-name,
 .input-password,
-.select-usertype {
+.select-usertype,
+.member-list,
+.member-list-remove {
   padding: 10px;
   border-radius: 5px;
 }
@@ -55,7 +61,13 @@ body {
 .btn-create-board,
 .btn-add-task,
 .btn-task-back,
-.btn-summary-back {
+.btn-summary-back,
+.btn-add-member,
+.btn-back-add-member,
+.btn-remove-member,
+.btn-back-remove-member,
+.btn-task-back-member,
+.btn-summary-back-member {
   padding: 10px;
   border-radius: 40px;
   cursor: pointer;
@@ -76,7 +88,13 @@ body {
 .btn-create-board:hover,
 .btn-add-task:hover,
 .btn-task-back:hover,
-.btn-summary-back:hover {
+.btn-summary-back:hover,
+.btn-add-member:hover,
+.btn-back-add-member:hover,
+.btn-remove-member:hover,
+.btn-back-remove-member:hover,
+.btn-task-back-member:hover,
+.btn-summary-back-member:hover {
   box-shadow: 8px 8px 6px rgba(0, 0, 0, 0.3);
 }
 

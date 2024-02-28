@@ -6,6 +6,18 @@ const btnTaskBack = document.querySelector(".btn-task-back");
 const btnSummaryBack = document.querySelector(".btn-summary-back");
 const adminAddTaskBtn = document.querySelector(".admin-add-task-btn");
 const adminSummaryBtn = document.querySelector(".admin-summary-btn");
+const addMemberBtn = document.querySelector(".add-member-btn");
+const btnAddMember = document.querySelector(".btn-add-member");
+const btnBackAddMember = document.querySelector(".btn-back-add-member");
+const memberAddTaskBtn = document.querySelector(".member-add-task-btn");
+const memberProjectSummaryBtn = document.querySelector(
+  ".member-project-summary-btn"
+);
+const memberLogout = document.querySelector(".member-logout");
+const removeMemberBtn = document.querySelector(".remove-member-btn");
+const btnBackRemoveMember = document.querySelector(".btn-back-remove-member");
+const btnTaskBackMember = document.querySelector(".btn-task-back-member");
+const btnSummaryBackMember = document.querySelector(".btn-summary-back-member");
 
 const inputNameSignin = document.querySelector(".input-name-signin");
 const inputPasswordSignin = document.querySelector(".input-password-signin");
@@ -20,6 +32,12 @@ const adminHomePageBoard = document.querySelector(".admin-home-page-board");
 const addTaskPage = document.querySelector(".add-task-page");
 const projectSummaryPage = document.querySelector(".project-summary-page");
 const adminLogout = document.querySelector(".admin-logout");
+const addNewMember = document.querySelector(".add-new-member");
+const removeMember = document.querySelector(".remove-member");
+const addTaskPageMember = document.querySelector(".add-task-page-member");
+const projectSummaryPageMember = document.querySelector(
+  ".project-summary-page-member"
+);
 
 const adminWelcomeMsg = document.querySelector(".admin-welcome");
 const memberWelcomeMsg = document.querySelector(".member-welcome");
@@ -136,6 +154,46 @@ adminSummaryBtn.addEventListener("click", function () {
 
 adminLogout.addEventListener("click", function () {
   interface.showSection(logInPage);
+});
+
+addMemberBtn.addEventListener("click", function () {
+  interface.showSection(addNewMember);
+});
+
+btnBackAddMember.addEventListener("click", function () {
+  interface.showSection(adminHomepage);
+});
+
+memberAddTaskBtn.addEventListener("click", function () {
+  interface.showSection(addTaskPageMember);
+});
+
+memberProjectSummaryBtn.addEventListener("click", function () {
+  interface.showSection(projectSummaryPage);
+});
+
+memberLogout.addEventListener("click", function () {
+  interface.showSection(logInPage);
+});
+
+removeMemberBtn.addEventListener("click", function () {
+  interface.showSection(removeMember);
+});
+
+btnBackRemoveMember.addEventListener("click", function () {
+  interface.showSection(adminHomepage);
+});
+
+btnTaskBackMember.addEventListener("click", function () {
+  interface.showSection(memberHomepage);
+});
+
+memberProjectSummaryBtn.addEventListener("click", function () {
+  interface.showSection(projectSummaryPageMember);
+});
+
+btnSummaryBackMember.addEventListener("click", function () {
+  interface.showSection(memberHomepage);
 });
 
 interface.showSection(logInPage);

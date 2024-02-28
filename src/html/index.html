@@ -24,31 +24,6 @@
         />
         <button class="btn-signin">Sign - in</button>
       </section>
-      <!-- <hr />
-        <h6>Don't have an account?</h6>
-        <button class="btn-create-new-account">Create new account</button>
-      </section> -->
-      <!-- <section class="create-account-page hidden">
-        <h5>Enter account details</h5>
-        <input
-          type="text"
-          placeholder="User Name"
-          class="input-name input-name-create"
-        />
-        <input
-          type="password"
-          maxlength="6"
-          placeholder="Password"
-          class="input-password input-password-create"
-        />
-        <select class="select-usertype">
-          <option value="" disabled selected hidden>Select account type</option>
-          <option>Admin</option>
-          <option>Member</option>
-        </select>
-        <button class="btn-create-account">Create account</button>
-        <button class="btn-back">Back</button>
-      </section> -->
       <section class="admin-homepage hidden">
         <div class="admin-page-header">
           <h3 class="admin-welcome">Welcome</h3>
@@ -99,8 +74,12 @@
         </div>
         <div class="admin-home-page-board">
           <div class="admin-side-bar">
-            <button class="btn-side-bar">Add New Task</button>
-            <button class="btn-side-bar">Project Summary</button>
+            <button class="btn-side-bar member-add-task-btn">
+              Add New Task
+            </button>
+            <button class="btn-side-bar member-project-summary-btn">
+              Project Summary
+            </button>
           </div>
           <div class="board-container">
             <h4 class="board-label">Kandan Board</h4>
@@ -122,6 +101,7 @@
         <button class="btn-create-board">Create</button>
         <button class="btn-board-back">Back</button>
       </section>
+
       <section class="add-task-page hidden">
         <h5>Add New Tasks:</h5>
         <p class="task-label">Task Name</p>
@@ -145,6 +125,7 @@
         <button class="btn-add-task">Add Task</button>
         <button class="btn-task-back">Back</button>
       </section>
+
       <section class="project-summary-page hidden">
         <h5>Project Summary:</h5>
         <p class="leader-name-label">Leader Name:</p>
@@ -152,6 +133,61 @@
         <p class="due-date-label">Due Date:</p>
         <p class="pending-tasks-label">Pending Tasks:</p>
         <button class="btn-summary-back">Back</button>
+      </section>
+
+      <section class="add-new-member hidden">
+        <p>Select the Member to Add:</p>
+        <select class="member-list">
+          <option value="" disabled selected hidden>Select Member</option>
+          <!-- <option>Admin</option>
+          <option>Member</option> -->
+        </select>
+        <button class="btn-add-member">Add Member</button>
+        <button class="btn-back-add-member">Back</button>
+      </section>
+
+      <section class="remove-member hidden">
+        <p>Select the Member to Remove:</p>
+        <select class="member-list-remove">
+          <option value="" disabled selected hidden>Select Member</option>
+          <!-- <option>Admin</option>
+          <option>Member</option> -->
+        </select>
+        <button class="btn-remove-member">Remove Member</button>
+        <button class="btn-back-remove-member">Back</button>
+      </section>
+
+      <section class="add-task-page-member hidden">
+        <h5>Add New Tasks:</h5>
+        <p class="task-label">Task Name</p>
+        <input
+          type="text"
+          placeholder="Task Name"
+          class="input-name input-task-name"
+        />
+        <p class="task-label">Due Date</p>
+        <input
+          type="date"
+          placeholder="due date"
+          class="input-password input-password-signin"
+        />
+        <p class="task-label">Assign a Member to the task:</p>
+        <select class="select-usertype">
+          <option value="" disabled selected hidden>Select Member</option>
+          <!-- <option>Admin</option>
+          <option>Member</option> -->
+        </select>
+        <button class="btn-add-task">Add Task</button>
+        <button class="btn-task-back-member">Back</button>
+      </section>
+
+      <section class="project-summary-page-member hidden">
+        <h5>Project Summary:</h5>
+        <p class="leader-name-label">Leader Name:</p>
+        <p class="members-name-label">Members Name:</p>
+        <p class="due-date-label">Due Date:</p>
+        <p class="pending-tasks-label">Pending Tasks:</p>
+        <button class="btn-summary-back-member">Back</button>
       </section>
     </main>
   </body>
