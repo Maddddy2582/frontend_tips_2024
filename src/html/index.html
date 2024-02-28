@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../assets/kanban icon.PNG" rel="icon" type="image/png" />
+  </head>
+  <body>
+    <main class="main-container">
+      <section class="log-in-page hidden">
+        <h5>Welcome to Maddy's planner</h5>
+        <input
+          type="text"
+          placeholder="User Name"
+          class="input-name input-name-signin"
+        />
+        <input
+          type="password"
+          maxlength="6"
+          placeholder="Password"
+          class="input-password input-password-signin"
+        />
+        <button class="btn-signin">Sign - in</button>
+      </section>
+      <!-- <hr />
+        <h6>Don't have an account?</h6>
+        <button class="btn-create-new-account">Create new account</button>
+      </section> -->
+      <!-- <section class="create-account-page hidden">
+        <h5>Enter account details</h5>
+        <input
+          type="text"
+          placeholder="User Name"
+          class="input-name input-name-create"
+        />
+        <input
+          type="password"
+          maxlength="6"
+          placeholder="Password"
+          class="input-password input-password-create"
+        />
+        <select class="select-usertype">
+          <option value="" disabled selected hidden>Select account type</option>
+          <option>Admin</option>
+          <option>Member</option>
+        </select>
+        <button class="btn-create-account">Create account</button>
+        <button class="btn-back">Back</button>
+      </section> -->
+      <section class="admin-homepage hidden">
+        <div class="admin-page-header">
+          <h3 class="admin-welcome">Welcome</h3>
+          <div class="profile">
+            <button class="log-out admin-logout">LOGOUT</button>
+            <img
+              src="../assets/profile-user.png"
+              alt="profile pic"
+              class="profile-pic-img"
+            />
+          </div>
+        </div>
+        <div class="admin-home-page-board">
+          <div class="admin-side-bar">
+            <button class="btn-side-bar add-board-btn">Add New Board</button>
+            <button class="btn-side-bar add-member-btn">Add New Member</button>
+            <button class="btn-side-bar remove-member-btn">
+              Remove Member
+            </button>
+            <button class="btn-side-bar admin-add-task-btn">
+              Add New Task
+            </button>
+            <button class="btn-side-bar admin-summary-btn">
+              Project Summary
+            </button>
+          </div>
+          <!-- <div class="board-container">
+            <h4 class="board-label">Kandan Board</h4>
+            <div class="main-board">
+              <div class="name1">Pending</div>
+              <div class="name1">In Progress</div>
+              <div class="name1">Completed</div>
+            </div>
+          </div> -->
+        </div>
+      </section>
+      <section class="member-homepage hidden">
+        <div class="admin-page-header">
+          <h3 class="member-welcome">Welcome</h3>
+          <div class="profile">
+            <button class="log-out member-logout">LOGOUT</button>
+            <img
+              src="../assets/profile-user.png"
+              alt="profile pic"
+              class="profile-pic-img"
+            />
+          </div>
+        </div>
+        <div class="admin-home-page-board">
+          <div class="admin-side-bar">
+            <button class="btn-side-bar">Add New Task</button>
+            <button class="btn-side-bar">Project Summary</button>
+          </div>
+          <div class="board-container">
+            <h4 class="board-label">Kandan Board</h4>
+            <div class="main-board">
+              <div class="name1">Pending</div>
+              <div class="name1">In Progress</div>
+              <div class="name1">Completed</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="add-board-page hidden">
+        <h5>Please Enter the Project Name:</h5>
+        <input
+          type="text"
+          placeholder="Project Name"
+          class="input-name input-project-name"
+        />
+        <button class="btn-create-board">Create</button>
+        <button class="btn-board-back">Back</button>
+      </section>
+      <section class="add-task-page hidden">
+        <h5>Add New Tasks:</h5>
+        <p class="task-label">Task Name</p>
+        <input
+          type="text"
+          placeholder="Task Name"
+          class="input-name input-task-name"
+        />
+        <p class="task-label">Due Date</p>
+        <input
+          type="date"
+          placeholder="due date"
+          class="input-password input-password-signin"
+        />
+        <p class="task-label">Assign a Member to the task:</p>
+        <select class="select-usertype">
+          <option value="" disabled selected hidden>Select Member</option>
+          <!-- <option>Admin</option>
+          <option>Member</option> -->
+        </select>
+        <button class="btn-add-task">Add Task</button>
+        <button class="btn-task-back">Back</button>
+      </section>
+      <section class="project-summary-page hidden">
+        <h5>Project Summary:</h5>
+        <p class="leader-name-label">Leader Name:</p>
+        <p class="members-name-label">Members Name:</p>
+        <p class="due-date-label">Due Date:</p>
+        <p class="pending-tasks-label">Pending Tasks:</p>
+        <button class="btn-summary-back">Back</button>
+      </section>
+    </main>
+  </body>
+  <script src="../javascript/script.js"></script>
+</html>
