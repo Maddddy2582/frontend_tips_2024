@@ -215,6 +215,8 @@ body {
 
 .task-message {
   padding-top: 25px;
+  text-wrap: wrap;
+  word-wrap: break-word;
 }
 
 .hidden {

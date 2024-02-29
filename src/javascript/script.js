@@ -48,6 +48,7 @@ const projectSummaryPageMember = document.querySelector(
 
 const adminWelcomeMsg = document.querySelector(".admin-welcome");
 const memberWelcomeMsg = document.querySelector(".member-welcome");
+const leaderNameLabel = document.querySelector(".leader-name-label");
 
 const allSections = document.querySelectorAll(".hidden");
 
@@ -95,6 +96,8 @@ class Webpage {
   }
 
   createBoard() {
+    let user = this.currentuser;
+    user.projects.push(new Project(inputProjectName.value, user.userName));
     let HTML = `<div class="board-container ${inputProjectName.value} hide-board"  id="${projectTracker}">
     <h4 class="board-label">${inputProjectName.value}</h4>
     <div class="main-board">
@@ -105,8 +108,7 @@ class Webpage {
   </div>`;
     adminHomePageBoard.insertAdjacentHTML("beforeend", HTML);
     this.showSection(adminHomepage);
-    let user = this.currentuser;
-    user.projects.push(new Project(inputProjectName.value, user.userName));
+
     let projectName = `<option>${inputProjectName.value}</option>`;
     listOfProjects.insertAdjacentHTML("beforeend", projectName);
   }
@@ -223,6 +225,7 @@ btnSummaryBack.addEventListener("click", function () {
 });
 
 adminSummaryBtn.addEventListener("click", function () {
+  leaderNameLabel.textContent = `Admin Name: ${interface.currentuser.userName} `;
   interface.showSection(projectSummaryPage);
 });
 
@@ -230,13 +233,13 @@ adminLogout.addEventListener("click", function () {
   interface.showSection(logInPage);
 });
 
-addMemberBtn.addEventListener("click", function () {
-  interface.showSection(addNewMember);
-});
+// addMemberBtn.addEventListener("click", function () {
+//   interface.showSection(addNewMember);
+// });
 
-btnBackAddMember.addEventListener("click", function () {
-  interface.showSection(adminHomepage);
-});
+// btnBackAddMember.addEventListener("click", function () {
+//   interface.showSection(adminHomepage);
+// });
 
 memberAddTaskBtn.addEventListener("click", function () {
   interface.showSection(addTaskPageMember);
@@ -250,13 +253,13 @@ memberLogout.addEventListener("click", function () {
   interface.showSection(logInPage);
 });
 
-removeMemberBtn.addEventListener("click", function () {
-  interface.showSection(removeMember);
-});
+// removeMemberBtn.addEventListener("click", function () {
+//   interface.showSection(removeMember);
+// });
 
-btnBackRemoveMember.addEventListener("click", function () {
-  interface.showSection(adminHomepage);
-});
+// btnBackRemoveMember.addEventListener("click", function () {
+//   interface.showSection(adminHomepage);
+// });
 
 btnTaskBackMember.addEventListener("click", function () {
   interface.showSection(memberHomepage);
@@ -281,6 +284,7 @@ btnAddTask.addEventListener("click", function () {
   inputDuedate.value = "";
   selectMember.value = "";
   selectTasktype.value = "";
+  interface.showSection(adminHomepage);
 });
 
 listOfProjects.addEventListener("change", function () {
