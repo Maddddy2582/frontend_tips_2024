@@ -48,9 +48,17 @@ body {
 .input-password,
 .select-usertype,
 .member-list,
-.member-list-remove {
+.member-list-remove,
+.select-tasktype,
+.select-member,
+.list-of-projects {
   padding: 10px;
   border-radius: 5px;
+}
+
+.list-of-projects {
+  margin-left: 10px;
+  width: 130px;
 }
 
 .btn-signin,
@@ -167,15 +175,9 @@ body {
   grid-template-columns: repeat(3, 1fr);
   /* grid-template-rows: auto; */
   text-align: center;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
+  border: 2px solid black;
   width: 600px;
   height: 400px;
-}
-
-.name1 {
-  border-right: 1px solid black;
 }
 
 .profile-pic-img {
@@ -190,6 +192,35 @@ body {
   top: 15px;
 }
 
+.board-label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Pending,
+.In-Progress,
+.Completed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  height: 60px;
+  width: 60px;
+  background-image: url(../assets/Screenshot\ 2024-02-28\ 232701.png);
+  background-size: cover;
+  font-size: 12px;
+}
+
+.task-message {
+  padding-top: 25px;
+}
+
 .hidden {
+  display: none;
+}
+
+.hide-board {
   display: none;
 }

@@ -18,11 +18,18 @@ const removeMemberBtn = document.querySelector(".remove-member-btn");
 const btnBackRemoveMember = document.querySelector(".btn-back-remove-member");
 const btnTaskBackMember = document.querySelector(".btn-task-back-member");
 const btnSummaryBackMember = document.querySelector(".btn-summary-back-member");
+const btnAddTask = document.querySelector(".btn-add-task");
 
 const inputNameSignin = document.querySelector(".input-name-signin");
 const inputPasswordSignin = document.querySelector(".input-password-signin");
 const selectUserType = document.querySelector(".select-usertype");
 const inputProjectName = document.querySelector(".input-project-name");
+const inputTaskName = document.querySelector(".input-task-name");
+const inputDuedate = document.querySelector(".input-duedate");
+const selectMember = document.querySelector(".select-member");
+const selectTasktype = document.querySelector(".select-tasktype");
+const listOfMembers = document.querySelectorAll(".list-of-members");
+const listOfProjects = document.querySelector(".list-of-projects");
 
 const adminHomepage = document.querySelector(".admin-homepage");
 const logInPage = document.querySelector(".log-in-page");
@@ -44,6 +51,8 @@ const memberWelcomeMsg = document.querySelector(".member-welcome");
 
 const allSections = document.querySelectorAll(".hidden");
 
+let projectTracker = 1;
+
 class User {
   userName = "";
   password = "";
@@ -59,6 +68,7 @@ class User {
 
 class Webpage {
   currentuser = undefined;
+  currentproject = undefined;
 
   signin(username, userpassword) {
     if (!usersList.length) {
@@ -85,16 +95,40 @@ class Webpage {
   }
 
   createBoard() {
-    let HTML = `<div class="board-container">
+    let HTML = `<div class="board-container ${inputProjectName.value} hide-board"  id="${projectTracker}">
     <h4 class="board-label">${inputProjectName.value}</h4>
     <div class="main-board">
-      <div class="name1">Pending</div>
-      <div class="name1">In Progress</div>
-      <div class="name1">Completed</div>
+      <div class="Pending">Pending</div>
+      <div class="In-Progress">In Progress</div>
+      <div class="Completed">Completed</div>
     </div>
   </div>`;
     adminHomePageBoard.insertAdjacentHTML("beforeend", HTML);
     this.showSection(adminHomepage);
+    let user = this.currentuser;
+    user.projects.push(new Project(inputProjectName.value, user.userName));
+    let projectName = `<option>${inputProjectName.value}</option>`;
+    listOfProjects.insertAdjacentHTML("beforeend", projectName);
+  }
+
+  showSelectedBoard(selectedBoard) {
+    let currentBoard = document.getElementsByClassName(`${selectedBoard}`);
+    this.currentproject = currentBoard[0];
+    let hideBoard = document.querySelectorAll(".board-container");
+    hideBoard.forEach((element) => {
+      element.classList.add("hide-board");
+    });
+    currentBoard[0].classList.remove("hide-board");
+  }
+
+  createTask(name, deadline, member, priority) {
+    let userProjects = this.currentuser.projects[0];
+    userProjects.tasks.push(
+      new Task(name, deadline, member, priority, "this is a task")
+    );
+    let prioritySection = this.currentproject.querySelector(`.${priority}`);
+    let HTML = `<div class="card"><p class="task-message">${name}<p></div>`;
+    prioritySection.insertAdjacentHTML("beforeend", HTML);
   }
 
   // Method to display the required panel
@@ -106,10 +140,46 @@ class Webpage {
   }
 }
 
+class Project {
+  static productIdgenerator = 1;
+  name = "";
+  creatorName = "";
+  tasks = [];
+
+  constructor(name, creatorName) {
+    this.name = name;
+    this.creatorName = creatorName;
+    this.productId = Project.productIdgenerator;
+    Project.productIdgenerator++;
+  }
+}
+
+class Task {
+  static taskIdgenerator = 1;
+  name = "";
+  deadline = "";
+  member = "";
+  priority = "";
+  description = "";
+
+  constructor(name, deadline, member, priority, description) {
+    this.name = name;
+    this.deadline = deadline;
+    this.member = member;
+    this.priority = priority;
+    this.description = description;
+  }
+}
 const interface = new Webpage();
 
 const addUser = function (userName, password, isAdmin) {
   usersList.push(new User(userName, password, isAdmin));
+  listOfMembers.forEach((element) => {
+    if (!isAdmin) {
+      let HTML = `<option>${userName}</option>`;
+      element.insertAdjacentHTML("beforeend", HTML);
+    }
+  });
 };
 
 usersList = [];
@@ -129,6 +199,10 @@ addBoardBtn.addEventListener("click", function () {
 });
 
 btnCreateBoard.addEventListener("click", function () {
+  if (!inputProjectName.value) {
+    alert("Enter a project name");
+    interface.showSection(createBoard);
+  }
   interface.createBoard();
 });
 
@@ -196,9 +270,25 @@ btnSummaryBackMember.addEventListener("click", function () {
   interface.showSection(memberHomepage);
 });
 
+btnAddTask.addEventListener("click", function () {
+  interface.createTask(
+    inputTaskName.value,
+    inputDuedate.value,
+    selectMember.value,
+    selectTasktype.value
+  );
+  inputTaskName.value = "";
+  inputDuedate.value = "";
+  selectMember.value = "";
+  selectTasktype.value = "";
+});
+
+listOfProjects.addEventListener("change", function () {
+  interface.showSelectedBoard(listOfProjects.value);
+});
 interface.showSection(logInPage);
 // Hard coded Users
-addUser("John", "Smith", true);
+addUser("2", "2", true);
 addUser("Alice", "Parker", false);
 
 // createNewAccountBtn.addEventListener("click", function () {});

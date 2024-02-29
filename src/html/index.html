@@ -38,6 +38,11 @@
         </div>
         <div class="admin-home-page-board">
           <div class="admin-side-bar">
+            <select class="list-of-projects">
+              <option value="" disabled selected hidden>Select Project</option>
+              <!-- <option>Admin</option>
+              <option>Member</option> -->
+            </select>
             <button class="btn-side-bar add-board-btn">Add New Board</button>
             <button class="btn-side-bar add-member-btn">Add New Member</button>
             <button class="btn-side-bar remove-member-btn">
@@ -53,9 +58,9 @@
           <!-- <div class="board-container">
             <h4 class="board-label">Kandan Board</h4>
             <div class="main-board">
-              <div class="name1">Pending</div>
-              <div class="name1">In Progress</div>
-              <div class="name1">Completed</div>
+              <div class="Pending">Pending</div>
+              <div class="In-progess">In Progress</div>
+              <div class="Completed">Completed</div>
             </div>
           </div> -->
         </div>
@@ -81,14 +86,14 @@
               Project Summary
             </button>
           </div>
-          <div class="board-container">
+          <!-- <div class="board-container">
             <h4 class="board-label">Kandan Board</h4>
             <div class="main-board">
               <div class="name1">Pending</div>
               <div class="name1">In Progress</div>
               <div class="name1">Completed</div>
             </div>
-          </div>
+          </div> -->
         </div>
       </section>
       <section class="add-board-page hidden">
@@ -104,23 +109,31 @@
 
       <section class="add-task-page hidden">
         <h5>Add New Tasks:</h5>
-        <p class="task-label">Task Name</p>
+        <p class="task-label">Task Name (Max- 10 Char)</p>
         <input
           type="text"
           placeholder="Task Name"
           class="input-name input-task-name"
+          maxlength="20"
         />
         <p class="task-label">Due Date</p>
         <input
           type="date"
           placeholder="due date"
-          class="input-password input-password-signin"
+          class="input-password input-duedate"
         />
         <p class="task-label">Assign a Member to the task:</p>
-        <select class="select-usertype">
+        <select class="select-member list-of-members">
           <option value="" disabled selected hidden>Select Member</option>
           <!-- <option>Admin</option>
           <option>Member</option> -->
+        </select>
+        <p class="task-label">Assign the task type:</p>
+        <select class="select-tasktype">
+          <option value="" disabled selected hidden>Task Type</option>
+          <option>Pending</option>
+          <option>In-Progress</option>
+          <option>Completed</option>
         </select>
         <button class="btn-add-task">Add Task</button>
         <button class="btn-task-back">Back</button>
@@ -137,7 +150,7 @@
 
       <section class="add-new-member hidden">
         <p>Select the Member to Add:</p>
-        <select class="member-list">
+        <select class="member-list list-of-members">
           <option value="" disabled selected hidden>Select Member</option>
           <!-- <option>Admin</option>
           <option>Member</option> -->
@@ -148,7 +161,7 @@
 
       <section class="remove-member hidden">
         <p>Select the Member to Remove:</p>
-        <select class="member-list-remove">
+        <select class="member-list-remove list-of-members">
           <option value="" disabled selected hidden>Select Member</option>
           <!-- <option>Admin</option>
           <option>Member</option> -->
