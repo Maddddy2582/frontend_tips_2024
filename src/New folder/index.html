@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="../css/style.css" rel="stylesheet" />
-    <link href="../assets/kanban icon.PNG" rel="icon" type="image/png" />
+    <link href="style.css" rel="stylesheet" />
+    <link href="kanban icon.PNG" rel="icon" type="image/png" />
   </head>
   <body>
     <main class="main-container">
@@ -30,7 +30,7 @@
           <div class="profile">
             <button class="log-out admin-logout">LOGOUT</button>
             <img
-              src="../assets/profile-user.png"
+              src="profile-user.png"
               alt="profile pic"
               class="profile-pic-img"
             />
@@ -40,14 +40,8 @@
           <div class="admin-side-bar">
             <select class="list-of-projects">
               <option value="" disabled selected hidden>Select Project</option>
-              <!-- <option>Admin</option>
-              <option>Member</option> -->
             </select>
             <button class="btn-side-bar add-board-btn">Add New Board</button>
-            <!-- <button class="btn-side-bar add-member-btn">Add New Member</button>
-            <button class="btn-side-bar remove-member-btn">
-              Remove Member
-            </button> -->
             <button class="btn-side-bar admin-add-task-btn">
               Add New Task
             </button>
@@ -55,23 +49,16 @@
               Project Summary
             </button>
           </div>
-          <!-- <div class="board-container">
-            <h4 class="board-label">Kandan Board</h4>
-            <div class="main-board">
-              <div class="Pending">Pending</div>
-              <div class="In-progess">In Progress</div>
-              <div class="Completed">Completed</div>
-            </div>
-          </div> -->
-        </div>
+       </div>
       </section>
+
       <section class="member-homepage hidden">
         <div class="admin-page-header">
           <h3 class="member-welcome">Welcome</h3>
           <div class="profile">
             <button class="log-out member-logout">LOGOUT</button>
             <img
-              src="../assets/profile-user.png"
+              src="profile-user.png"
               alt="profile pic"
               class="profile-pic-img"
             />
@@ -86,16 +73,9 @@
               Project Summary
             </button>
           </div>
-          <!-- <div class="board-container">
-            <h4 class="board-label">Kandan Board</h4>
-            <div class="main-board">
-              <div class="name1">Pending</div>
-              <div class="name1">In Progress</div>
-              <div class="name1">Completed</div>
-            </div>
-          </div> -->
         </div>
       </section>
+
       <section class="add-board-page hidden">
         <h5>Please Enter the Project Name:</h5>
         <input
@@ -125,8 +105,6 @@
         <p class="task-label">Assign a Member to the task:</p>
         <select class="select-member list-of-members">
           <option value="" disabled selected hidden>Select Member</option>
-          <!-- <option>Admin</option>
-          <option>Member</option> -->
         </select>
         <p class="task-label">Assign the task type:</p>
         <select class="select-tasktype">
@@ -135,6 +113,8 @@
           <option>In-Progress</option>
           <option>Completed</option>
         </select>
+        <p class="task-label">Give Description:</p>
+        <textarea class="task-descp" rows="2" cols="20"></textarea>
         <button class="btn-add-task">Add Task</button>
         <button class="btn-task-back">Back</button>
       </section>
@@ -142,8 +122,8 @@
       <section class="project-summary-page hidden">
         <h5>Project Summary:</h5>
         <p class="leader-name-label">Leader Name:</p>
+        <p>Members Name:</p>
         <p class="members-name-label">Members Name:</p>
-        <p class="due-date-label">Due Date:</p>
         <p class="pending-tasks-label">Remining Tasks:</p>
         <button class="btn-summary-back">Back</button>
       </section>
@@ -152,8 +132,6 @@
         <p>Select the Member to Add:</p>
         <select class="member-list list-of-members">
           <option value="" disabled selected hidden>Select Member</option>
-          <!-- <option>Admin</option>
-          <option>Member</option> -->
         </select>
         <button class="btn-add-member">Add Member</button>
         <button class="btn-back-add-member">Back</button>
@@ -163,8 +141,7 @@
         <p>Select the Member to Remove:</p>
         <select class="member-list-remove list-of-members">
           <option value="" disabled selected hidden>Select Member</option>
-          <!-- <option>Admin</option>
-          <option>Member</option> -->
+
         </select>
         <button class="btn-remove-member">Remove Member</button>
         <button class="btn-back-remove-member">Back</button>
@@ -187,8 +164,6 @@
         <p class="task-label">Assign a Member to the task:</p>
         <select class="select-usertype">
           <option value="" disabled selected hidden>Select Member</option>
-          <!-- <option>Admin</option>
-          <option>Member</option> -->
         </select>
         <button class="btn-add-task">Add Task</button>
         <button class="btn-task-back-member">Back</button>
@@ -198,11 +173,53 @@
         <h5>Project Summary:</h5>
         <p class="leader-name-label">Leader Name:</p>
         <p class="members-name-label">Members Name:</p>
-        <p class="due-date-label">Due Date:</p>
         <p class="pending-tasks-label">Pending Tasks:</p>
         <button class="btn-summary-back-member">Back</button>
       </section>
+
+      <section class="popup" id="popup">
+        <div class="popup-content">
+          <p class="task-name"</p>
+          <p class="task-member"></p>
+          <p class="task-duedate"></p>
+          <p class="task-priority"></p>
+          <p class="task-description"></p>
+          <button class="btn-modify-task">Modify</button>
+        </div>
+      </section>
+
+      <section class="modify-task-page hidden">
+        <h5>Modify Task:</h5>
+        <p class="task-label">Task Name (Max- 10 Char)</p>
+        <input
+          type="text"
+          placeholder="Task Name"
+          class="input-name input-modify-name"
+          maxlength="18"
+        />
+        <p class="task-label">Due Date</p>
+        <input
+          type="date"
+          placeholder="due date"
+          class="input-password input-modify-duedate"
+        />
+        <p class="task-label">Assign a Member to the task:</p>
+        <select class="select-member modify-list-of-members list-of-members">
+          <option value="" disabled selected hidden>Select Member</option>
+        </select>
+        <p class="task-label">Assign the task type:</p>
+        <select class="modify-tasktype">
+          <option value="" disabled selected hidden>Task Type</option>
+          <option>Pending</option>
+          <option>In-Progress</option>
+          <option>Completed</option>
+        </select>
+        <p class="task-label">Give Description:</p>
+        <textarea class="modify-task-descp" rows="2" cols="20"></textarea>
+        <button class="btn-modify-task-confirm">Modify</button>
+        <button class="btn-modify-back">Back</button>
+      </section>
     </main>
   </body>
-  <script src="../javascript/script.js"></script>
+  <script src="script.js"></script>
 </html>
